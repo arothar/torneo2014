@@ -9,11 +9,10 @@ app.service = (function() {
 
     function post(uri, data) {
         return $.ajax({
-            contentType: 'application/json; charset=UTF-8',
             url: uri,
             type: 'POST',
-            data: data,
-            dataType: 'json'
+            dataType: 'json',
+			data: {data : JSON.stringify(data)}
         });
     }
     

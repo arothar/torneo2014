@@ -24,7 +24,11 @@ class Usuario extends CI_Model {
 	
 	function guardarPartido($idUsuario, $idPartido, $golesLocal, $golesVisitante)
 	{
-		$this->db->insert("usuarioPartido", array($idUsuario, $idPartido, $golesLocal, $golesVisitante));
+		$this->db->insert("usuarioPartido", 
+					array('idUsuario'=>$idUsuario, 
+							'idPartido'=>$idPartido, 
+							'golesLocal'=>$golesLocal, 
+							'golesVisitante'=> $golesVisitante));
 		return $this->db->insert_id();
 	}
 

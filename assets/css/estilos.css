@@ -554,18 +554,33 @@ background-image:url(../img/bgbuttonoveractive.png);
 * FORM LOGIN
 *
 *******************************************************************************/
-
+#logopielogin {
+	position:absolute;
+	width:232px;
+	height:57px;
+	left:50%;
+	margin-left:-116px;
+	margin-top:380px;
+}
+#logologin {
+	position:absolute;
+	width:260px;
+	height:200px;
+	margin-left:-130px;
+	left:50%;
+	margin-top:-220px;
+}
 #contentLogin{
-    background-color: #FFFFFF;
-    border-radius: 7px;
-    height: 580px;
+	background-image:url(../img/fondocontentlogin.png);
+	background-repeat:no-repeat;
+    height: 380px;
     left: 50%;
-    margin-left: -420px;
-    margin-top: -290px;
+    margin-left: -270px;
+    margin-top: -260px;
     padding: 10px;
     position: absolute;
     top: 50%;
-    width: 840px;
+    width: 540px;
     z-index: 1000;
 }
 
@@ -584,11 +599,10 @@ background-image:url(../img/bgbuttonoveractive.png);
 }
 
 .contenedor-caja-login{
-    background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 5px;
     left: 50%;
     margin-left: -175px;
-    margin-top: 166px;
+    margin-top: 56px;
     padding: 12px;
     position: absolute;
     width: 350px;
@@ -596,12 +610,14 @@ background-image:url(../img/bgbuttonoveractive.png);
 }
 
 .contenedor-caja-login .login-registrar{
-    background-color: #F7A700;
+    background-color: #D32020;
     border-radius: 2px;
     color: #FFFFFF;
     cursor: pointer;
     font-size: 15px;
     font-weight: 600;
+	text-decoration:none;
+	border:none;
     margin-bottom: 3px;
     margin-left: 21px;
     margin-top: 12px;
@@ -612,7 +628,8 @@ background-image:url(../img/bgbuttonoveractive.png);
 
 .contenedor-caja-login a:hover{
     text-decoration: none;
-    color: #FFFFFF;
+	border:none;
+
 }
 
 
@@ -631,17 +648,18 @@ background-image:url(../img/bgbuttonoveractive.png);
 
 
 .caja-login .encabezado{
-    background-color: #88C238;
+    background-color:#000;
     border-radius: 5px;
     color: #FFFFFF;
     padding: 12px 12px 11px 20px;
-    width: 100%;
+    width: 90%;
 }
 
 .caja-login .titulo{
     font-size: 16px;
     font-weight: 600;
     padding-bottom: 3px;
+	text-align:center;
 }
 
 .caja-login .texto{
@@ -676,7 +694,7 @@ background-image:url(../img/bgbuttonoveractive.png);
 }
 
 .form-login input.enviar{
-    background-color: #88C238;
+    background-color:#21486D;
     border: 0 none;
     color: #FFFFFF;
 }
@@ -687,9 +705,16 @@ background-image:url(../img/bgbuttonoveractive.png);
 *
 *******************************************************************************/
 
+#logopie {
+	position:absolute;
+	left:50%;
+	margin-left:-116px;
+	width:232px;
+	margin-top:600px;
+}
 #contentRegistro{
-    background-color: #FFFFFF;
-    border-radius: 7px;
+	background-image:url(../img/fondoLogin.png);
+	background-repeat:no-repeat;
     height: 580px;
     left: 50%;
     margin-left: -420px;
@@ -732,10 +757,9 @@ background-image:url(../img/bgbuttonoveractive.png);
 }
 
 .contenedor-caja-registro{
-    background: none repeat scroll 0 0 #FFFFFF;
     border-radius: 5px;
-    margin-left: 280px;
-    margin-top: 6px;
+    margin-left: 310px;
+    margin-top: 10px;
     padding: 12px;
     position: absolute;
     width: 500px;
@@ -787,11 +811,11 @@ background-image:url(../img/bgbuttonoveractive.png);
 
 
 .caja-registro .encabezado{
-    background-color: #88C238;
+	background-color:#000;
     border-radius: 5px;
     color: #FFFFFF;
     padding: 7px 11px 7px 20px;
-    width: 100%;
+    width: 94%;
 }
 
 .caja-registro .titulo{
@@ -846,8 +870,8 @@ background-image:url(../img/bgbuttonoveractive.png);
 }
 
 .form-registro input[type='submit']{
-    background-color: #88C23A;
-    color: #FFFFFF;
+    background-color: #21486D;
+	color:#FFF;
     margin-left: 253px;
     margin-top: 52px;
     width: 179px;
@@ -904,14 +928,16 @@ background-image:url(../img/bgbuttonoveractive.png);
     position: absolute;
 }
 .form-registro .label-terminos{
+	color:#000;
     font-size: 12px;
-    margin-left: -221px;
+    margin-left: 1px;
     margin-top: 66px;
     position: absolute;
+	text-transform:uppercase;
 }
 
 .form-registro .input-terminos{
-    margin-left: -104px;
+    margin-left: -20px;
     margin-top: 59px;
     position: absolute;
 }
@@ -932,7 +958,7 @@ background-image:url(../img/bgbuttonoveractive.png);
     color: #434343;
     font-size: 12px;
     font-weight: 600;
-    margin-left: 87px;
+    margin-left: 60px;
     margin-top: -31px;
     position: absolute;
     text-decoration: underline;
