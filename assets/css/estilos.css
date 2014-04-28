@@ -1,0 +1,2644 @@
+/*******************************************************************************
+*
+* SOBRESCRIBO ESTILOS LIBRERIAS
+*
+*******************************************************************************/
+
+.modal{
+    overflow-y: auto;
+}
+
+/*******************************************************************************
+*
+* GENERALES
+*
+*******************************************************************************/
+
+html{
+    height: 100%;
+    margin: 0;
+}
+body{
+	
+	height:100%;
+	margin:0px;
+	padding:0px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+	background:url(../img/bg.jpg) no-repeat center center #040f25;
+	-moz-background-size: cover;
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+}
+
+
+a:focus{
+    outline: none;
+}
+
+.hidden{
+    display:none;
+}
+
+#contenedor{
+    width: 795px;
+	margin-left:auto;
+	margin-right:auto;
+    z-index: 1000;
+}
+
+#content{
+    margin-left: 18px;
+    width: 760px;
+}
+
+#bannerInicio{
+    width:760px;
+}
+
+
+#contenedorheader {
+	width:100%;
+	height:230px;
+	background-image:url(../img/bgheader.png);
+	background-position:top;
+	background-repeat:no-repeat;
+}
+#header{
+    height:165px;
+	width:765px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#header .header-modulo{
+    display:inline-block;
+    margin-top:15px;
+}
+
+#header .header-logo-premio{
+    float: left;
+    margin-left: -2px;
+    margin-top: 28px;
+    width: 260px;
+}
+
+#header .header-usuario{
+    background-image: url("../img/bgpuntaje.png");
+    height: 88px;
+    margin-left: 5px;
+    margin-top: 70px;
+    width: 494px;
+}
+
+#header .header-usuario .nombre{
+	color:#000;
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 260px;
+    margin-top: 35px;
+    position: absolute;
+    text-align: center;
+    width: 152px;
+}
+
+
+#header .header-usuario .puntos{
+    color: #FFFFFF;
+    font-size: 45px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-left: 368px;
+    margin-top: 8px;
+    position: absolute;
+    text-align: center;
+    width: 162px;
+}
+
+#header .header-usuario .sub-puntos{
+    color: #FFFFFF;
+    font-size: 8px;
+    font-weight: 700;
+    margin-left: 365px;
+    margin-top: 60px;
+    position: absolute;
+    text-align: center;
+    width: 162px;
+}
+
+#header .header-usuario .detalle{
+	color:#FFF;
+    cursor: pointer;
+    font-size: 9px;
+    font-weight: 600;
+    margin-left: 365px;
+    margin-top: 90px;
+    position: absolute;
+    text-align: center;
+    width: 162px;
+}
+
+#header .header-usuario .foto{
+    margin-left: 218px;
+    margin-top: 17px;
+    position: absolute;
+}
+
+#header .header-usuario .foto img{
+    height: 53px;
+    width: 53px;
+}
+
+#header .logout{
+    background-image: url("../img/botonLogout.png");
+    height: 32px;
+    margin-left: 685px;
+    margin-top: 2px;
+    position: absolute;
+    width: 80px;
+}
+
+#header .logout a{
+    color: #000000;
+    text-decoration: none;
+}
+
+
+#pie{
+	background-image:url(../img/bgfooter.png);
+	background-position:bottom;
+	background-repeat:repeat-x;
+    height: 220px;
+    width:100%;
+}
+#contenedorpie {
+	width:815px;
+	margin-left:auto;
+	margin-right:auto;	
+}
+
+#cuerpo{
+    margin-top:10px;
+    margin-bottom:15px;
+	border:none;
+}
+
+#cuerpo .tab-content{
+    margin-top: -7px;
+    position: relative;
+    padding: 15px 0px 0px 12px;
+	border:none;
+	
+}
+
+#cuerpo .mundial-tab li {
+	background-image:url(../img/bgbutton.png);
+	background-repeat:no-repeat;
+    margin-right: 8px;
+    text-align: center;
+    width: 184px;
+    height:47px;
+    font-size: 12px;
+	border:none;
+	
+}
+
+#cuerpo .mundial-tab li.active  {
+background-image:url(../img/bgbuttonoveractive.png);
+	background-repeat:no-repeat;
+	border:none;
+	
+}
+#cuerpo .mundial-tab li a:hover {
+background-image:url(../img/bgbuttonoveractive.png);
+	background-repeat:no-repeat;
+	border:none;
+	
+}
+
+#cuerpo .mundial-tab li a {
+    color:#FFF;
+}
+
+#cuerpo .mundial-tab li.active a{
+    border-color: transparent;
+    font-weight: 700;
+	background-image:url(../img/bgbuttonoveractive.png);
+	background-repeat:no-repeat;
+	border:none;
+}
+
+#cuerpo .mundial-tab li.active a:focus{
+    outline: none;
+}
+
+#cuerpo .mundial-tab li:last-child {
+    margin-right: 0px;
+}
+
+#cuerpo .texto .resaltado{
+    font-weight:600;
+}
+
+#cuerpo .texto{
+    margin-bottom:10px;
+}
+
+#cuerpo .texto-titulo{
+    background-color: #BD000B;
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding: 11px 11px 11px 20px;
+    width: 731px;
+}
+
+#cuerpo .texto-titulo .tiempo-restante{
+    background-color: #000000;
+    border-radius: 3px;
+    float: right;
+    height: 42px;
+    margin-right: -11px;
+    margin-top: -10px;
+    width: 240px;
+}
+#cuerpo .texto-titulo .tiempo-restante-faltan{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 16px;
+    margin-top: 9px;
+}
+
+#cuerpo .texto-titulo .tiempo-restante-horario{
+    float: right;
+    height: 24px;
+    width: 145px;
+    margin-top:5px;
+    color:#fffc00;
+    font-size:15px;
+}
+
+#cuerpo .texto-titulo .tiempo-restante-horario .tiempo-restante-dias{
+    display:inline-block;
+}
+
+#cuerpo .texto-titulo .tiempo-restante-horario .tiempo-restante-horas{
+    display:inline-block;
+}
+
+#cuerpo .texto-titulo .tiempo-restante-horario .tiempo-restante-minutos{
+    display:inline-block;
+}
+#cuerpo .texto-titulo .tiempo-restante-horario .tiempo-restante-separador{
+    margin-left:9px;
+    margin-right:9px;
+    display:inline-block;
+}
+
+#cuerpo .texto-titulo .tiempo-restante-texto{
+    float: right;
+    font-size: 9px;
+    height: 24px;
+    margin-top: -7px;
+    width: 146px;
+}
+
+#cuerpo .texto-titulo .tiempo-restante-texto .tiempo-restante-dias-texto{
+    display:inline-block;
+}
+
+#cuerpo .texto-titulo .tiempo-restante-texto .tiempo-restante-horas-texto{
+    margin-left:20px;
+    display:inline-block;
+}
+
+#cuerpo .texto-titulo .tiempo-restante-texto .tiempo-restante-minutos-texto{
+    margin-left:10px;
+    display:inline-block;
+}
+
+#cuerpo .trivia{
+    background-image: url("../img/fondoTrivia.jpg");
+    height: 82px;
+    margin-bottom: 9px;
+    margin-left: -2px;
+    width: 737px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    /* Firefox */
+    display: -moz-box;
+    -moz-box-align: center;
+    /* IE */
+    display: -ms-box;
+    -ms-box-align: center;
+    /* Native CSS */
+    display: box;
+    box-align: center;
+
+}
+
+#cuerpo .trivia .texto{
+    color: #FFFFFF;
+    font-size: 17px;
+    margin-left: 29px;
+    margin-top: 11px;
+    text-align: left;
+    width: 369px;
+}
+
+#cuerpo .trivia.mal .texto{
+    width: 585px;
+}
+
+
+#cuerpo .trivia .trivia-puntos{
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+#cuerpo .trivia .trivia-puntos .punto{
+    background-color: #97C744;
+    border-radius: 15px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 30px;
+    padding-top: 5px;
+    text-align: center;
+    width: 30px;
+}
+
+#cuerpo .trivia .utm{
+    font-size: 10px;
+}
+
+.contenedor-popup-trivia{
+    display:none;
+}
+
+.popup-trivia{
+    background-image: url("../img/fondoPopupTrivia.png");
+    height: 233px;
+    width: 617px;
+}
+
+
+.popup-trivia .titulo{
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 25px;
+    position: relative;
+    top: 20px;
+}
+
+.popup-trivia .close{
+    font-size: 15px;
+    margin-right: 9px;
+    margin-top: -15px;
+}
+
+.popup-trivia .pregunta{
+    color: #4B3424;
+    font-size: 20px;
+    font-weight: 600;
+    left: 25px;
+    line-height: 23px;
+    position: relative;
+    top: 30px;
+    width: 320px;
+    display:inline-block;
+}
+
+.popup-trivia .tiempo{
+    background-image: url("../img/relojTiempo.gif");
+    color: #4B3424;
+    display: inline-block;
+    font-size: 54px;
+    font-weight: 600;
+    height: 114px;
+    margin-left: 165px;
+    margin-top: -16px;
+    padding-top: 16px;
+    position: absolute;
+    text-align: center;
+    width: 114px;
+}
+
+.popup-trivia .reloj-parado{
+    background-image: url("../img/relojParado.jpg");
+}
+
+.popup-trivia .preparados{
+    color: #4B3424;
+    display: inline-block;
+    font-size: 36px;
+    font-weight: 600;
+    margin-left: 40px;
+    margin-top: 26px;
+    position: absolute;
+    width: 116px;
+}
+
+.popup-trivia .listos{
+    color: #4B3424;
+    display: inline-block;
+    font-size: 36px;
+    font-weight: 600;
+    margin-left: 101px;
+    margin-top: 26px;
+    position: absolute;
+    width: 116px;
+}
+
+.popup-trivia .ya{
+    color: #4B3424;
+    display: inline-block;
+    font-size: 36px;
+    font-weight: 600;
+    margin-left: 134px;
+    margin-top: 26px;
+    position: absolute;
+    width: 116px;
+}
+
+.popup-trivia .respuestas{
+    bottom: 0;
+    margin-bottom: 20px;
+    margin-left: 14px;
+    position: absolute;
+
+}
+.popup-trivia .respuestas .respuesta{
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    cursor: pointer;
+    float: left;
+    height: 36px;
+    margin-right: 5px;
+    margin-top: 5px;
+    width: 291px;
+}
+
+.popup-trivia .respuestas .respuesta.resp{
+    cursor:default;
+}
+
+
+.popup-trivia .respuestas .respuesta.resaltada-verde{
+    background-color: #33FF33;
+}
+
+.popup-trivia .respuestas .respuesta.resaltada-roja{
+    background-color:  #FF0000;
+}
+
+
+.popup-trivia .respuestas .respuesta .opcion{
+    background-color: #83C143;
+    border-radius: 2px;
+    color: #FFFFFF;
+    float: left;
+    font-weight: 600;
+    height: 32px;
+    margin-left: 2px;
+    margin-top: 2px;
+    padding-top: 5px;
+    text-align: center;
+    width: 32px;
+}
+
+.popup-trivia .respuestas .respuesta .texto{
+    color: black;
+    margin-left: 50px;
+    margin-top: 8px;
+}
+
+.popup-trivia .resultado-trivia{
+    color: #4B3424;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+    left: 25px;
+    line-height: 23px;
+    position: relative;
+    top: 30px;
+    width: 460px;
+}
+
+.modal-responder-trivia .modal-body{
+    padding:10px;
+}
+
+.modal-responder-trivia .modal-content{
+    width:639px;
+}
+
+.modal-responder-trivia .bootbox-close-button{
+    margin-right: 7px !important; 
+    margin-top: 5px !important;
+}
+
+
+
+/*******************************************************************************
+*
+* FORM LOGIN
+*
+*******************************************************************************/
+
+#contentLogin{
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    height: 580px;
+    left: 50%;
+    margin-left: -420px;
+    margin-top: -290px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    width: 840px;
+    z-index: 1000;
+}
+
+.imagen-login{
+    background-image: url("../img/fondoLogin.jpg");
+    height: 553px;
+    position: absolute;
+    width: 814px;
+    z-index: 2;
+}
+
+.caja-login{
+    width:200px;
+    height:200px;
+
+}
+
+.contenedor-caja-login{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px;
+    left: 50%;
+    margin-left: -175px;
+    margin-top: 166px;
+    padding: 12px;
+    position: absolute;
+    width: 350px;
+    z-index: 1000;
+}
+
+.contenedor-caja-login .login-registrar{
+    background-color: #F7A700;
+    border-radius: 2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    margin-left: 21px;
+    margin-top: 12px;
+    padding: 8px;
+    text-align: center;
+    width: 285px;
+}
+
+.contenedor-caja-login a:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+.caja-login{
+    background-color: #EBEBEB;
+    border-radius: 5px;
+    font-family: 'Open Sans',sans-serif !important;
+    height: auto;
+    width: 326px;
+    z-index: 10000;
+}
+
+.caja-login .alert-danger{
+    width:285px;
+}
+
+
+.caja-login .encabezado{
+    background-color: #88C238;
+    border-radius: 5px;
+    color: #FFFFFF;
+    padding: 12px 12px 11px 20px;
+    width: 100%;
+}
+
+.caja-login .titulo{
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+
+.caja-login .texto{
+    font-size:13px;
+}
+
+.caja-login .registrado{
+    color: #808080;
+    font-size: 12px;
+    cursor:pointer;
+    margin-left: 25px;
+    width: 300px;
+    padding-bottom: 10px;
+}
+
+
+.form-login{
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.form-login input{
+    border: medium none rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    color: #8A8A8A;
+    font-family: Open Sans !important;
+    font-weight: 600;
+    height: 35px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    width: 286px;
+}
+
+.form-login input.enviar{
+    background-color: #88C238;
+    border: 0 none;
+    color: #FFFFFF;
+}
+
+/*******************************************************************************
+*
+* FORM REGISTRO WEB
+*
+*******************************************************************************/
+
+#contentRegistro{
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    height: 580px;
+    left: 50%;
+    margin-left: -420px;
+    margin-top: -290px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    width: 840px;
+    z-index: 1000;
+}
+
+#contentRegistro.fb{
+    background-color: #FFFFFF;
+    border-radius: 7px;
+    height: 580px;
+    left: 0;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    width: 771px;
+    z-index: 1000;
+}
+
+.form-registro div:not(#fos_user_registration_form){
+    display: inline-block;
+    margin-left: 2px;
+    width: 220px;
+}
+
+.imagen-login.fb {
+    width: 751px;
+}
+
+.caja-registro{
+    width:200px;
+    height:200px;
+
+}
+
+.contenedor-caja-registro{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px;
+    margin-left: 280px;
+    margin-top: 6px;
+    padding: 12px;
+    position: absolute;
+    width: 500px;
+    z-index: 1000;
+}
+.contenedor-caja-registro.fb{
+    margin-left: 312px;
+    width: 377px;
+
+}
+
+.contenedor-caja-registro .login-registrar{
+    background-color: #F7A700;
+    border-radius: 2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    margin-left: 21px;
+    margin-top: 12px;
+    padding: 8px;
+    text-align: center;
+    width: 285px;
+}
+
+.contenedor-caja-registro a:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+
+.caja-registro{
+    background-color: #EBEBEB;
+    border-radius: 5px;
+    font-family: 'Open Sans',sans-serif !important;
+    height: auto;
+    width: 478px;
+    z-index: 10000;
+}
+
+.caja-registro.fb{
+    width: 353px;
+}
+
+.caja-registro .alert-danger{
+    width:285px;
+}
+
+
+.caja-registro .encabezado{
+    background-color: #88C238;
+    border-radius: 5px;
+    color: #FFFFFF;
+    padding: 7px 11px 7px 20px;
+    width: 100%;
+}
+
+.caja-registro .titulo{
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+
+.caja-registro .texto{
+    font-size:13px;
+}
+
+.caja-registro .registrado{
+    color: #808080;
+    font-size: 12px;
+    cursor:pointer;
+    margin-left: 25px;
+    width: 300px;
+    padding-bottom: 10px;
+}
+
+
+.form-registro{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.form-registro div:not(#fos_user_registration_form){
+    display: inline-block;
+    margin-left: 2px;
+    width: 220px;
+}
+
+.form-registro label{
+    color: #929292;
+    display: inline;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.form-registro input{
+    border: medium none rgba(0, 0, 0, 0);
+    border-radius: 2px;
+    color: #8A8A8A;
+    font-family: Open Sans !important;
+    font-weight: 600;
+    height: 35px;
+    margin-bottom: 5px;
+    margin-top: 3px;
+    padding-left: 10px;
+    width: 209px;
+}
+
+.form-registro input[type='submit']{
+    background-color: #88C23A;
+    color: #FFFFFF;
+    margin-left: 253px;
+    margin-top: 52px;
+    width: 179px;
+}
+
+
+.form-registro.fb input[type='submit']{
+    background-color: #88C23A;
+    color: #FFFFFF;
+    margin-left: 253px;
+    margin-top: 52px;
+    width: 179px;
+}
+
+.form-registro.fb .check-terminos-fb{
+    width:300px;
+}
+
+.form-registro.fb .check-terminos-fb .texto{
+    display: inline-block;
+    width: 200px;
+}
+
+.form-registro.fb .check-terminos-fb .check{
+    display: inline-block;
+    margin-left: 223px;
+    margin-top: -27px;
+    position: absolute;
+    width: 22px;
+}
+
+
+.form-registro.fb .check-terminos-fb .terminos-link{
+    color:#434343;
+    text-decoration: underline;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.form-registro .label-captcha{
+    margin-left: 318px;
+    margin-top: -14px;
+    position: absolute;
+}
+.form-registro .input-captcha{
+    margin-left: 319px;
+    margin-top: 10px;
+    position: absolute;
+    width: 112px;
+}
+
+.form-registro img{
+    margin-top: -4px;
+    position: absolute;
+}
+.form-registro .label-terminos{
+    font-size: 12px;
+    margin-left: -221px;
+    margin-top: 66px;
+    position: absolute;
+}
+
+.form-registro .input-terminos{
+    margin-left: -104px;
+    margin-top: 59px;
+    position: absolute;
+}
+
+.form-registro  select{
+    height: 36px;
+    margin-bottom: 7px;
+    padding: 8px;
+    width: 209px;
+}
+
+.form-registro input.enviar{
+    background-color: #88C238;
+    border: 0 none;
+    color: #FFFFFF;
+}
+.pie .terminos-link{
+    color: #434343;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 87px;
+    margin-top: -31px;
+    position: absolute;
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+.contenedor-terminos{
+    display:none;
+}
+
+.form-registro ul{
+    color: #FF0000;
+    font-weight: bold;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.form-registro ul li{
+    list-style: none outside none;
+    margin-left: 0;
+}
+.form-registro.fb{
+    margin-left: 25px;
+    margin-top: 15px;
+    width: 300px;
+}
+
+.form-registro.fb input{
+    font-family: Open Sans !important;
+    font-weight: 600;
+    height: 35px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    width: 300px;
+}
+
+.form-registro.fb input.enviar{
+    background-color: #88C238;
+    border: 0 none;
+    color: #FFFFFF;
+    margin-left: 2px;
+    margin-top: 16px;
+    width: 300px;
+}
+
+.form-registro.fb select{
+    border: medium none;
+    height: 36px;
+    margin-bottom: 7px;
+    padding: 8px;
+    width: 300px;
+}
+
+
+.form-registro.fb ul{
+    color: #FF0000;
+    font-weight: bold;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.form-registro.fb ul li{
+    list-style: none outside none;
+    margin-left: 0;
+}
+
+/*******************************************************************************
+*
+* GRUPOS
+*
+*******************************************************************************/
+
+#listaGrupos{
+    clear:both;
+}
+
+#listaGrupos .grupo{
+    background-color: #323132;
+    border-radius: 5px;
+    float:left;
+    height: 210px;
+    margin-right: 12px;
+    width: 360px;
+    margin-bottom:12px;
+}
+
+#listaGrupos .grupo .grupo-titulo{
+    background-color: #323132;
+    color: #FFFFFF;
+    font-weight: 700;
+    height: 35px;
+    padding: 7px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+#listaGrupos .grupo .lista-partidos{
+	background-color:#F1F1F1;
+    border-radius: 5px;
+    height: 174px;
+    margin-left: 1px;
+    width: 358px;
+    padding-top: 4px;
+}
+
+.blank{
+    clear:both;
+}
+
+
+.loader-partido{
+    background: url("../img/ajax-loader.gif") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 16px;
+    margin-left: 22px;
+    position: relative;
+    top: 5px;
+    width: 16px;
+    display:none;
+}
+
+
+/*******************************************************************************
+*
+* FINAL
+*
+*******************************************************************************/
+
+#listaFinal .grupo{
+    background-color: #323132;
+    border-radius: 5px;
+    display: inline-block;
+    height: auto;
+    margin-bottom: 12px;
+    margin-left: -3px;
+    margin-right: 0;
+    position: relative;
+    width: 741px;
+}
+
+#listaFinal .grupo .grupo-titulo{
+    background-color: #323132;
+    color: #FFFFFF;
+    font-weight: 700;
+    height: 35px;
+    padding: 7px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+#listaFinal .grupo .lista-partidos{
+	background-color:#F1F1F1;
+    border-radius: 5px;
+    display: inline-block;
+    height: auto;
+    margin-bottom: 2px;
+    margin-left: 4px;
+    margin-right: 0;
+    padding-bottom: 10px;
+    padding-top: 8px;
+    width: 363px;
+}
+
+#listaFinal .fondo-fase-final{
+    background-image: url("../img/fondoFaseFinal.png");
+    background-position: 0 0;
+    height: 612px;
+    margin-left: -4px;
+    position: relative;
+    width: 744px;
+    z-index: 10;
+}
+#listaFinal .arbol-fase-final{
+    background-image: url("../img/arbolFaseFinal.png");
+    background-position: 0 0;
+    height: 612px;
+    margin-left: 3px;
+    margin-top: 7px;
+	margin-bottom:7px;
+    position: absolute;
+    width: 742px;
+    z-index: 10;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final{
+    display: inline-block;
+    position: absolute;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-1{
+    margin: 35px 0 0 25px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-1 .boton-editar{
+    border-radius: 2px;
+    margin-left: 143px;
+    margin-top: 51px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-1 .boton-enviar{
+    border-radius: 2px;
+    margin-left: 143px;
+    margin-top: 51px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-1 .loader-partido{
+    margin-left: 157px !important;
+    margin-top: 49px !important;
+    position: absolute;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-1 .contenido-derecha{
+    margin-left: 2px;
+    margin-top: -1px;
+    position: absolute;
+    width: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-1 .contenido-derecha .jugando{
+color: #F70000;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 139px;
+    margin-top: 51px;
+    width: 69px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-1 .resultado-derecha{
+    display: inline-block;
+    margin-left: 131px;
+    margin-top: 46px;
+    position: absolute;
+    width: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-1 .resultado-derecha .resultado{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: 17px;
+    margin-left: 7px;
+    margin-top: 5px;
+    padding-left: 9px;
+    padding-top: 1px;
+    position: relative;
+    width: 40px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-2{
+    margin: 35px 0 0 592px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .boton-editar{
+    border-radius: 2px;
+    margin-left: -70px;
+    margin-top: 51px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .boton-enviar{
+    border-radius: 2px;
+    margin-left: -70px;
+    margin-top: 51px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-2  .loader-partido{ 
+    margin-left: -53px !important;
+    margin-top: 49px !important;
+    position: absolute;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .equipo{
+    text-align: right;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .contenido-izquierda{
+    margin-left: 1px;
+    margin-top: -1px;
+    position: absolute;
+    width: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .contenido-izquierda .jugando{
+    color: #F70000;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: -67px;
+    margin-top: 53px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .resultado-izquierda{
+    display: inline-block;
+    margin-left: -98px;
+    margin-top: 46px;
+    position: absolute;
+    width: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .resultado-izquierda .resultado{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: 17px;
+    margin-left: 51px;
+    margin-top: 5px;
+    padding-left: 16px;
+    padding-top: 1px;
+    position: relative;
+    width: 40px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-3{
+    margin: 262px 0 0 25px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-3 .boton-editar{
+    border-radius: 2px;
+    margin-left: 143px;
+    margin-top: 51px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-3 .boton-enviar{
+    border-radius: 2px;
+    margin-left: 143px;
+    margin-top: 51px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-3 .loader-partido{
+    margin-left: 155px !important;
+    margin-top: 46px !important;
+    position: absolute;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-3 .contenido-derecha{
+    margin-left: 2px;
+    margin-top: -1px;
+    position: absolute;
+    width: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-3 .contenido-derecha .jugando{
+color: #F70000;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 137px;
+    margin-top: 52px;
+    width: 100px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-3 .resultado-derecha{
+    display: inline-block;
+    margin-left: 131px;
+    margin-top: 46px;
+    position: absolute;
+    width: 65px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-3 .resultado-derecha .resultado{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: 17px;
+    margin-left: 7px;
+    margin-top: 5px;
+    padding-left: 9px;
+    padding-top: 1px;
+    position: relative;
+    width: 40px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-4{
+    margin: 262px 0 0 592px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .boton-editar{
+    border-radius: 2px;
+    margin-left: -2px;
+    margin-top: 0;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .boton-enviar{
+    border-radius: 2px;
+    margin-left: -2px;
+    margin-top: 0;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .loader-partido{ 
+    border-radius: 2px;
+    margin-left: 12px;
+    margin-top: -8px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .equipo{
+    text-align: right;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .contenido-izquierda{
+    margin-left: -63px;
+    margin-top: 50px;
+    position: absolute;
+    width: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .contenido-izquierda .jugando{
+    color: #F70000;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .resultado-izquierda{
+    display: inline-block;
+    margin-left: -98px;
+    margin-top: 46px;
+    position: absolute;
+    width: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .resultado-izquierda .resultado{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: 17px;
+    margin-left: 51px;
+    margin-top: 5px;
+    padding-left: 16px;
+    padding-top: 1px;
+    position: relative;
+    width: 40px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-1{
+    margin: 150px 0 0 127px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-1 .boton-editar{
+    border-radius: 2px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-1 .boton-enviar{
+    border-radius: 2px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.semi-1 .loader-partido{ 
+    margin-left: 20px !important;
+    margin-top: -16px !important;
+    position: absolute;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.semi-1 .contenido-derecha{
+    margin-left: 131px;
+    margin-top: 62px;
+    position: absolute;
+    width: 65px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.semi-1 .contenido-derecha .jugando{
+    color: #F70000;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 7px;
+    margin-top: -13px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.semi-1 .resultado-derecha{
+    display: inline-block;
+    margin-left: 131px;
+    margin-top: 46px;
+    position: absolute;
+    width: 65px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.semi-1 .resultado-derecha .resultado{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: 17px;
+    margin-left: 7px;
+    margin-top: 5px;
+    padding-left: 9px;
+    padding-top: 1px;
+    position: relative;
+    width: 40px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-2{
+    margin:150px 0 0 492px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-2 .boton-editar{
+    border-radius: 2px;
+    margin-left: -70px;
+    margin-top: 51px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-2 .boton-enviar{
+    border-radius: 2px;
+    margin-left: -70px;
+    margin-top: 51px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-2 .loader-partido{ 
+    margin-left: -57px !important;
+    margin-top: 45px !important;
+    position: absolute;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-2 .equipo{
+    text-align: right;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-2 .contenido-izquierda{
+    margin-left: 3px;
+    margin-top: -4px;
+    position: absolute;
+    width: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-2 .contenido-izquierda .jugando{
+    color: #F70000;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: -72px;
+    margin-top: 53px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-2 .resultado-izquierda{
+    display: inline-block;
+    margin-left: -98px;
+    margin-top: 46px;
+    position: absolute;
+    width: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-2 .resultado-izquierda .resultado{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: 17px;
+    margin-left: 50px;
+    margin-top: 5px;
+    padding-left: 16px;
+    padding-top: 1px;
+    position: relative;
+    width: 40px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.final{
+    margin: 387px 0 0 237px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.final .boton-editar{
+    border-radius: 2px;
+    margin-left: 4px;
+    margin-top: 1px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.final .boton-enviar{
+    border-radius: 2px;
+    margin-left: 4px;
+    margin-top: 1px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.final .loader-partido{ 
+    margin-top: 66px;
+    position: absolute;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.final .partido-equipo-1{
+    display: inline-block;
+    margin-left:-6px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.final .partido-equipo-1 .equipo{
+    text-align: right;
+    margin-right:5px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.final .bandera img{
+    height:24px;
+    margin-right:1px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.final .partido-equipo-2{
+    display: inline-block;
+    margin-left:3px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.final .resultado-inferior{
+    margin-left: 46px;
+    margin-top: 7px;
+    position: relative;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.final .resultado-inferior .resultado{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: 17px;
+    margin-left: 58px;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-top: 1px;
+    position: relative;
+    width: 33px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.final .resultado-inferior .puntaje{
+    float: none;
+    position:relative;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.final .contenido-inferior{
+    margin-left: 105px;
+    margin-top: 12px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.final .contenido-inferior .jugando{
+    color: #F70000;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 7px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto{
+    margin: 488px 0 0 243px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .boton-editar{
+    border-radius: 2px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .boton-enviar{
+    border-radius: 2px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .loader-partido{ 
+    position: absolute;
+    margin-top: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .partido-equipo-1{
+    display: inline-block;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .partido-equipo-1 .equipo{
+    text-align: right;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .partido-equipo-2{
+    display: inline-block;
+    margin-left:3px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .resultado-inferior{
+    margin-left: 41px;
+    margin-top: 7px;
+    position: relative;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .resultado-inferior .resultado{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: 17px;
+    margin-left: 58px;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-top: 1px;
+    position: relative;
+    width: 33px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .resultado-inferior .puntaje{
+    float: none;
+    position:relative;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .contenido-inferior{
+    margin-left: 98px;
+    margin-top: 11px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .contenido-inferior .jugando{
+    color: #F70000;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 7px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final .partido-equipo-1{
+    margin-top: 34px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final .partido-equipo-2{
+    margin-top: 7px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final .partido-gol-input{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    height: 22px;
+    margin: -2px 3px -2px -2px;
+    text-align: center;
+    width: 27px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final .bandera{
+    display: inline-block;
+    margin-right: 3px;
+    margin-top: 1.6px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final .bandera img{
+    margin-top:-2px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final .equipo{
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    width: 52px;
+    text-align: left;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final .resultado-derecha{
+    display: inline-block;
+    margin-left: 145px;
+    margin-top: 46px;
+    position: absolute;
+    width: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final .resultado-izquierda{
+    display: inline-block;
+    margin-left: -120px;
+    margin-top: 46px;
+    position: absolute;
+    width: 65px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final .resultado-izquierda .puntaje{
+    background-color: #444444;
+    border-radius: 15px;
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 11px;
+    height: 25px;
+    margin-top: 1px;
+    padding-top: 4px;
+    position: absolute;
+    text-align: center;
+    width: 25px;
+    z-index: 10000;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final .resultado-izquierda .resultado{
+    display: inline-block;
+    margin-left: 60px;
+    margin-top: 5px;
+    position: absolute;
+    width: 29px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final .puntaje{
+    background-color: #444444;
+    border-radius: 15px;
+    color: #FFFFFF;
+    display: inline-block;
+    float: right;
+    font-size: 11px;
+    height: 25px;
+    margin-top: 1px;
+    padding-top: 4px;
+    position: absolute;
+    right:5px;
+    text-align: center;
+    width: 25px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final .partido-inactivo{
+    margin-top: 37px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final .partido-inactivo .partido-gol-input{
+    margin-bottom: 5px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.final.partido-inactivo{
+    margin-left: 227px;
+    margin-top: 434px;
+    width: 293px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.final.partido-inactivo .partido-separacion-input {
+    display: inline-block;
+    width: 9px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto.partido-inactivo{
+    margin-left: 234px;
+    margin-top: 531px;
+    width: 293px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto.partido-inactivo .partido-separacion-input {
+    display: inline-block;
+    width: 9px;
+}
+
+#listaFinal .banner-final{
+    margin-left: 42px;
+    margin-top: 408px;
+    position: absolute;
+}
+
+/*******************************************************************************
+*
+* GRUPOS Y FINAL
+*
+*******************************************************************************/
+
+.lista-partidos .partido{
+    display: inline-block;
+    margin: 2px 0 0 9px;
+    height:24px;
+}
+
+.lista-partidos .partido .bandera{
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.lista-partidos .partido .equipo{
+    display: inline-block;
+    font-size: 10px;
+    width: 62px;
+    text-transform: uppercase; 
+}
+
+.boton-enviar{
+    background-image: url("../img/botonEnviar.jpg");
+    cursor: pointer;
+    height: 17px;
+    margin-left: 7px;
+    margin-top: -13px;
+    position: absolute;
+    width: 47px;
+}
+
+.lista-partidos .jugando{
+    color: #F70000;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 7px;
+}
+
+.boton-editar{
+    background-image: url("../img/botonEditar.jpg");
+    cursor: pointer;
+    height: 17px;
+    margin-left: 7px;
+    margin-top: -13px;
+    position: absolute;
+    width: 47px;
+}
+
+.lista-partidos .partido .equipo.equipo-izq{
+    text-align: right;
+}
+.lista-partidos .partido .equipo.equipo-der{
+    text-align: left;
+}
+
+.partido-gol-input{
+    background-image: url("../img/fondoInput.jpg");
+    border: medium none #FFFFFF;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    width: 26px;
+}
+
+
+.lista-partidos .partido .partido-gol{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    width: 26px;
+}
+
+.lista-partidos .partido .partido-separacion-input{
+    display: inline-block;
+    font-size:10px;
+}
+
+
+.lista-partidos .partido .contenido-derecha{
+    display:inline-block;
+    width:65px;
+    position:relative;
+}
+.lista-partidos .partido .resultado{
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    height: 17px;
+    margin-left: 3px;
+    margin-top: 5px;
+    padding-left: 9px;
+    padding-top: 1px;
+    position: relative;
+    width: 40px;
+}
+
+.lista-partidos .partido .puntaje{
+    background-color: #444444;
+    border-radius: 15px;
+    color: #FFFFFF;
+    display: inline-block;
+    float: right;
+    font-size: 11px;
+    height: 25px;
+    margin-top: 1px;
+    padding-top: 4px;
+    position: absolute;
+    right:5px;
+    text-align: center;
+    width: 25px;
+}
+
+.partido-inactivo {
+    margin-top:3px;
+}
+
+.partido-inactivo .bandera img{
+    -moz-filter: grayscale(100%);
+    -o-filter:grayscale(100%);
+    -ms-filter:grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%); /* For Webkit browsers */
+    filter: gray; /* For IE 6 - 9 */
+    -webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+}
+
+
+.partido-inactivo .partido-gol-input{
+    background-image: url("../img/fondoInputInactivo.jpg");
+    border:none;
+    height:23px;
+}
+
+
+/*******************************************************************************
+*
+* POSICIONES Y PREMIOS
+*
+*******************************************************************************/
+
+
+.contenedor-premios{
+    display: inline-block;
+    float:right;
+    margin-right:27px;
+    margin-top: 15px;
+}
+
+.posiciones-ronda{
+    margin-top:25px;    
+}
+
+.modal-premios-globales .modal-dialog{
+    width:340px;
+}
+
+.modal-premios-globales .modal-dialog .close{
+    color: #FF0000;
+    float: none;
+    font-weight: bold;
+    margin-left: 287px;
+    opacity: 0.6;
+    position: relative;
+    top: -7px !important;
+}
+
+
+.modal-premios-actuales .modal-dialog{
+    width:340px;
+}
+
+.modal-premios-actuales .modal-dialog .close{
+    color: #FF0000;
+    float: none;
+    font-weight: bold;
+    margin-left: 287px;
+    opacity: 0.6;
+    position: relative;
+    top: -7px !important;
+}
+
+.premios-globales{
+    width:300px;
+    height: 496px;
+}
+
+.premios-globales .titulo{
+	background-color:#000;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 5px 5px 5px 20px;
+    width: 100%;
+	text-align:center;
+}
+
+.premios-globales .texto{
+    font-weight:bold;
+    color:#444444;
+}
+
+.premios-globales .premio-1{
+    background-color:#eaeaea;
+    width: 100%;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom:1px;
+}
+
+.premios-globales .premio-1 .imagen img{
+    width:160px;
+}
+
+.premios-globales .premio-1 .texto{
+    font-weight:bold;
+    color:#444444;
+    padding-top:5px;
+}
+
+.premios-globales .premio-1 .medalla{
+    background-image: url("../img/medallaOroPosicion.png");
+    height: 41px;
+    margin-left: 48px;
+    margin-top: 43px;
+    position: absolute;
+    width: 42px;
+}
+
+
+.premios-globales .premio-2{
+    background-color: #D5D5D5;
+    float: left;
+    margin-right: 6px;
+    margin-top: 4px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    text-align: center;
+    width: 49%;
+    height:163px;
+}
+
+.premios-globales .premio-2 .imagen img{
+    width: 120px;
+}
+
+.premios-globales .premio-2 .texto{
+    color: #444444;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 14px;
+    padding-top: 5px;
+    width: 125px;
+}
+
+.premios-globales .premio-2 .medalla{
+    background-image: url("../img/medallaPlataPosicion.png");
+    height: 41px;
+    margin-left: -5px;
+    margin-top: 13px;
+    position: absolute;
+    width: 42px;
+}
+
+.premios-globales .premio-3{
+    background-color:#bababa;
+    margin-top: 4px;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    text-align: center;
+    width: 49%;
+    float:left;
+    height:163px;
+
+}
+
+.premios-globales .premio-3 .imagen img{
+    width:120px;
+}
+
+
+.premios-globales .premio-3 .texto{
+    color: #444444;
+    font-size: 13px;
+    font-weight: bold;
+    margin-left: 14px;
+    padding-top: 5px;
+    width: 120px;
+}
+
+.premios-globales .premio-3 .medalla{
+    background-image: url("../img/medallaBroncePosicion.png");
+    height: 41px;
+    margin-left: -5px;
+    margin-top: 13px;
+    position: absolute;
+    width: 42px;
+}
+
+.lista-premios{
+    clear: both;
+    position: relative;
+    top: 6px;
+}
+
+
+.lista-premios .premio-lista{
+    background-color: #EBEBEB;
+    height: 30px;
+    margin-top: 6px;
+    position: relative;
+    width: 100%;
+}
+
+.lista-premios .premio-lista .posicion{
+    background-color: #000000;
+    color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+    height: 100%;
+    padding: 5px 0 0;
+    text-align: center;
+    width: 30px;
+}
+
+.lista-premios .premio-lista .texto{
+    font-weight: 600;
+    padding: 5px 5px 5px 44px;
+    font-size: 13px;
+}
+
+.lista-premios .mas-premios{
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+	color:#FFF;
+}
+
+.lista-premios .mas-premios .resaltado{
+    font-weight: 600;
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+.premios-actuales{
+    width:300px;
+}
+
+.premios-actuales .titulo{
+    background-color: #BA000B;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 5px 5px 5px 20px;
+    width: 100%;
+}
+
+.premios-actuales .texto{
+    font-weight:bold;
+    color:#444444;
+}
+
+.premios-actuales .premio-1{
+    background-color: #EAEAEA;
+    height: 97px;
+    padding-bottom: 1px;
+    padding-top: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.premios-actuales .premio-1 .imagen img{
+    float: left;
+    margin-left: 13px;
+    width: 100px;
+}
+
+.premios-actuales .premio-1 .texto{
+    color: #444444;
+    font-weight: bold;
+    height: 163px;
+    padding-top: 17px;
+}
+
+.premios-actuales .premio{
+    margin-top: 5px;
+}
+
+
+.premios-actuales .premio .texto{
+    background-color: #EBEBEB;
+    height: 30px;
+    margin-bottom: 0 !important;
+    padding-top: 4px;
+    width: 100%;
+    font-weight: 600;
+    padding: 5px 5px 5px 44px;
+    font-size: 13px;
+}
+
+.premios-actuales  .premio .posicion{
+    background-color: #000000;
+    color: #FFFFFF;
+    float: left;
+    font-weight: bold;
+    height: 100%;
+    margin-left: 0;
+    padding: 5px 0;
+    position: relative;
+    text-align: center;
+    width: 30px;
+    z-index: 100;
+}
+
+.premios-actuales  .mas-premios{
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.premios-actuales  .mas-premios .resaltado{
+    font-weight: 600;
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+
+#posiciones .posiciones{
+    display: inline-block;
+    margin-bottom:22px;
+    margin-top: 10px;
+}
+
+#posiciones .posiciones .medalla{
+    color: #7E6100;
+    font-size: 12px;
+    font-weight: 700;
+    height: 33px;
+    margin-left: -17px;
+    margin-top: 15px;
+    padding-top: 8px;
+    position: absolute;
+    text-align: center;
+    width: 34px;
+}
+
+#posiciones .posiciones .medalla-oro{
+    background-image: url("../img/medallaOro.png");
+    background-position: -6px -5px;
+}
+
+#posiciones .posiciones .medalla-plata{
+    background-image: url("../img/medallaPlata.png");
+    background-position: -6px -5px;
+
+}
+
+#posiciones .posiciones .medalla-bronce{
+    background-image: url("../img/medallaBronce.png");
+    background-position: -6px -5px;
+}
+
+#posiciones .podio{
+    background-image: url("../img/podio.png");
+    height:220px;
+    width:395px;
+    position:relative;
+    background-repeat: no-repeat;
+}
+
+#posiciones .podio .foto img{
+    width: 49px;
+    height:49px;
+}
+
+#posiciones .podio .nombre{
+    margin-left: -5px;
+    width: 82px;
+    font-size: 11px;
+    margin-top: 4px;
+    height:24px;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    /* Firefox */
+    display: -moz-box;
+    -moz-box-align: center;
+    /* IE */
+    display: -ms-box;
+    -ms-box-align: center;
+    /* Native CSS */
+    display: box;
+    box-align: center;
+
+}
+
+#posiciones .podio .nombre.nombre-primero{
+    margin-left: -10px;
+}
+
+#posiciones .podio .nombre.nombre-segundo{
+    margin-left: -7px;
+}
+
+#posiciones .podio .nombre.nombre-tercero{
+    margin-left: -9px;
+}
+
+#posiciones .podio .nombre .alineacion-nombre{
+    width: 100px;
+    text-align: center;
+    display: block;
+    line-height: 11px;
+}
+#posiciones .podio .foto{
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    margin-left: 9px;
+    overflow: hidden;
+    padding: 5px;
+    width: 59px;
+}
+
+#posiciones .podio .primero{
+    margin-left: 160px;
+    margin-top: 20px;
+    position: absolute;
+}
+
+#posiciones .podio .segundo{
+    margin-left: 40px;
+    margin-top: 32px;
+    position: absolute;
+}
+
+#posiciones .podio .tercero{
+    margin-left: 280px;
+    margin-top: 39px;
+    position: absolute;
+}
+
+#posiciones .lista-resultados{
+    background-color:#EAEAEA;
+    border-radius: 6px;
+    height: 276px;
+    margin-left: 11px;
+    margin-top: -25px;
+    padding-left: 15px;
+    padding-top: 18px;
+    width: 374px;
+}
+
+#posiciones .lista-resultados .resultado{
+    background-image: url("../img/puestoOrdinario.png");
+    height: 25px;
+    width:350px;
+    margin-bottom:12px;
+}
+
+#posiciones .lista-resultados .resultado .puesto{
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 3px;
+    text-align: center;
+    width: 27px;
+}
+
+#posiciones .lista-resultados .resultado .nombre{
+    display: inline-block;
+    margin-left: 20px;
+    width: 230px;
+    font-size:12px;
+}
+
+#posiciones .lista-resultados .resultado .puntaje{
+    color: #FFFFFF;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 15px;
+    text-align: center;
+    width: 44px;
+}
+
+#posiciones .posiciones-ronda .lista-resultados{
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url("../img/fondoPuntajeActual.png");
+    background-position: -8px -7px;
+    height: 223px;
+    margin-top: 12px;
+    padding-top: 48px;
+    width: 377px;
+}
+
+#posiciones .posiciones-ronda .lista-resultados .resultado{
+    padding-left: 1px;
+}
+
+#posiciones .posiciones-ronda .lista-resultados .resultado.primero{
+    background-image: url("../img/primerPuesto.png");
+    background-position: -1px center;
+    height: 31px;
+    margin-bottom: 3px;
+    padding-top: 3px;
+}
+
+
+#posiciones .posiciones-ronda .lista-resultados .resultado.primero .nombre{
+    margin-left: 20px;
+}
+
+#posiciones .posiciones-ronda .lista-resultados .resultado.primero .puntaje{
+    margin-left: 18px;
+}
+
+
+#posiciones .posiciones-ronda .lista-resultados .resultado.segundo{
+    background-image: url("../img/segundoPuesto.png");
+    height:31px;
+    margin-bottom:3px;
+    padding-top: 3px;
+}
+
+#posiciones .posiciones-ronda .lista-resultados .resultado.segundo .nombre{
+    margin-left: 20px;
+}
+
+#posiciones .posiciones-ronda .lista-resultados .resultado.segundo .puntaje{
+    margin-left: 18px;
+}
+
+#posiciones .posiciones-ronda .lista-resultados .resultado.tercero{
+    background-image: url("../img/tercerPuesto.png");
+    height:31px;
+    margin-bottom:5px;
+    padding-top: 3px;
+}
+
+#posiciones .posiciones-ronda .lista-resultados .resultado.tercero .nombre{
+    margin-left: 20px;
+}
+
+#posiciones .posiciones-ronda .lista-resultados .resultado.tercero .puntaje{
+    margin-left: 18px;
+}
+
+#posiciones .posiciones-ronda .lista-resultados .resultado .nombre{
+    margin-left: 23px;
+}
+
+#posiciones .posiciones-ronda .lista-resultados .resultado.cuarto{
+    margin-bottom: 5px;
+}
+
+#reglamento .reglamento-imagen-superior{
+    background-image: url("../img/reglamentoImagenSuperior.jpg");
+    height: 553px;
+    margin: 4px 0 2px -4px;
+    width: 741px;
+}
+
+#reglamento .reglamento-imagen-inferior-derecha{
+    background-image: url("../img/reglamentoImagenInferiorDerecha.jpg");
+    height: 330px;
+    margin: -5px 0 0 386px;
+    width: 356px;
+}
+
+
+#reglamento .reglamento-grupo{
+    margin-top:10px;
+    margin-left:6px;
+}
+
+#reglamento .reglamento-tooltip-grupo{
+    background-image: url("../img/reglamentoTooltipGrupo.png");
+    height: 125px;
+    margin: -12px 0 2px -15px;
+    width: 393px;
+}
+
+#reglamento{
+    clear:both;
+}
+
+#reglamento .grupo{
+    background-color: #323132;
+    border-radius: 5px;
+    float:left;
+    height: 210px;
+    margin-right: 12px;
+    width: 360px;
+    margin-bottom:12px;
+}
+
+#reglamento .grupo .grupo-titulo{
+    background-color: #323132;
+    color: #FFFFFF;
+    font-weight: 700;
+    height: 35px;
+    padding: 7px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+#reglamento .grupo .lista-partidos{
+	background-color:#F1F1F1;
+    border-radius: 5px;
+    height: 174px;
+    margin-left: 1px;
+    width: 358px;
+    padding-top: 4px;
+}
+
+
+
+/*******************************************************************************
+*
+* DETALLE DEL PUNTAJE
+*
+*******************************************************************************/
+
+.contenedor-detalle-puntaje{
+    display:none;
+}
+
+.detalle-puntaje{
+    width: 470px;
+}
+
+.detalle-puntaje .titulo{
+	background-color:#000;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font-weight: 600;
+    padding: 12px;
+}
+
+.detalle-puntaje ul{
+    display: inline-block;
+    list-style: none outside none;
+    margin-top: 10px;
+    margin-left:10px;
+}
+
+
+.detalle-puntaje li div{
+    display:inline-block;
+}
+
+.detalle-puntaje li.encabezado-lista{
+    font-size: 13px;
+    font-weight: 600;
+    height:25px;
+}
+.detalle-puntaje li.encabezado-lista .puntos{
+    color: black;
+}
+
+.detalle-puntaje li .fecha{
+    width: 75px;
+}
+
+.detalle-puntaje li .etapa{
+    width: 75px;
+}
+
+.detalle-puntaje li .descripcion{
+    width: 135px;
+}
+
+.detalle-puntaje li .puntos{
+    width: 70px;
+    color: #808080;
+    text-align: center;
+    width: 70px;
+}
+
+.detalle-puntaje li.fila-osc{
+    background-color: #EFEFEF;
+    font-size: 12px;
+    height: 23px;
+}
+.detalle-puntaje li.fila-osc div{
+    padding-left: 5px;
+    border-right: 1px solid #d8d8d8;
+    border-bottom: 1px solid white;
+    height:23px;
+    padding-top: 3px;
+}
+
+.detalle-puntaje li.fila-osc div:last-child{
+    border-right: none;
+}
+
+.detalle-puntaje li.fila-clar{
+    background-color: #F7F7F7;
+    font-size: 12px;
+    height: 23px;
+    height:23px;
+}
+
+.detalle-puntaje li.fila-clar div{
+    padding-left: 5px;
+    border-right: 1px solid #ebebeb;
+    border-bottom: 1px solid white;
+    padding-top: 3px;
+
+}
+.detalle-puntaje li.fila-clar div:last-child{
+    border-right: none;
+}
+
+.detalle-puntaje .total{
+    margin-left: 288px;
+}
+
+.detalle-puntaje .total .texto{
+	color:#000;
+    display:inline-block;
+}
+
+.detalle-puntaje .total .numero{
+    color: #808080;
+    display: inline-block;
+    margin-left: 39px;
+}
+
+.modal-detalle-puntaje .modal-body{
+    padding:10px;
+}
+
+.modal-detalle-puntaje .modal-content{
+    padding-left: 6px;
+    padding-top: 11px;
+    width: 503px;
+}
+
+.modal-detalle-puntaje .bootbox-close-button{
+    margin-right: 2px !important;
+    margin-top: -13px !important;
+}
+
+
+.modal-detalle-puntaje .bootbox-body{
+    margin-top: 12px !important;
+}
+
+
+#countdown p {
+    display: inline-block;
+    padding: 5px;
+    background: #FFA500;
+    margin: 0 0 20px;
+}
