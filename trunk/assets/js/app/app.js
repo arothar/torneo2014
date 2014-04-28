@@ -2,7 +2,7 @@ var app = (function() {
 
     function urlIndex() {
        // var url = "http://localhost/trabajos/desafioMundial/appMundial/web/app_dev.php/";
-          var url = "http://localhost:4880/ProdeLucho/dev/";
+          var url = "http://localhost/prodelucho/";
       // var url = "https://www.desafiomundial2014.com.ar/desafioMundialCert/appMundial/web/";
 
         return url;

@@ -17,7 +17,6 @@
 						<div class="bandera"><img src="assets/img/banderas/<?=$partidos[$grupo->idGrupo][$i]["banderaVisitante"]; ?>" title="bandera"></div>
 						<div class="contenido-derecha">
 							<div class="boton-editar assets/js-boton-editar"></div>
-							<input type="button" onclick="javascript:enviar()" />
 						</div>
 					</div>
 				<? } ?>

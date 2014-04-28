@@ -11,6 +11,7 @@ class Prode extends CI_Controller {
 		$this->load->model('Grupo','',TRUE);
 		$this->load->model('PartidoMundial','',TRUE);
 		$this->load->model('UsuarioPartido','',TRUE);
+		$this->load->model('Usuario','',TRUE);
 		
 		if ($this->session->userdata('usuario') == FALSE)
 			redirect(base_url(). 'login', 'refresh');
@@ -44,13 +45,13 @@ class Prode extends CI_Controller {
 	
 	function partido()
 	{
-		var_dump($_REQUEST);
-		$idPartido = $this->input->post('golesLocal');
-		echo "paso por partido:" . $idPartido;
+		$data = $this->input->post('data');
+		$data = json_decode($data);
+		$this->Usuario->guardarPartido(1,$data->idPartido, $data->golesLocal, $data->golesVisitante);
+		echo true;
+		/*echo "paso por partido:" . $idPartido;*/
+		
+		
 	}
 	
-	function logoutApp()
-	{
-	
-	}
 }
