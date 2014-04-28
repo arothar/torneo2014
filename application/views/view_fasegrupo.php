@@ -16,7 +16,11 @@
 						<div class="equipo equipo-der"><?=$partidos[$grupo->idGrupo][$i]["equipovisitante"]; ?></div>
 						<div class="bandera"><img src="assets/img/banderas/<?=$partidos[$grupo->idGrupo][$i]["banderaVisitante"]; ?>" title="bandera"></div>
 						<div class="contenido-derecha">
-							<div class="boton-editar assets/js-boton-editar"></div>
+							<? if (empty($partidosUsuario[$idPartido])) { ?>
+								<div class="boton-enviar assets/js-boton-enviar"></div>
+							<? } else { ?>
+								<div class="boton-editar assets/js-boton-editar"></div>
+							<? }?>
 						</div>
 					</div>
 				<? } ?>
