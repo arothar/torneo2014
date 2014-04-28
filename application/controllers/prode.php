@@ -47,10 +47,9 @@ class Prode extends CI_Controller {
 	{
 		$data = $this->input->post('data');
 		$data = json_decode($data);
-		$this->Usuario->guardarPartido(1,$data->idPartido, $data->golesLocal, $data->golesVisitante);
+		$usuario = $this->session->userdata('usuario');
+		$this->Usuario->guardarPartido($usuario[0]->idUsuario,$data->idPartido, $data->golesLocal, $data->golesVisitante);
 		echo true;
-		/*echo "paso por partido:" . $idPartido;*/
-		
 		
 	}
 	
