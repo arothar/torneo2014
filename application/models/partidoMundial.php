@@ -59,7 +59,7 @@ class PartidoMundial extends CI_Model {
 					   'idequipovisitante' => $val->idEquipoVisitante,
 					   'equipovisitante' => $val->equipoVisitante,
 					   'banderaVisitante' => $val->banderaVisitante,
-					   'fechapartido' => $val->fechaPartido,
+					   'fechaPartido' => $val->fechaPartido,
 					   'golesLocal' => $val->golesLocal,
 					   'golesVisitante' => $val->golesVisitante,
 					   'idResultadoMundial' => $val->idResultadoMundial
