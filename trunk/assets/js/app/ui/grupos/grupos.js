@@ -1,9 +1,12 @@
 app.ui.grupos = (function() {
+
     function init() {
         $('.partido').on('click', '.boton-editar', editarPartidoCallback);
         $('.partido').on('click', '.boton-enviar', enviarPartidoCallback);
         $('.partido').on('click', 'input', limpiarInput);
         $('.partido input').numberMask({beforePoint:2});
+		
+		$('#grupos .partido').tooltip({position: "BOTTOM RIGHT"});
       /*  
         $(".countdown").countdown({
 		date: $('.hasta').html(),
