@@ -43,6 +43,8 @@ class Admin extends CI_Controller {
 				$crud->display_as('idEquipoVisitante','EquipoVisitante');
 				
 				$crud->columns('idEquipoLocal','idEquipoVisitante','fechaPartido');
+				
+				$crud->callback_after_update(array($this, 'actualizarPuntos'));
 
 				$output = $crud->render();
 
@@ -50,6 +52,16 @@ class Admin extends CI_Controller {
 			}else{
 				redirect(base_url(). 'login/', 'refresh');
 			}
+	}
+	
+	function actualizarPuntos($post_array,$primary_key)
+	{
+		var_dump($post_array);
+						
+	 
+		
+
+		return true;
 	}
 
 }

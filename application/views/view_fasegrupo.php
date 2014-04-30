@@ -11,24 +11,26 @@
 					
 					?>
 					<? $idPartido = $partidos[$grupo->idGrupo][$i]["idPartido"]; ?>
-					<div class="partido <?if ($horas->d > 2) { echo "partido-inactivo"; }?>" data-id="<?=$idPartido?>">
+					<div class="partido <?if ($horas->d > 2) { echo "partido-inactivo"; } ?>" data-toggle="tooltip" data-original-title="<?=$partidos[$grupo->idGrupo][$i]["fechaPartido"]?>" data-id="<?=$idPartido?>">
 						<div class="bandera"><img src="assets/img/banderas/<?=$partidos[$grupo->idGrupo][$i]["banderaLocal"]; ?>" title="bandera"></div>
 						<div class="equipo equipo-izq"><?=$partidos[$grupo->idGrupo][$i]["equipolocal"]; ?></div>
 						<div class="partido-gol">
 							<? if ($horas->d <= 2) {?>
-								<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" disabled="disabled">
+								<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
 							<? } else { ?>
 								<input disabled="disabled" class="partido-gol-input">
 							<? } ?>
 						</div>
 						<div class="partido-separacion-input">.</div>
-						<div class="partido-gol"><input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" disabled="disabled"></div>
+						<div class="partido-gol">
+							<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
+						</div>
 						<div class="equipo equipo-der"><?=$partidos[$grupo->idGrupo][$i]["equipovisitante"]; ?></div>
 						<div class="bandera"><img src="assets/img/banderas/<?=$partidos[$grupo->idGrupo][$i]["banderaVisitante"]; ?>" title="bandera"></div>
 						<div class="contenido-derecha">
 							<? if ($fechaHoy > $fechaPartido) {?>
 								<div class="contenido-derecha">
-									<div class="resultado">3-0</div>
+									<div class="resultado"><?=$partidos[$grupo->idGrupo][$i]["golesLocal"]?>-<?=$partidos[$grupo->idGrupo][$i]["golesVisitante"]?></div>
 									<div class="puntaje">5</div>
 								</div>
 							<? } else { 

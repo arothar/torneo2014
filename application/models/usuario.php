@@ -24,12 +24,31 @@ class Usuario extends CI_Model {
 	
 	function guardarPartido($idUsuario, $idPartido, $golesLocal, $golesVisitante)
 	{
-		$this->db->insert("usuarioPartido", 
-					array('idUsuario'=>$idUsuario, 
-							'idPartido'=>$idPartido, 
-							'golesLocal'=>$golesLocal, 
-							'golesVisitante'=> $golesVisitante));
-		return $this->db->insert_id();
+	
+		$this->db->where('idUsuario', $idUsuario);
+		$this->db->where('idPartido', $idPartido);
+		$resultado = $this->db->get("usuarioPartido")->result();
+		//var_dump($resultado);
+		if (empty($resultado)){
+		
+			$this->db->insert("usuarioPartido", 
+						array('idUsuario'=>$idUsuario, 
+								'idPartido'=>$idPartido, 
+								'golesLocal'=>$golesLocal, 
+								'golesVisitante'=> $golesVisitante));
+			return $this->db->insert_id();
+		} else {
+			$this->db->where('idUsuario', $idUsuario);
+			$this->db->where('idPartido', $idPartido);
+			$this->db->update('usuarioPartido', 
+								array('golesLocal'=>$golesLocal, 
+										'golesVisitante'=> $golesVisitante));
+		}
+	}
+
+	function  asignarPuntaje($partido)
+	{
+		
 	}
 
 }
