@@ -9,6 +9,7 @@ class Admin extends CI_Controller {
 		$this->load->database();
 		$this->load->helper('url');
 		$this->load->library('session');
+		$this->load->model('Usuario','',TRUE);
 
 		$this->load->library('grocery_CRUD');
 		
@@ -42,7 +43,7 @@ class Admin extends CI_Controller {
 				$crud->display_as('idEquipoLocal','EquipoLocal');
 				$crud->display_as('idEquipoVisitante','EquipoVisitante');
 				
-				$crud->columns('idEquipoLocal','idEquipoVisitante','fechaPartido');
+				$crud->columns('idEquipoLocal','idEquipoLocal','idEquipoVisitante','fechaPartido');
 				
 				$crud->callback_after_update(array($this, 'actualizarPuntos'));
 
@@ -55,12 +56,12 @@ class Admin extends CI_Controller {
 	}
 	
 	function actualizarPuntos($post_array,$primary_key)
-	{
-		var_dump($post_array);
-						
+	{	
+		//var_dump($primary_key);
+		//var_dump($post_array);
+		//die();
+		$this->Usuario->asignarPuntaje($primary_key,$post_array["golesLocal"], $post_array["golesVisitante"]);
 	 
-		
-
 		return true;
 	}
 
