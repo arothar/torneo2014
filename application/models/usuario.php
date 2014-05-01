@@ -46,9 +46,12 @@ class Usuario extends CI_Model {
 		}
 	}
 
-	function  asignarPuntaje($partido)
+	function  asignarPuntaje($partido, $golesLocal, $golesVisitante)
 	{
-		
+		$sql = "CALL asignarPuntaje(?,?,?)";
+		$params = array($partido,$golesLocal, $golesVisitante);
+		$this->db->query($sql, $params);
+		//$this->db->call_function('asignarPuntaje',$partido);
 	}
 
 }
