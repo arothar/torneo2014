@@ -21,8 +21,7 @@ class Login extends CI_Controller {
 		$uri_segment = 3;
 		$offset = $this->uri->segment($uri_segment);
 		$valido = false;
-		$user = $this->Usuario->login($this->input->post('name'), $this->input->post('password'))->result();
-		//var_dump($user);
+		$user = $this->Usuario->login($this->input->post('usuario'), $this->input->post('_password'))->result();
 		if (count($user) == 1){
 			$this->session->set_userdata('usuario',$user);
 			redirect(base_url(). 'prode', 'refresh');

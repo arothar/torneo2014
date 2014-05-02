@@ -18,7 +18,7 @@
                 </div>
                 <form class="form-login" action="login/autenticar" method="post">
                     <input type="hidden" name="_csrf_token" value="ifm3FHPWusdpy1b5FVfw9D8TalnzXbHLaXXHKyIa5Bg" />
-                                        <input class="username_js"  placeholder="Usuario" type="text" value="" required="required" minlength="5"  />
+					<input class="username_js" name="usuario"  placeholder="Usuario" type="text" value="" required="required" minlength="5"  />
                     <input class="username" type="hidden" id="username" name="_username" value=""  />
                     <input class="password" placeholder="Password" type="password" id="password" name="_password" required="required" />
                     <input class="enviar" type="submit" value="Enviar"/>
