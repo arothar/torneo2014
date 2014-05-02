@@ -31,7 +31,7 @@
 							<? if ($fechaHoy > $fechaPartido) {?>
 								<div class="contenido-derecha">
 									<div class="resultado"><?=$partidos[$grupo->idGrupo][$i]["golesLocal"]?>-<?=$partidos[$grupo->idGrupo][$i]["golesVisitante"]?></div>
-									<div class="puntaje">5</div>
+									<div class="puntaje"><?=$partidosUsuario[$idPartido]['puntos'] ?></div>
 								</div>
 							<? } else { 
 								if ($horas->d <= 2) {?>

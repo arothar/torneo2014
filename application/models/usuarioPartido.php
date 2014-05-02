@@ -34,7 +34,8 @@ class UsuarioPartido extends CI_Model {
 					   'idPartido' => $val->idPartido,
 					   'golesLocal' => $val->golesLocal,
 					   'golesVisitante' => $val->golesVisitante,
-					   'idGanador' => $val->idGanador
+					   'idGanador' => $val->idGanador,
+					   'puntos' => $val->puntos
 			);
 			$arr_partido[$val->idPartido] = $unPartido;
 		}
