@@ -27,12 +27,12 @@ class PartidoMundial extends CI_Model {
 														equipoLocal.archivoBandera banderaLocal,
 														equipoVisitante.nombre equipoVisitante,
 														equipoVisitante.archivoBandera banderaVisitante,
-														equipoLocal.idGrupo idGrupo');
+														partidomundial.idGrupo idGrupo');
 		$this->db->from($this->tbl_partidoMundial);
 		$this->db->join('equipo as equipoLocal', 'equipoLocal.idEquipo = ' . $this->tbl_partidoMundial.' . idEquipoLocal');
 		$this->db->join('equipo as equipoVisitante', 'equipoVisitante.idEquipo = ' . $this->tbl_partidoMundial.' . idEquipoVisitante');
 		$this->db->where('idPlayoffEstructura', null);
-		$this->db->order_by('idGrupo','asc');
+		$this->db->order_by('partidomundial.idGrupo','asc');
 		$this->db->order_by('fechaPartido','asc');
 		return $this->db->get(); 
 		

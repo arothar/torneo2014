@@ -3,10 +3,10 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <meta charset="UTF-8" />
 <title>Desafio Mundial!</title>
-<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="assets/css/estilos.css" rel="stylesheet" type="text/css" media="all" />
-<link href="assets/css/css.css" rel="stylesheet" type="text/css" />
-<link href="assets/css/css_002.css" rel="stylesheet" type="text/css" />
+<link href="<?echo base_url()?>assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?echo base_url()?>assets/css/estilos.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?echo base_url()?>assets/css/css.css" rel="stylesheet" type="text/css" />
+<link href="<?echo base_url()?>assets/css/css_002.css" rel="stylesheet" type="text/css" />
 <link rel="icon" type="image/x-icon" href="https://www.desafiomundial2014.com.ar/desafioMundial/appMundial/web/favicon.ico" />
 </head>
 <body>
@@ -15,9 +15,9 @@
 	  <a href="login/remover/">
       <div class="logout"></div>
       </a>
-      <div class="header-modulo header-logo-premio"> <img src="assets/img/logoPremio.png" alt="Tu foto"> </div>
+      <div class="header-modulo header-logo-premio"> <img src="<?echo base_url()?>assets/img/logoPremio.png" alt="Tu foto"> </div>
       <div class="header-modulo header-usuario">
-        <div class="foto"><img src="assets/img/avatar1.jpg" alt="Tu foto"></div>
+        <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Tu foto"></div>
         <div class="nombre"><?= $usuario->username?></div>
         <div class="puntos"> 0 </div>
         <div class="sub-puntos">PUNTOS</div>
@@ -57,10 +57,10 @@
 </div>
 <div id="pie">
 <div id="contenedorpie">
-<img src="assets/img/fondoPie.png"/>
+<img src="<?echo base_url()?>assets/img/fondoPie.png"/>
 </div>
 </div>
-<div class="contenedor-detalle-puntaje assets/js-detalle-puntaje">
+<div class="contenedor-detalle-puntaje <?echo base_url()?>assets/js-detalle-puntaje">
   <div class="detalle-puntaje ">
     <div class="titulo">DETALLE DE TU PUNTAJE</div>
     <ul>
@@ -102,23 +102,23 @@
   </div>
 </div>
 </div>
-<script src="assets/js/lib/jquery-1.10.2.min.js" type="text/javascript"></script> 
-<script src="assets/js/lib/bootstrap.min.js" type="text/javascript"></script> 
-<script src="assets/js/lib/bootbox.min.js" type="text/javascript"></script> 
-<script src="assets/js/lib/jsrender.min.js" type="text/javascript"></script> 
-<script src="assets/js/lib/jquery.numberMask.js" type="text/javascript"></script> 
-<script src="assets/js/lib/jquery.countdown.js" type="text/javascript"></script> 
-<script src="assets/js/app/app.js" type="text/javascript"></script> 
-<script src="assets/js/app/service/service.js" type="text/javascript"></script> 
-<script src="assets/js/app/service/usuario/usuario.js" type="text/javascript"></script> 
-<script src="assets/js/app/service/grupo/grupo.js" type="text/javascript"></script> 
-<script src="assets/js/app/ui/ui.js" type="text/javascript"></script> 
-<script src="assets/js/app/ui/grupos/grupos.js" type="text/javascript"></script> 
-<script src="assets/js/app/ui/premios/premios.js" type="text/javascript"></script> 
-<script src="assets/js/app/ui/trivias/trivias.js" type="text/javascript"></script> 
-<script src="assets/js/app/ui/detallePuntaje/detallePuntaje.js" type="text/javascript"></script> 
-<script src="assets/js/app/ui/reglamento/reglamento.js" type="text/javascript"></script> 
-<script src="assets/js/app/ui/login/login.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/lib/jquery-1.10.2.min.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/lib/bootstrap.min.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/lib/bootbox.min.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/lib/jsrender.min.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/lib/jquery.numberMask.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/lib/jquery.countdown.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/app/app.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/app/service/service.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/app/service/usuario/usuario.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/app/service/grupo/grupo.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/app/ui/ui.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/app/ui/grupos/grupos.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/app/ui/premios/premios.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/app/ui/trivias/trivias.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/app/ui/detallePuntaje/detallePuntaje.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/app/ui/reglamento/reglamento.js" type="text/javascript"></script> 
+<script src="<?echo base_url()?>assets/js/app/ui/login/login.js" type="text/javascript"></script> 
 <script type="text/javascript">
         $(document).on("ready", function () {
             app.ui.init();

@@ -13,6 +13,7 @@ class Login extends CI_Controller {
 	}
 
 	function index($offset = 0){
+		
 		$data['comportamiento'] = "login";
 		$this->load->view('view_login', $data);
 	}
@@ -21,13 +22,40 @@ class Login extends CI_Controller {
 		$uri_segment = 3;
 		$offset = $this->uri->segment($uri_segment);
 		$valido = false;
-		$user = $this->Usuario->login($this->input->post('usuario'), $this->input->post('_password'))->result();
+		$user = $this->Usuario->login($this->input->post('usuario'), md5($this->input->post('_password')))->result();
 		if (count($user) == 1){
 			$this->session->set_userdata('usuario',$user);
 			redirect(base_url(). 'prode', 'refresh');
 		} else 
 			$this->load->view('view_login', '');
-		
+	}
+
+	function nuevousuario($offset = 0){
+		$data['passDiferentes']=0;
+		$this->load->view('view_nuevoUsuario',$data);
+	}
+
+	function registronuevo()
+	{
+		$plainPass = $this->input->post('plainPassword');
+		if ($plainPass['first'] != $plainPass['second'])
+		{
+			$data['passDiferentes']=1;
+			$this->load->view('view_nuevoUsuario',$data);	
+		}else
+		{
+			$this->Usuario->crearUsuario(
+				$this->input->post('username'),
+				$this->input->post('email'),
+				$plainPass['first'],
+				$this->input->post('direccion'),
+				$this->input->post('nombre'),
+				$this->input->post('localidad'),
+				$this->input->post('telefono'),
+				$this->input->post('dni')
+				);
+				redirect(base_url(). 'login', 'refresh');
+		}
 	}
 	
 	function remover($offset = 0){

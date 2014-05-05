@@ -43,7 +43,7 @@ class Admin extends CI_Controller {
 				$crud->display_as('idEquipoLocal','EquipoLocal');
 				$crud->display_as('idEquipoVisitante','EquipoVisitante');
 				
-				$crud->columns('idEquipoLocal','idEquipoLocal','idEquipoVisitante','fechaPartido');
+				$crud->columns('idGrupo','idEquipoLocal','golesLocal','golesVisitante','idEquipoVisitante','fechaPartido');
 				
 				$crud->callback_after_update(array($this, 'actualizarPuntos'));
 
