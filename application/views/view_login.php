@@ -2,11 +2,11 @@
     <head>
         <meta charset="UTF-8" />
         <title>Desafio Mundial!</title>
-            <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
-            <link href="assets/css/estilos.css" rel="stylesheet" type="text/css" media="all">
-            <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
-            <link href='https://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet' type='text/css'>
-                <link rel="icon" type="image/x-icon" href="/desafioMundial/appMundial/web/favicon.ico" />
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+		<link href="assets/css/estilos.css" rel="stylesheet" type="text/css" media="all">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet' type='text/css'>
+		<link rel="icon" type="image/x-icon" href="/desafioMundial/appMundial/web/favicon.ico" />
     </head>
     <body>
         <div id="contentLogin">
@@ -25,7 +25,7 @@
                 </form>
         </div>
                     <input class="js-codigo-empresa" type="hidden" value="edemo">
-            <a class="registrado" href="/desafioMundial/appMundial/web/register/">
+            <a class="registrado" href="login/nuevousuario">
                 <div class="login-registrar">
                     CREAR USUARIO NUEVO
                 </div>
@@ -33,7 +33,7 @@
             </div>
             <div id="logopielogin"> <img src="assets/img/logobridgestone.jpg"/></div>
     </div>
-                <script src="assets/js/lib/jquery-1.10.2.min.js" type="text/javascript"></script>
+        <script src="assets/js/lib/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script src="assets/js/lib/bootstrap.min.js" type="text/javascript"></script>
         <script src="assets/js/lib/bootbox.min.js" type="text/javascript"></script>
         <script src="assets/js/lib/jsrender.min.js" type="text/javascript"></script>
