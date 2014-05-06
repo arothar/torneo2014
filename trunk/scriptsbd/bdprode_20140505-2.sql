@@ -10,10 +10,7 @@ MySQL - 5.6.17 : Database - bdprode
 
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`bdprode` /*!40100 DEFAULT CHARACTER SET utf8 */;
-
-USE `bdprode`;
+USE `elgranp_bdprode`;
 
 /*Table structure for table `equipo` */
 
@@ -236,7 +233,7 @@ insert  into `usuariopartido`(`idUsuario`,`idPartido`,`golesLocal`,`golesVisitan
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_actualizarPuntos`()
+/*!50003 CREATE   PROCEDURE `sp_actualizarPuntos`()
 BEGIN
 	update usuario as u
 	inner join (select idUsuario, sum(puntos) as puntos from usuariopartido group by idUsuario) as  up on u.idUsuario = up.idUsuario
@@ -250,7 +247,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_armarPlayoffs`()
+/*!50003 CREATE   PROCEDURE `sp_armarPlayoffs`()
 BEGIN
 	insert into partidomundial (idPlayoffEstructura, idEquipoLocal, idEquipoVisitante,fechaPartido, idTorneo)
 	SELECT l.idPlayoff, l.idEquipoLocal, v.idEquipoVisitante ,fecha,1
@@ -287,7 +284,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_asignarPuntajeUsuario`(in p_partido int,IN p_golesLocal int,IN p_golesVisitante int)
+/*!50003 CREATE   PROCEDURE `sp_asignarPuntajeUsuario`(in p_partido int,IN p_golesLocal int,IN p_golesVisitante int)
 BEGIN
 	update usuariopartido 
 	set puntos =  CASE
@@ -306,7 +303,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_clasificacionOctavos`()
+/*!50003 CREATE   PROCEDURE `sp_clasificacionOctavos`()
 BEGIN
 	select * from (
 		select @row_num := IF(@prev_value=idGrupo,@row_num+1,1) AS posicion, idGrupo,idEquipo,nombre,puntosTotal,@prev_value := idGrupo as a from 
@@ -348,7 +345,7 @@ DELIMITER ;
 
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_rankingFaseGrupos`(p_idGrupo int)
+/*!50003 CREATE   PROCEDURE `sp_rankingFaseGrupos`(p_idGrupo int)
 BEGIN
 	declare p_rank int;
 	set p_rank=0;

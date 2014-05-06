@@ -2,15 +2,15 @@
     <head>
         <meta charset="UTF-8" />
         <title>Desafio Mundial!</title>
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
-		<link href="assets/css/estilos.css" rel="stylesheet" type="text/css" media="all">
+		<link href="<?echo base_url()?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+		<link href="<?echo base_url()?>assets/css/estilos.css" rel="stylesheet" type="text/css" media="all">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet' type='text/css'>
 		<link rel="icon" type="image/x-icon" href="/desafioMundial/appMundial/web/favicon.ico" />
     </head>
     <body>
         <div id="contentLogin">
-        <div id="logologin"> <img src="assets/img/logoPremio.png"/> </div>
+        <div id="logologin"> <img src="<?echo base_url()?>assets/img/logoPremio.png"/> </div>
         <div class="contenedor-caja-login">
         <div class="caja-login">
                 <div class="encabezado">
@@ -31,26 +31,26 @@
                 </div>
             </a>
             </div>
-            <div id="logopielogin"> <img src="assets/img/logobridgestone.jpg"/></div>
+            <div id="logopielogin"> <img src="<?echo base_url()?>assets/img/logobridgestone.jpg"/></div>
     </div>
-        <script src="assets/js/lib/jquery-1.10.2.min.js" type="text/javascript"></script>
-        <script src="assets/js/lib/bootstrap.min.js" type="text/javascript"></script>
-        <script src="assets/js/lib/bootbox.min.js" type="text/javascript"></script>
-        <script src="assets/js/lib/jsrender.min.js" type="text/javascript"></script>
-        <script src="assets/js/lib/jquery.numberMask.js" type="text/javascript"></script>
-        <script src="assets/js/lib/jquery.countdown.js" type="text/javascript"></script>
-        <script src="assets/js/app/app.js" type="text/javascript"></script>
-        <script src="assets/js/app/service/service.js" type="text/javascript"></script>
-        <script src="assets/js/app/service/usuario/usuario.js" type="text/javascript"></script>
-        <script src="assets/js/app/service/trivia/trivia.js" type="text/javascript"></script>
-        <script src="assets/js/app/service/grupo/grupo.js" type="text/javascript"></script>
-        <script src="assets/js/app/ui/ui.js" type="text/javascript"></script>
-        <script src="assets/js/app/ui/grupos/grupos.js" type="text/javascript"></script>
-        <script src="assets/js/app/ui/premios/premios.js" type="text/javascript"></script>
-        <script src="assets/js/app/ui/trivias/trivias.js" type="text/javascript"></script>
-        <script src="assets/js/app/ui/detallePuntaje/detallePuntaje.js" type="text/javascript"></script>
-        <script src="assets/js/app/ui/reglamento/reglamento.js" type="text/javascript"></script>
-        <script src="assets/js/app/ui/login/login.js" type="text/javascript"></script><script type="text/javascript">
+        <script src="<?echo base_url()?>assets/js/lib/jquery-1.10.2.min.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/lib/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/lib/bootbox.min.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/lib/jsrender.min.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/lib/jquery.numberMask.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/lib/jquery.countdown.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/app.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/service/service.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/service/usuario/usuario.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/service/trivia/trivia.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/service/grupo/grupo.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/ui/ui.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/ui/grupos/grupos.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/ui/premios/premios.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/ui/trivias/trivias.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/ui/detallePuntaje/detallePuntaje.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/ui/reglamento/reglamento.js" type="text/javascript"></script>
+        <script src="<?echo base_url()?>assets/js/app/ui/login/login.js" type="text/javascript"></script><script type="text/javascript">
             $(document).on("ready",function(){
                 app.ui.init();
                 app.ui.grupos.init();

@@ -43,11 +43,11 @@ class Usuario extends CI_Model {
 	
 		$this->db->where('idUsuario', $idUsuario);
 		$this->db->where('idPartido', $idPartido);
-		$resultado = $this->db->get("usuarioPartido")->result();
+		$resultado = $this->db->get("usuariopartido")->result();
 		//var_dump($resultado);
 		if (empty($resultado)){
 		
-			$this->db->insert("usuarioPartido", 
+			$this->db->insert("usuariopartido", 
 						array('idUsuario'=>$idUsuario, 
 								'idPartido'=>$idPartido, 
 								'golesLocal'=>$golesLocal, 
@@ -56,7 +56,7 @@ class Usuario extends CI_Model {
 		} else {
 			$this->db->where('idUsuario', $idUsuario);
 			$this->db->where('idPartido', $idPartido);
-			$this->db->update('usuarioPartido', 
+			$this->db->update('usuariopartido', 
 								array('golesLocal'=>$golesLocal, 
 										'golesVisitante'=> $golesVisitante));
 		}

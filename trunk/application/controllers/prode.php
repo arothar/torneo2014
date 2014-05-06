@@ -39,7 +39,7 @@ class Prode extends CI_Controller {
 		$data['estructuraOctavos'] = $estructuraOctavos;
 		
 		$outReglamento = $this->load->view('view_reglamento',null, TRUE);
-		$outFaseGrupo = $this->load->view('view_faseGrupo',$data, TRUE);
+		$outFaseGrupo = $this->load->view('view_fasegrupo',$data, TRUE);
 		$outFinal = $this->load->view('view_final',null, TRUE);
 		$outPosiciones = $this->load->view('view_posiciones',null, TRUE);
 		
