@@ -2,7 +2,8 @@ var app = (function() {
 
     function urlIndex() {
           // var url = "http://localhost/prodelucho/";
-		  var url = "http://localhost:4880/ProdeLucho/dev/";
+		  //var url = "http://localhost:4880/ProdeLucho/dev/";
+		  var url = "http://176.9.45.109/~elgranp/luchoprode/";
 
       // var url = "https://www.desafiomundial2014.com.ar/desafioMundialCert/appMundial/web/";
 
