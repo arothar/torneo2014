@@ -23,7 +23,7 @@ class PlayOff extends CI_Model {
 	
 	function get_estructura_octavos()
 	{
-		$this->db->select('pe.idGrupo,pe.posicion posicion1,g.nombre nombre1,pv.posicion posicion2,gv.nombre nombre2');
+		$this->db->select('pe.idGrupo,pe.posicion posicion1,g.nombre nombre1,pv.posicion posicion2,gv.nombre nombre2, pe.idPlayoff');
 		$this->db->from($this->tbl_playoffs);
 		$this->db->join('playoffestructura as pe', $this->tbl_playoffs.'.idPlayoffs = pe.idPlayoff AND pe.posicion=1', 'left');
 		$this->db->join('playoffestructura as pv', $this->tbl_playoffs.'.idPlayoffs = pv.idPlayoff AND pv.posicion=2', 'left');
