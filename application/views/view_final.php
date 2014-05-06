@@ -7,13 +7,13 @@
 					<div class="lista-partidos">
 				  <? } ?>
 						<div class="partido partido-inactivo" data-id="108">
-						  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
+						  <div class="bandera"><img src="<?if (isset($partidosOctavos[$val->idPlayoff])) {echo base_url()?>assets/img/banderas/<?=$partidosOctavos[$val->idPlayoff]["banderaLocal"];}else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
 						  <div class="equipo equipo-izq"><?=$val->posicion1;?>º <?=$val->nombre1;?></div>
 						  <input class="partido-gol-input" disabled="disabled">
 						  <div class="partido-separacion-input">ó</div>
 						  <input class="partido-gol-input" disabled="disabled">
 						  <div class="equipo equipo-der"><?=$val->posicion2;?>º <?=$val->nombre2;?></div>
-						  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
+						  <div class="bandera"><img src="<?if (isset($partidosOctavos[$val->idPlayoff])) {echo base_url()?>assets/img/banderas/<?=$partidosOctavos[$val->idPlayoff]["banderaVisitante"];}else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
 						</div>
 					<? if ($separador==3 || $separador ==7){ ?>
 						</div>

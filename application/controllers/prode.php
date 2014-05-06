@@ -23,30 +23,33 @@ class Prode extends CI_Controller {
 	{
 		$fechaHoy = new DateTime('2014-06-12 01:00');
 	
-		$grupos = $this->Grupo->get_paged_list(30, 0)->result();
-		$partidos = $this->PartidoMundial->get_partidoxgrupo_array(1);
-		$usuarioPartidoElegido = $this->session->userdata('usuario');
-		$partidosUsuario = $this->UsuarioPartido->get_by_user_array($usuarioPartidoElegido[0]->idUsuario);
-		$estructuraOctavos = $this->PlayOff->get_estructura_octavos()->result();
+		$grupos = 					$this->Grupo->get_paged_list(30, 0)->result();
+		$partidos = 				$this->PartidoMundial->get_partidoxgrupo_array(1);
+		$usuarioPartidoElegido = 	$this->session->userdata('usuario');
+		$partidosUsuario = 			$this->UsuarioPartido->get_by_user_array($usuarioPartidoElegido[0]->idUsuario);
+		$estructuraOctavos = 		$this->PlayOff->get_estructura_octavos()->result();
+		$partidosOctavos = 			$this->PartidoMundial->get_partidosplayoffs_array(8);
 		
+
 		//var_dump($estructuraOctavos);
 		
-		$data['grupos'] = $grupos;
-		$data['partidos'] = $partidos;
-		$data['partidosUsuario'] = $partidosUsuario;
-		$data['usuario'] = $usuarioPartidoElegido[0];
-		$data['fechaHoy'] = $fechaHoy;
-		$data['estructuraOctavos'] = $estructuraOctavos;
+		$data['grupos'] = 				$grupos;
+		$data['partidos'] = 			$partidos;
+		$data['partidosUsuario'] = 		$partidosUsuario;
+		$data['usuario'] = 				$usuarioPartidoElegido[0];
+		$data['fechaHoy'] = 			$fechaHoy;
+		$data['estructuraOctavos'] = 	$estructuraOctavos;
+		$data['partidosOctavos'] = 		$partidosOctavos;
 		
-		$outReglamento = $this->load->view('view_reglamento',null, TRUE);
-		$outFaseGrupo = $this->load->view('view_fasegrupo',$data, TRUE);
-		$outFinal = $this->load->view('view_final',null, TRUE);
-		$outPosiciones = $this->load->view('view_posiciones',null, TRUE);
+		$outReglamento = 	$this->load->view('view_reglamento',null, TRUE);
+		$outFaseGrupo = 	$this->load->view('view_fasegrupo',$data, TRUE);
+		$outFinal = 		$this->load->view('view_final',null, TRUE);
+		$outPosiciones = 	$this->load->view('view_posiciones',null, TRUE);
 		
-		$data['outReglamento'] = $outReglamento;
-		$data['outFaseGrupo'] = $outFaseGrupo;
-		$data['outFinal'] = $outFinal;
-		$data['outPosiciones'] = $outPosiciones;
+		$data['outReglamento'] = 	$outReglamento;
+		$data['outFaseGrupo'] = 	$outFaseGrupo;
+		$data['outFinal'] = 		$outFinal;
+		$data['outPosiciones'] = 	$outPosiciones;
 		
 		$this->load->view('view_prode',$data);
 	}
