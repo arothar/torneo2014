@@ -1,82 +1,26 @@
 ﻿<div id="listaFinal">
             <div class="grupo">
               <div class="grupo-titulo"> OCTAVOS DE FINAL </div>
-              <div class="lista-partidos">
-                <div class="partido partido-inactivo" data-id="108">
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                  <div class="equipo equipo-izq">1º A</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="partido-separacion-input">ó</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="equipo equipo-der">2º B</div>
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                </div>
-                <div class="partido partido-inactivo" data-id="113">
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                  <div class="equipo equipo-izq">1º B</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="partido-separacion-input">ó</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="equipo equipo-der">2º A</div>
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                </div>
-                <div class="partido partido-inactivo" data-id="115">
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                  <div class="equipo equipo-izq">1º F</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="partido-separacion-input">ó</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="equipo equipo-der">2º E</div>
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                </div>
-                <div class="partido partido-inactivo" data-id="109">
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                  <div class="equipo equipo-izq">1º C</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="partido-separacion-input">ó</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="equipo equipo-der">2º D</div>
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                </div>
-              </div>
-              <div class="lista-partidos">
-                <div class="partido partido-inactivo" data-id="111">
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                  <div class="equipo equipo-izq">1º G</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="partido-separacion-input">ó</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="equipo equipo-der">2º H</div>
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                </div>
-                <div class="partido partido-inactivo" data-id="114">
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                  <div class="equipo equipo-izq">1º D</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="partido-separacion-input">ó</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="equipo equipo-der">2º C</div>
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                </div>
-                <div class="partido partido-inactivo" data-id="116">
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                  <div class="equipo equipo-izq">1º H</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="partido-separacion-input">ó</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="equipo equipo-der">2º G</div>
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                </div>
-                <div class="partido partido-inactivo" data-id="110">
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                  <div class="equipo equipo-izq">1º E</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="partido-separacion-input">ó</div>
-                  <input class="partido-gol-input" disabled="disabled">
-                  <div class="equipo equipo-der">2º F</div>
-                  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                </div>
-              </div>
+			  <?$separador = 0; 
+				foreach ($estructuraOctavos as $val){ ?>
+				  <? if ($separador==0 || $separador ==4){ ?>
+					<div class="lista-partidos">
+				  <? } ?>
+						<div class="partido partido-inactivo" data-id="108">
+						  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
+						  <div class="equipo equipo-izq"><?=$val->posicion1;?>º <?=$val->nombre1;?></div>
+						  <input class="partido-gol-input" disabled="disabled">
+						  <div class="partido-separacion-input">ó</div>
+						  <input class="partido-gol-input" disabled="disabled">
+						  <div class="equipo equipo-der"><?=$val->posicion2;?>º <?=$val->nombre2;?></div>
+						  <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
+						</div>
+					<? if ($separador==3 || $separador ==7){ ?>
+						</div>
+					<? } 
+					$separador += 1;
+				   ?>
+			   <? } ?>
             </div>
             <div class="fondo-fase-final">
               <div class="arbol-fase-final">
