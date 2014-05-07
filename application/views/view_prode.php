@@ -19,7 +19,7 @@
       <div class="header-modulo header-usuario">
         <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Tu foto"></div>
         <div class="nombre"><?= $usuario->username?></div>
-        <div class="puntos"> 0 </div>
+        <div class="puntos"> <?=$usuario->puntos ?> </div>
         <div class="sub-puntos">PUNTOS</div>
         <div class="detalle">VER DETALLE</div>
       </div>
