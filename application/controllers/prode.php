@@ -21,7 +21,7 @@ class Prode extends CI_Controller {
 	
 	public function index()
 	{
-		$fechaHoy = new DateTime('2014-06-12 01:00');
+		$fechaHoy = new DateTime('2014-06-26 01:00');
 	
 		$grupos = 					$this->Grupo->get_paged_list(30, 0)->result();
 		$partidos = 				$this->PartidoMundial->get_partidoxgrupo_array(1);
