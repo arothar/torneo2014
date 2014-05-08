@@ -71,5 +71,12 @@ class Usuario extends CI_Model {
 		$sql = "CALL sp_actualizarPuntos()";
 		$this->db->query($sql);
 	}
+	
+	function getUsuarios()
+	{
+		$this->db->order_by('puntos','desc');
+		$resultado = $this->db->get("usuario");
+		return $resultado;
+	}
 
 }

@@ -3,56 +3,28 @@
               <div class="podio">
                 <div class="primero">
                   <div class="medalla medalla-oro">130</div>
-                  <div class="foto"><img src="#" alt="Imagen primero"></div>
-                  <div class="nombre nombre-primero"><span class="alineacion-nombre"></span></div>
+                  <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Imagen primero"></div>
+                  <div class="nombre nombre-primero"><span class="alineacion-nombre"><?=$usuariosOrdenados[0]["username"]?></span></div>
                 </div>
                 <div class="segundo">
                   <div class="medalla medalla-plata">120</div>
-                  <div class="foto"><img src="#" alt="Imagen segund"></div>
-                  <div class="nombre nombre-segundo"><span class="alineacion-nombre"></span></div>
+                  <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Imagen segund"></div>
+                  <div class="nombre nombre-segundo"><span class="alineacion-nombre"><?=$usuariosOrdenados[1]["username"]?></span></div>
                 </div>
                 <div class="tercero">
                   <div class="medalla medalla-bronce">90</div>
-                  <div class="foto"><img src="#" alt="Imagen tercero"></div>
-                  <div class="nombre nombre-tercero"><span class="alineacion-nombre"></span></div>
+                  <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Imagen tercero"></div>
+                  <div class="nombre nombre-tercero"><span class="alineacion-nombre"><?=$usuariosOrdenados[2]["username"]?></span></div>
                 </div>
               </div>
               <div class="lista-resultados">
+			  <? for ($i=3; $i < count($usuariosOrdenados); $i++){ ?>
                 <div class="resultado">
-                  <div class="puesto">4</div>
-                  <div class="nombre">Jesás Pascual</div>
-                  <div class="puntaje">231</div>
+                  <div class="puesto"><?=$i+1?></div>
+                  <div class="nombre"><?=$usuariosOrdenados[$i]["username"]?></div>
+                  <div class="puntaje"><?=$usuariosOrdenados[$i]["puntos"]?></div>
                 </div>
-                <div class="resultado">
-                  <div class="puesto">5</div>
-                  <div class="nombre">Tomás Rosado</div>
-                  <div class="puntaje">201</div>
-                </div>
-                <div class="resultado">
-                  <div class="puesto">6</div>
-                  <div class="nombre">Pedro Panqueque</div>
-                  <div class="puntaje">201</div>
-                </div>
-                <div class="resultado">
-                  <div class="puesto">7</div>
-                  <div class="nombre">Jorge Meconio</div>
-                  <div class="puntaje">200</div>
-                </div>
-                <div class="resultado">
-                  <div class="puesto">8</div>
-                  <div class="nombre">Juan Palenque</div>
-                  <div class="puntaje">197</div>
-                </div>
-                <div class="resultado">
-                  <div class="puesto">9</div>
-                  <div class="nombre">Armando Esteban Quito</div>
-                  <div class="puntaje">190</div>
-                </div>
-                <div class="resultado">
-                  <div class="puesto">10</div>
-                  <div class="nombre">Alan Brito</div>
-                  <div class="puntaje">182</div>
-                </div>
+			  <? } ?>
               </div>
             </div>
             <div class="posiciones-ronda">
