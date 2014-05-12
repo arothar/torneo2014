@@ -59,6 +59,12 @@ class PartidoMundial extends CI_Model {
 
 		$this->db->order_by('pe.idPlayoff','asc');
 		$this->db->order_by('fechaPartido','asc');
+		
+		/*
+		$this->db->get(); 
+		echo $this->db->last_query();
+		die();
+		*/
 		return $this->db->get(); 
 		
 		//return $this->db->get($this->tbl_propiedadServicio); 	
