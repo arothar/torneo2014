@@ -51,17 +51,22 @@
             </div>
             <div class="fondo-fase-final">
               <div class="arbol-fase-final">
-                <div class="partido partido-fase-final cuartos-1" data-id="117">
-                  <div class="partido partido-inactivo" data-id="117">
-                    <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                    <div class="equipo equipo-izq">1º A ó 2º B</div>
-                    <input class="partido-gol-input" disabled="disabled">
-                    <br>
-                    <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
-                    <div class="equipo equipo-der">1º C ó 2º D</div>
-                    <input class="partido-gol-input" disabled="disabled">
-                  </div>
-                </div>
+			    <? $countCuartos = 1;
+					foreach ($estructuraCuartosArray as $val){ ?>
+					<div class="partido partido-fase-final cuartos-<?=$countCuartos?>" data-id="117">
+					  <div class="partido partido-inactivo" data-id="117">
+						<div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
+						<div class="equipo equipo-izq"><?=$val['estructura'][0]['padre'][0]['posicion'] ?>º <?=$val['estructura'][0]['padre'][0]['nombregrupo'] ?> ó <?=$val['estructura'][0]['padre'][1]['posicion'] ?>º <?=$val['estructura'][0]['padre'][1]['nombregrupo'] ?></div>
+						<input class="partido-gol-input" disabled="disabled">
+						<br>
+						<div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
+						<div class="equipo equipo-der"><?=$val['estructura'][1]['padre'][0]['posicion'] ?>º <?=$val['estructura'][1]['padre'][0]['nombregrupo'] ?> ó <?=$val['estructura'][1]['padre'][1]['posicion'] ?>º <?=$val['estructura'][1]['padre'][1]['nombregrupo'] ?></div>
+						<input class="partido-gol-input" disabled="disabled">
+					  </div>
+					</div>
+				<? $countCuartos += 1;
+				} ?>
+				<!--
                 <div class="partido partido-fase-final cuartos-2" data-id="118">
                   <div class="partido partido-inactivo" data-id="118">
                     <input class="partido-gol-input" disabled="disabled">
@@ -94,7 +99,8 @@
                     <div class="equipo equipo-der">1º H ó 2º G</div>
                     <div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
                   </div>
-                </div>
+				  
+                </div>-->
                 <div class="partido partido-fase-final
                                         semi-1
                     " data-id="121">
