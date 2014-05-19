@@ -28,6 +28,12 @@ class Prode extends CI_Controller {
 		$usuarioPartidoElegido = 	$this->session->userdata('usuario');
 		$partidosUsuario = 			$this->UsuarioPartido->get_by_user_array($usuarioPartidoElegido[0]->idUsuario);
 		$estructuraOctavos = 		$this->PlayOff->get_estructura_octavos()->result();
+		$estructuraCuartosArray = 	$this->PlayOff->get_estructura_cuartos_array(4);
+		
+		//var_dump($estructuraCuartosArray[17]['padre'][0]['nombregrupo']);die();
+		// echo "<pre>";
+		// print_r ($estructuraCuartosArray);die();
+		// echo "</pre>";
 		
 		$partidosOctavos = 			$this->PartidoMundial->get_partidosplayoffs_array(8);
 		$partidosCuartos = 			$this->PartidoMundial->get_partidosplayoffs_array(4);
@@ -45,6 +51,7 @@ class Prode extends CI_Controller {
 		$data['usuario'] = 				$usuarioPartidoElegido[0];
 		$data['fechaHoy'] = 			$fechaHoy;
 		$data['estructuraOctavos'] = 	$estructuraOctavos;
+		$data['estructuraCuartosArray'] = 	$estructuraCuartosArray;
 		$data['partidosOctavos'] = 		$partidosOctavos;
 		$data['usuariosOrdenados'] = 	$usuariosOrdenados;
 		
