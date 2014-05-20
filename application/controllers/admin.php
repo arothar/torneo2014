@@ -10,6 +10,7 @@ class Admin extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->library('session');
 		$this->load->model('Usuario','',TRUE);
+		$this->load->model('PlayOff','',TRUE);
 
 		$this->load->library('grocery_CRUD');
 		
@@ -31,28 +32,50 @@ class Admin extends CI_Controller {
 
 	public function partidos_management()
 	{
-			$usuario = $this->session->userdata('usuario');
-			if ($usuario[0]->esAdmin == '1')
+		$usuario = $this->session->userdata('usuario');
+		if ($usuario[0]->esAdmin == '1')
+		{
+			$crud = new grocery_CRUD();
+
+			$crud->set_theme('datatables');
+			$crud->set_table('partidomundial');
+			$crud->set_relation('idEquipoLocal','equipo','nombre');
+			$crud->set_relation('idEquipoVisitante','equipo','nombre');
+			$crud->display_as('idEquipoLocal','EquipoLocal');
+			$crud->display_as('idEquipoVisitante','EquipoVisitante');
+			
+			$crud->columns('idGrupo','idEquipoLocal','golesLocal','golesVisitante','idEquipoVisitante','fechaPartido');
+			
+			$crud->callback_after_update(array($this, 'actualizarPuntos'));
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+		}else{
+			redirect(base_url(). 'login/', 'refresh');
+		}
+	}
+	
+	public function armarCuartos()
+	{
+		$equiposGanadores 	= 	$this->PlayOff->get_ganadoresTipoFinal(4,8);
+		$idPlayoff = 0;
+		$idEquipoLocal = 0;
+		$idEquipoVisitante = 0;
+
+		foreach ($equiposGanadores as $equipoGanador)
+		{
+			if ($idPlayoff != $equipoGanador->idPlayoff)
 			{
-				$crud = new grocery_CRUD();
-
-				$crud->set_theme('datatables');
-				$crud->set_table('partidomundial');
-				$crud->set_relation('idEquipoLocal','equipo','nombre');
-				$crud->set_relation('idEquipoVisitante','equipo','nombre');
-				$crud->display_as('idEquipoLocal','EquipoLocal');
-				$crud->display_as('idEquipoVisitante','EquipoVisitante');
-				
-				$crud->columns('idGrupo','idEquipoLocal','golesLocal','golesVisitante','idEquipoVisitante','fechaPartido');
-				
-				$crud->callback_after_update(array($this, 'actualizarPuntos'));
-
-				$output = $crud->render();
-
-				$this->_example_output($output);
-			}else{
-				redirect(base_url(). 'login/', 'refresh');
+				$idPlayoff = $equipoGanador->idPlayoff;
+				$idEquipoLocal = $equipoGanador->idGanador;
+			}else
+			{
+				$idPlayoff = 0;
+				$idEquipoVisitante = $equipoGanador->idGanador;
+				//aca tengo que hacer el insert en la tabla de "partidomundial".
 			}
+		}
 	}
 	
 	function actualizarPuntos($post_array,$primary_key)
