@@ -115,4 +115,10 @@ class PlayOff extends CI_Model {
 		return $arr_playoff;
 	}
 	
+	function get_ganadoresTipoFinal($idTipoFinal, $idTipoFinalAnterior)
+	{
+		$sql = "CALL sp_traerGanadoresTipoFinal(?,?)";
+		$params = array($idTipoFinal,$idTipoFinalAnterior);
+		return $this->db->query($sql, $params);
+	}
 }
