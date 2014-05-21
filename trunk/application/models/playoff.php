@@ -69,7 +69,8 @@ class PlayOff extends CI_Model {
 			$unPadre = array(
 					   'idGrupo' => $val->idGrupo,
 					   'nombregrupo' => $val->nombregrupo,
-					   'posicion' => $val->posicion
+					   'posicion' => $val->posicion,
+					   'fecha' => $val->fecha
 			);
 			
 			if ($val->idPlayoffEstructura != $estructuraAnterior){
@@ -115,10 +116,33 @@ class PlayOff extends CI_Model {
 		return $arr_playoff;
 	}
 	
+	function get_ganadoresTipoFinalSP($idTipoFinal, $idTipoFinalAnterior)
+	{
+		$sql = "CALL sp_traerGanadoresTipoFinal(?,?);";
+		$params = array($idTipoFinal,$idTipoFinalAnterior);
+		$this->db->query($sql, $params);
+		return ($this->my_db->affected_rows() == 1); 
+	}
+	
 	function get_ganadoresTipoFinal($idTipoFinal, $idTipoFinalAnterior)
 	{
-		$sql = "CALL sp_traerGanadoresTipoFinal(?,?)";
-		$params = array($idTipoFinal,$idTipoFinalAnterior);
-		return $this->db->query($sql, $params);
+		$sql = "
+			select pe.idPlayoffEstructura, pe.idPlayoff, p.fecha, pe.idPlayoffPadre, pg.idGanador, e.archivoBandera
+			from playoffestructura pe
+			inner join playoffs p on pe.idplayoff= p.idplayoffs
+			inner join (
+					select idPartidoMundial, CASE
+						WHEN (golesLocal > golesVisitante) THEN idEquipoLocal
+						WHEN (golesLocal < golesVisitante) THEN idEquipoVisitante
+						else null end as idGanador,pm.idTorneo,
+					p.idPlayoffs
+					from partidomundial pm
+					inner join playoffs p on pm.idPlayoff = p.idPlayoffs
+					where not golesLocal is null
+						and p.idtipofinal = " . $idTipoFinalAnterior . "
+				   ) pg on pg.idPlayOffs =  pe.idPlayoffPadre
+			inner join equipo e on e.IdEquipo= pg.idGanador
+			where idTipoFinal=".$idTipoFinal.";";
+		return $this->db->query($sql);
 	}
 }

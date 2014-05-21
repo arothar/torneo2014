@@ -1174,7 +1174,7 @@ background-image:url(../img/bgbuttonoveractive.png);
 
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-1 .contenido-derecha{
     margin-left: 2px;
-    margin-top: -1px;
+    margin-top: -90px;
     position: absolute;
     width: 65px;
 }
@@ -1242,7 +1242,7 @@ color: #F70000;
 
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .contenido-izquierda{
     margin-left: 1px;
-    margin-top: -1px;
+    margin-top: -90px;
     position: absolute;
     width: 65px;
 }
@@ -1305,7 +1305,7 @@ color: #F70000;
 
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-3 .contenido-derecha{
     margin-left: 2px;
-    margin-top: -1px;
+    margin-top: -90px;
     position: absolute;
     width: 65px;
 }
@@ -1375,7 +1375,7 @@ color: #F70000;
 
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .contenido-izquierda{
     margin-left: -63px;
-    margin-top: 50px;
+    margin-top: -40px;
     position: absolute;
     width: 65px;
 }
@@ -1770,11 +1770,16 @@ color: #F70000;
 #listaFinal .arbol-fase-final .partido-fase-final .partido-inactivo{
     margin-top: 37px;
 }
+#listaFinal .arbol-fase-final .partido-fase-final .partido-activo{
+    margin-top: 37px;
+}
 
 #listaFinal .arbol-fase-final .partido-fase-final .partido-inactivo .partido-gol-input{
     margin-bottom: 5px;
 }
-
+#listaFinal .arbol-fase-final .partido-fase-final .partido-activo .partido-gol-input{
+    margin-bottom: 5px;
+}
 
 #listaFinal .arbol-fase-final .partido-fase-final.final.partido-inactivo{
     margin-left: 227px;

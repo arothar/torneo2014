@@ -52,16 +52,42 @@
             <div class="fondo-fase-final">
               <div class="arbol-fase-final">
 			    <? $countCuartos = 1;
-					foreach ($estructuraCuartosArray as $val){ ?>
-					<div class="partido partido-fase-final cuartos-<?=$countCuartos?>" data-id="117">
-					  <div class="partido partido-inactivo" data-id="117">
-						<div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
+					$idPartido =0;
+					foreach ($estructuraCuartosArray as $val){ 
+					if (isset($partidosCuartos[$val['idPlayoff']])==1){
+						$fechaPartido = new DateTime($partidosCuartos[$val['idPlayoff']]["fechaPartido"]); 
+						$idPartido = $partidosCuartos[$val['idPlayoff']]["idPartido"];
+					}
+					?>
+					<div class="partido partido-fase-final cuartos-<?=$countCuartos?>" data-id="<?=$idPartido?>">
+					  <div class="partido-activo" >
+						<div class="bandera"><img src="<?if (isset($partidosCuartos[$val['idPlayoff']])) {echo base_url()?>assets/img/banderas/<?=$partidosCuartos[$val['idPlayoff']]["banderaLocal"];}else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
 						<div class="equipo equipo-izq"><?=$val['estructura'][0]['padre'][0]['posicion'] ?>º <?=$val['estructura'][0]['padre'][0]['nombregrupo'] ?> ó <?=$val['estructura'][0]['padre'][1]['posicion'] ?>º <?=$val['estructura'][0]['padre'][1]['nombregrupo'] ?></div>
-						<input class="partido-gol-input" disabled="disabled">
+						<!--<input class="partido-gol-input" disabled="disabled">-->
+						<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
 						<br>
-						<div class="bandera"><img src="assets/img/banderas/16702.jpg" title="bandera"></div>
+						<div class="bandera"><img src="<?if (isset($partidosCuartos[$val['idPlayoff']])) {echo base_url()?>assets/img/banderas/<?=$partidosCuartos[$val['idPlayoff']]["banderaVisitante"];}else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
 						<div class="equipo equipo-der"><?=$val['estructura'][1]['padre'][0]['posicion'] ?>º <?=$val['estructura'][1]['padre'][0]['nombregrupo'] ?> ó <?=$val['estructura'][1]['padre'][1]['posicion'] ?>º <?=$val['estructura'][1]['padre'][1]['nombregrupo'] ?></div>
-						<input class="partido-gol-input" disabled="disabled">
+						<!--<input class="partido-gol-input" disabled="disabled">-->
+						<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
+						<div class="contenido-<?if ($countCuartos%2==0) echo "izquierda"; else echo "derecha";?>">
+							<? if ($fechaHoy > $fechaPartido) {?>
+								<div class="contenido-derecha">
+									<div class="resultado"><?=$partidos[$grupo->idGrupo][$i]["golesLocal"]?>-<?=$partidos[$grupo->idGrupo][$i]["golesVisitante"]?></div>
+									<div class="puntaje"><?if (!empty($partidosUsuario[$idPartido])){ echo $partidosUsuario[$idPartido]['puntos'];} ?></div>
+								</div>
+							<? } else { 
+								 if ($horas->d <= 2) {?>
+									<? if ($horas->d != 0 || $horas->h >= 5) {?>
+										<? if (empty($partidosUsuario[$idPartido] )) { ?>
+											<div class="boton-enviar <?echo base_url()?>assets/js-boton-enviar"></div>
+										<? } else { ?>
+											<div class="boton-editar <?echo base_url()?>assets/js-boton-editar"></div>
+										<? }?>
+									<? }?>
+								<? }?>
+							<? }?>
+						</div>
 					  </div>
 					</div>
 				<? $countCuartos += 1;
