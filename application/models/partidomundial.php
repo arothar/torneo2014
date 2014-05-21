@@ -99,6 +99,19 @@ class PartidoMundial extends CI_Model {
 		return $arr_partido;
 	}
 	
+	function crearPartido($idEquipoLocal, $idEquipoVisitante, $fechaPartido, $idPlayoffEstructura, $idplayoff, $idTorneo)
+	{
+		$this->db->insert("partidomundial", 
+					array('idEquipoLocal'=>$idEquipoLocal, 
+							'idEquipoVisitante'=>$idEquipoVisitante, 
+							'fechaPartido'=>$fechaPartido, 
+							'idPlayoffEstructura'=> $idPlayoffEstructura,
+							'idplayoff'=> $idplayoff,
+							'idTorneo'=> $idTorneo
+						)
+					);
+		return $this->db->insert_id();
+	}
 	
 	function get_partidoxgrupo_array($idTorneo)
 	{

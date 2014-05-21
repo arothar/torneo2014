@@ -11,6 +11,8 @@ class Admin extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('Usuario','',TRUE);
 		$this->load->model('PlayOff','',TRUE);
+		$this->load->model('PartidoMundial','',TRUE);
+		
 
 		$this->load->library('grocery_CRUD');
 		
@@ -21,7 +23,7 @@ class Admin extends CI_Controller {
 
 	public function _example_output($output = null)
 	{
-		$this->load->view('example.php',$output);
+		$this->load->view('view_admin.php',$output);
 	}
 
 	
@@ -58,11 +60,14 @@ class Admin extends CI_Controller {
 	
 	public function armarCuartos()
 	{
-		$equiposGanadores 	= 	$this->PlayOff->get_ganadoresTipoFinal(4,8);
+		$equiposGanadores 	= 	$this->PlayOff->get_ganadoresTipoFinal(4,8)->result();
 		$idPlayoff = 0;
 		$idEquipoLocal = 0;
 		$idEquipoVisitante = 0;
 
+		//var_dump($equiposGanadores);
+		//die();
+		
 		foreach ($equiposGanadores as $equipoGanador)
 		{
 			if ($idPlayoff != $equipoGanador->idPlayoff)
@@ -74,6 +79,7 @@ class Admin extends CI_Controller {
 				$idPlayoff = 0;
 				$idEquipoVisitante = $equipoGanador->idGanador;
 				//aca tengo que hacer el insert en la tabla de "partidomundial".
+				$this->PartidoMundial->crearPartido($idEquipoLocal, $idEquipoVisitante, $equipoGanador->fecha, $equipoGanador->idPlayoffEstructura, $equipoGanador->idPlayoff, 1);
 			}
 		}
 	}

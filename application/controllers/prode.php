@@ -42,8 +42,9 @@ class Prode extends CI_Controller {
 		
 		$usuariosOrdenados = 		$this->Usuario->getUsuarios()->result_array();
 		
-
-		//var_dump($estructuraOctavos);
+		// echo "<pre>";
+		// print_r ($partidosCuartos);die();
+		// echo "</pre>";
 		
 		$data['grupos'] = 				$grupos;
 		$data['partidos'] = 			$partidos;
@@ -53,6 +54,7 @@ class Prode extends CI_Controller {
 		$data['estructuraOctavos'] = 	$estructuraOctavos;
 		$data['estructuraCuartosArray'] = 	$estructuraCuartosArray;
 		$data['partidosOctavos'] = 		$partidosOctavos;
+		$data['partidosCuartos'] = 		$partidosCuartos;
 		$data['usuariosOrdenados'] = 	$usuariosOrdenados;
 		
 		$outReglamento = 	$this->load->view('view_reglamento',null, TRUE);
