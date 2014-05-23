@@ -84,6 +84,33 @@ class Admin extends CI_Controller {
 		}
 	}
 	
+	public function armarSemis()
+	{
+		$equiposGanadores 	= 	$this->PlayOff->get_ganadoresTipoFinal(2,4)->result();
+		$idPlayoff = 0;
+		$idEquipoLocal = 0;
+		$idEquipoVisitante = 0;
+
+		//var_dump($equiposGanadores);
+		//die();
+		
+		foreach ($equiposGanadores as $equipoGanador)
+		{
+			if ($idPlayoff != $equipoGanador->idPlayoff)
+			{
+				$idPlayoff = $equipoGanador->idPlayoff;
+				$idEquipoLocal = $equipoGanador->idGanador;
+			}else
+			{
+				$idPlayoff = 0;
+				$idEquipoVisitante = $equipoGanador->idGanador;
+				//aca tengo que hacer el insert en la tabla de "partidomundial".
+				$this->PartidoMundial->crearPartido($idEquipoLocal, $idEquipoVisitante, $equipoGanador->fecha, $equipoGanador->idPlayoffEstructura, $equipoGanador->idPlayoff, 1);
+			}
+		}
+	}
+	
+	
 	function actualizarPuntos($post_array,$primary_key)
 	{	
 		//var_dump($primary_key);
