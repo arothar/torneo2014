@@ -1448,7 +1448,7 @@ color: #F70000;
 }
 #listaFinal .arbol-fase-final .partido-fase-final.semi-1 .contenido-derecha{
     margin-left: 131px;
-    margin-top: 62px;
+    margin-top: -25px;
     position: absolute;
     width: 65px;
 }
@@ -1510,7 +1510,7 @@ color: #F70000;
 
 #listaFinal .arbol-fase-final .partido-fase-final.semi-2 .contenido-izquierda{
     margin-left: 3px;
-    margin-top: -4px;
+    margin-top: -88px;
     position: absolute;
     width: 65px;
 }
