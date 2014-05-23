@@ -23,13 +23,15 @@ class Prode extends CI_Controller {
 	{
 		$fechaHoy = new DateTime('2014-06-30 01:00');
 	
-		$grupos = 					$this->Grupo->get_paged_list(30, 0)->result();
-		$partidos = 				$this->PartidoMundial->get_partidoxgrupo_array(1);
-		$usuarioPartidoElegido = 	$this->session->userdata('usuario');
-		$partidosUsuario = 			$this->UsuarioPartido->get_by_user_array($usuarioPartidoElegido[0]->idUsuario);
-		$estructuraOctavos = 		$this->PlayOff->get_estructura_octavos()->result();
-		$estructuraCuartosArray = 	$this->PlayOff->get_estructura_cuartos_array(4);
-		$estructuraSemisArray = 	$this->PlayOff->get_estructura_semis_array(2);
+		$grupos = 						$this->Grupo->get_paged_list(30, 0)->result();
+		$partidos = 					$this->PartidoMundial->get_partidoxgrupo_array(1);
+		$usuarioPartidoElegido = 		$this->session->userdata('usuario');
+		$partidosUsuario = 				$this->UsuarioPartido->get_by_user_array($usuarioPartidoElegido[0]->idUsuario);
+		$estructuraOctavos = 			$this->PlayOff->get_estructura_octavos()->result();
+		$estructuraCuartosArray = 		$this->PlayOff->get_estructura_cuartos_array(4);
+		$estructuraSemisArray = 		$this->PlayOff->get_estructura_semis_array(2);
+		$estructuraFinalisimaArray = 	$this->PlayOff->get_estructura_semis_array(1);
+		$estructuraTercerArray = 	$this->PlayOff->get_estructura_semis_array(34);
 		
 		//var_dump($estructuraCuartosArray[17]['padre'][0]['nombregrupo']);die();
 		// echo "<pre>";
@@ -47,18 +49,20 @@ class Prode extends CI_Controller {
 		// print_r ($estructuraSemisArray);die();
 		// echo "</pre>";
 		
-		$data['grupos'] = 				$grupos;
-		$data['partidos'] = 			$partidos;
-		$data['partidosUsuario'] = 		$partidosUsuario;
-		$data['usuario'] = 				$usuarioPartidoElegido[0];
-		$data['fechaHoy'] = 			$fechaHoy;
-		$data['estructuraOctavos'] = 	$estructuraOctavos;
-		$data['estructuraCuartosArray'] = 	$estructuraCuartosArray;
-		$data['estructuraSemisArray'] = 	$estructuraSemisArray;
-		$data['partidosOctavos'] = 		$partidosOctavos;
-		$data['partidosCuartos'] = 		$partidosCuartos;
-		$data['partidosSemis'] = 		$partidosSemis;
-		$data['usuariosOrdenados'] = 	$usuariosOrdenados;
+		$data['grupos'] = 						$grupos;
+		$data['partidos'] = 					$partidos;
+		$data['partidosUsuario'] = 				$partidosUsuario;
+		$data['usuario'] = 						$usuarioPartidoElegido[0];
+		$data['fechaHoy'] = 					$fechaHoy;
+		$data['estructuraOctavos'] = 			$estructuraOctavos;
+		$data['estructuraCuartosArray'] = 		$estructuraCuartosArray;
+		$data['estructuraSemisArray'] = 		$estructuraSemisArray;
+		$data['estructuraFinalisimaArray'] = 	$estructuraFinalisimaArray;
+		$data['estructuraTercerArray'] = 		$estructuraTercerArray;
+		$data['partidosOctavos'] = 				$partidosOctavos;
+		$data['partidosCuartos'] = 				$partidosCuartos;
+		$data['partidosSemis'] = 				$partidosSemis;
+		$data['usuariosOrdenados'] = 			$usuariosOrdenados;
 		
 		$outReglamento = 	$this->load->view('view_reglamento',null, TRUE);
 		$outFaseGrupo = 	$this->load->view('view_fasegrupo',$data, TRUE);
