@@ -21,7 +21,7 @@ class Prode extends CI_Controller {
 	
 	public function index()
 	{
-		$fechaHoy = new DateTime('2014-07-05 01:00');
+		$fechaHoy = new DateTime('2014-06-30 01:00');
 	
 		$grupos = 					$this->Grupo->get_paged_list(30, 0)->result();
 		$partidos = 				$this->PartidoMundial->get_partidoxgrupo_array(1);
@@ -29,6 +29,7 @@ class Prode extends CI_Controller {
 		$partidosUsuario = 			$this->UsuarioPartido->get_by_user_array($usuarioPartidoElegido[0]->idUsuario);
 		$estructuraOctavos = 		$this->PlayOff->get_estructura_octavos()->result();
 		$estructuraCuartosArray = 	$this->PlayOff->get_estructura_cuartos_array(4);
+		$estructuraSemisArray = 	$this->PlayOff->get_estructura_semis_array(2);
 		
 		//var_dump($estructuraCuartosArray[17]['padre'][0]['nombregrupo']);die();
 		// echo "<pre>";
@@ -43,7 +44,7 @@ class Prode extends CI_Controller {
 		$usuariosOrdenados = 		$this->Usuario->getUsuarios()->result_array();
 		
 		// echo "<pre>";
-		// print_r ($partidos);die();
+		// print_r ($estructuraSemisArray);die();
 		// echo "</pre>";
 		
 		$data['grupos'] = 				$grupos;
@@ -53,8 +54,10 @@ class Prode extends CI_Controller {
 		$data['fechaHoy'] = 			$fechaHoy;
 		$data['estructuraOctavos'] = 	$estructuraOctavos;
 		$data['estructuraCuartosArray'] = 	$estructuraCuartosArray;
+		$data['estructuraSemisArray'] = 	$estructuraSemisArray;
 		$data['partidosOctavos'] = 		$partidosOctavos;
 		$data['partidosCuartos'] = 		$partidosCuartos;
+		$data['partidosSemis'] = 		$partidosSemis;
 		$data['usuariosOrdenados'] = 	$usuariosOrdenados;
 		
 		$outReglamento = 	$this->load->view('view_reglamento',null, TRUE);

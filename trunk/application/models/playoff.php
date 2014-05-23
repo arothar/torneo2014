@@ -44,9 +44,24 @@ class PlayOff extends CI_Model {
 		$this->db->where('idTipoFinal', $idTipoFinal);
 		$this->db->order_by($this->tbl_playoffs . '.idPlayoffs,pe.idPlayoffEstructura,g.idGrupo','asc');
 		
-		/* $this->db->get();
-		echo $this->db->last_query();
-		die(); */
+		// $this->db->get();
+		// echo $this->db->last_query();
+		// die(); 
+		return $this->db->get();
+		
+	}
+	
+	function get_estructura_semis($idTipoFinal)
+	{
+		$this->db->select('pe.idPlayoffEstructura, '. $this->tbl_playoffs. '.idPlayoffs, pe.idPlayoffPadre, fecha, idTipoFinal');
+		$this->db->from($this->tbl_playoffs);
+		$this->db->join('playoffestructura as pe', $this->tbl_playoffs.'.idPlayoffs = pe.idPlayoff ');
+		$this->db->where('idTipoFinal', $idTipoFinal);
+		$this->db->order_by($this->tbl_playoffs . '.idPlayoffs,pe.idPlayoffEstructura','asc');
+		
+		// $this->db->get();
+		// echo $this->db->last_query();
+		// die(); 
 		return $this->db->get();
 		
 	}
@@ -61,6 +76,7 @@ class PlayOff extends CI_Model {
 		$estructuraAnterior = 0;
 		$idPlayoffAnterior = 0;
 		$elemento  = $this->get_estructura_cuartos($idTipoFinal)->result();
+		
 		foreach ($elemento as $val)
 		{
 		
@@ -71,6 +87,68 @@ class PlayOff extends CI_Model {
 					   'nombregrupo' => $val->nombregrupo,
 					   'posicion' => $val->posicion,
 					   'fecha' => $val->fecha
+			);
+			
+			if ($val->idPlayoffEstructura != $estructuraAnterior){
+				$arr_padre = array();
+				$arr_padre[$indicePadre] = $unPadre;
+				$indicePadre += 1;
+				$estructuraAnterior = $val->idPlayoffEstructura;
+			}else{
+				$arr_padre[$indicePadre] = $unPadre;
+				$indicePadre = 0;
+			}
+			
+			
+			
+			$unElemento = array(
+					   'idplayoffestructura' => $val->idPlayoffEstructura,
+					   'idplayoffpadre' => $val->idPlayoffPadre,
+					   'fecha' => $val->fecha,
+					   'idTipoFinal' => $val->idTipoFinal,
+					   'padre' => $arr_padre,
+					   'idPlayoffs' => $val->idPlayoffs
+			);
+			//$arr_estructura[$idPlayoffEstructura] = $unElemento;
+			
+			
+			if ($val->idPlayoffs != $idPlayoffAnterior){
+				$arr_estructura = array();
+				$arr_estructura[$indicePlayoff] = $unElemento;
+				$indicePlayoff += 1;
+				$idPlayoffAnterior = $val->idPlayoffs;
+			}else{
+				$arr_estructura[$indicePlayoff] = $unElemento;
+				$indicePlayoff = 0;
+			}
+			
+			$unPlayoff = array(
+							'idPlayoff' => $val->idPlayoffs,
+							'estructura' => $arr_estructura,
+						);
+						
+			$arr_playoff[$val->idPlayoffs] = $unPlayoff;
+		}
+		return $arr_playoff;
+	}
+	
+	function get_estructura_semis_array($idTipoFinal)
+	{
+		$indicePadre = 0;
+		$indicePlayoff = 0;
+		$arr_estructura = array();
+		$arr_playoff = array();
+		$arr_padre = array();
+		$estructuraAnterior = 0;
+		$idPlayoffAnterior = 0;
+		$elemento  = $this->get_estructura_semis($idTipoFinal)->result();
+		
+		foreach ($elemento as $val)
+		{
+			$idPlayoffEstructura = $val->idPlayoffEstructura;
+		
+			$unPadre = array(
+			   'fecha' => $val->fecha
 			);
 			
 			if ($val->idPlayoffEstructura != $estructuraAnterior){
@@ -134,7 +212,7 @@ class PlayOff extends CI_Model {
 					select idPartidoMundial, CASE
 						WHEN (golesLocal > golesVisitante) THEN idEquipoLocal
 						WHEN (golesLocal < golesVisitante) THEN idEquipoVisitante
-						else null end as idGanador,pm.idTorneo,
+						else idEquipoGanador end as idGanador,pm.idTorneo,
 					p.idPlayoffs
 					from partidomundial pm
 					inner join playoffs p on pm.idPlayoff = p.idPlayoffs
