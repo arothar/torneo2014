@@ -146,4 +146,21 @@ class PartidoMundial extends CI_Model {
 		//var_dump($arr_adicionales);
 		return $arr_partido;
 	}
+	
+	function get_partidoxplayoff_array($idPlayoff)
+	{
+		$query = $this->db->get_where('partidomundial', array('idPlayoff' => $idPlayoff), $limit, $offset);
+		
+		if ($query->num_rows() > 0)
+			$resultado = $query->result_array();
+		else
+			$resultado = null;
+	}
+	
+	function save_partidoMundialPlayoff($idPlayoffHijo, $idPlayOffPadre, $idEquipo)
+	{
+		$sql = "CALL sp_save_partidoMundialPlayoff(?,?,?)";
+		$params = array($idPlayoffHijo,$idPlayOffPadre,$idEquipo);
+		$this->db->query($sql, $params);
+	}
 }

@@ -113,10 +113,39 @@ class Admin extends CI_Controller {
 	
 	function actualizarPuntos($post_array,$primary_key)
 	{	
-		//var_dump($primary_key);
-		//var_dump($post_array);
-		//die();
 		$this->Usuario->asignarPuntaje($primary_key,$post_array["golesLocal"], $post_array["golesVisitante"]);
+		$idEquipoGanador = 0;
+		
+		if ($post_array["idPlayoff"] != null)
+		{
+			if ($post_array["golesLocal"] > $post_array["golesVisitante"])
+			{
+				$idEquipoGanador = $post_array["idEquipoLocal"];
+				$idEquipoPerdedor = $post_array["idEquipoVisitante"];
+			}
+			else if ($post_array["golesLocal"] < $post_array["golesVisitante"])
+			{
+				$idEquipoGanador = $post_array["idEquipoVisitante"];
+				$idEquipoPerdedor = $post_array["idEquipoLocal"];
+			}
+			
+			$resultado = $this->PlayOff->get_playOffHijo_array($post_array["idPlayoff"], 1);
+			if ($resultado != null)
+			{
+				$idPlayoffHijo = $resultado[0]['idPlayoff'];
+				//var_dump($resultado);
+				$resultPartido = $this->PartidoMundial->save_partidoMundialPlayoff($idPlayoffHijo,$post_array["idPlayoff"],$idEquipoGanador);
+			}
+			
+			$resultado = $this->PlayOff->get_playOffHijo_array($post_array["idPlayoff"], 2);
+			if ($resultado != null)
+			{
+				$idPlayoffHijo = $resultado[0]['idPlayoff'];
+				$resultPartido = $this->PartidoMundial->save_partidoMundialPlayoff($idPlayoffHijo,$post_array["idPlayoff"],$idEquipoPerdedor);
+			}
+			
+		} 
+
 	 
 		return true;
 	}
