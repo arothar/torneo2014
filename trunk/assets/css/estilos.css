@@ -1804,7 +1804,20 @@ color: #F70000;
     width: 293px;
 }
 
+
+#listaFinal .arbol-fase-final .partido-fase-final.final{
+    margin-left: 227px;
+    margin-top: 434px;
+    width: 293px;
+}
+
 #listaFinal .arbol-fase-final .partido-fase-final.final.partido-inactivo .partido-separacion-input {
+    display: inline-block;
+    width: 9px;
+}
+
+
+#listaFinal .arbol-fase-final .partido-fase-final.final .partido-separacion-input {
     display: inline-block;
     width: 9px;
 }
@@ -1814,8 +1827,16 @@ color: #F70000;
     margin-top: 531px;
     width: 293px;
 }
-
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto{
+    margin-left: 234px;
+    margin-top: 531px;
+    width: 293px;
+}
 #listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto.partido-inactivo .partido-separacion-input {
+    display: inline-block;
+    width: 9px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .partido-separacion-input {
     display: inline-block;
     width: 9px;
 }

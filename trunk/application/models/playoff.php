@@ -223,4 +223,21 @@ class PlayOff extends CI_Model {
 			where idTipoFinal=".$idTipoFinal.";";
 		return $this->db->query($sql);
 	}
+	
+	function get_playOffHijo_array($idPlayoff, $posicion)
+	{
+		$this->db->select('idPlayoff');
+		$this->db->from('playoffestructura');
+		$this->db->where('idPlayoffPadre', $idPlayoff);
+		$this->db->where('posicion', $posicion);
+		
+		$query = $this->db->get();
+		
+		if ($query->num_rows() > 0)
+			$resultado = $query->result_array();
+		else
+			$resultado = null;
+		
+		return $resultado;
+	}
 }

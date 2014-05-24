@@ -31,7 +31,7 @@ class Prode extends CI_Controller {
 		$estructuraCuartosArray = 		$this->PlayOff->get_estructura_cuartos_array(4);
 		$estructuraSemisArray = 		$this->PlayOff->get_estructura_semis_array(2);
 		$estructuraFinalisimaArray = 	$this->PlayOff->get_estructura_semis_array(1);
-		$estructuraTercerArray = 	$this->PlayOff->get_estructura_semis_array(34);
+		$estructuraTercerArray = 		$this->PlayOff->get_estructura_semis_array(34);
 		
 		//var_dump($estructuraCuartosArray[17]['padre'][0]['nombregrupo']);die();
 		// echo "<pre>";
@@ -42,6 +42,7 @@ class Prode extends CI_Controller {
 		$partidosCuartos = 			$this->PartidoMundial->get_partidosplayoffs_array(4);
 		$partidosSemis = 			$this->PartidoMundial->get_partidosplayoffs_array(2);
 		$partidoFinal = 			$this->PartidoMundial->get_partidosplayoffs_array(1);
+		$partidoTercer = 			$this->PartidoMundial->get_partidosplayoffs_array(34);
 		
 		$usuariosOrdenados = 		$this->Usuario->getUsuarios()->result_array();
 		
@@ -62,6 +63,8 @@ class Prode extends CI_Controller {
 		$data['partidosOctavos'] = 				$partidosOctavos;
 		$data['partidosCuartos'] = 				$partidosCuartos;
 		$data['partidosSemis'] = 				$partidosSemis;
+		$data['partidoFinal'] = 				$partidoFinal;
+		$data['partidoTercer'] = 				$partidoTercer;
 		$data['usuariosOrdenados'] = 			$usuariosOrdenados;
 		
 		$outReglamento = 	$this->load->view('view_reglamento',null, TRUE);
