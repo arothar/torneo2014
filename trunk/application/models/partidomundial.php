@@ -157,10 +157,10 @@ class PartidoMundial extends CI_Model {
 			$resultado = null;
 	}
 	
-	function save_partidoMundialPlayoff($idPlayoffHijo, $idPlayOffPadre, $idEquipo)
+	function save_partidoMundialPlayoff($idPlayoffHijo, $idPlayOffPadre, $idEquipo, $localia)
 	{
-		$sql = "CALL sp_save_partidoMundialPlayoff(?,?,?)";
-		$params = array($idPlayoffHijo,$idPlayOffPadre,$idEquipo);
+		$sql = "CALL sp_save_partidoMundialPlayoff(?,?,?,?)";
+		$params = array($idPlayoffHijo,$idPlayOffPadre,$idEquipo,$localia);
 		$this->db->query($sql, $params);
 	}
 }

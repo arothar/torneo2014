@@ -226,7 +226,7 @@ class PlayOff extends CI_Model {
 	
 	function get_playOffHijo_array($idPlayoff, $posicion)
 	{
-		$this->db->select('idPlayoff');
+		$this->db->select('idPlayoff,localia');
 		$this->db->from('playoffestructura');
 		$this->db->where('idPlayoffPadre', $idPlayoff);
 		$this->db->where('posicion', $posicion);

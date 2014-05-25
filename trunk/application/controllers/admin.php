@@ -133,15 +133,17 @@ class Admin extends CI_Controller {
 			if ($resultado != null)
 			{
 				$idPlayoffHijo = $resultado[0]['idPlayoff'];
+				$localia = $resultado[0]['localia'];
 				//var_dump($resultado);
-				$resultPartido = $this->PartidoMundial->save_partidoMundialPlayoff($idPlayoffHijo,$post_array["idPlayoff"],$idEquipoGanador);
+				$resultPartido = $this->PartidoMundial->save_partidoMundialPlayoff($idPlayoffHijo,$post_array["idPlayoff"],$idEquipoGanador,$localia);
 			}
 			
 			$resultado = $this->PlayOff->get_playOffHijo_array($post_array["idPlayoff"], 2);
 			if ($resultado != null)
 			{
 				$idPlayoffHijo = $resultado[0]['idPlayoff'];
-				$resultPartido = $this->PartidoMundial->save_partidoMundialPlayoff($idPlayoffHijo,$post_array["idPlayoff"],$idEquipoPerdedor);
+				$localia = $resultado[0]['localia'];
+				$resultPartido = $this->PartidoMundial->save_partidoMundialPlayoff($idPlayoffHijo,$post_array["idPlayoff"],$idEquipoPerdedor,$localia);
 			}
 			
 		} 
