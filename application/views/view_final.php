@@ -82,7 +82,7 @@
 								 if ($horas->d <= 2) {?>
 									<? if ($horas->d != 0 || $horas->h >= 5) {?>
 										<? if (empty($partidosUsuario[$idPartido] )) { ?>
-											<div class="boton-enviar <?echo base_url()?>assets/js-boton-enviar"></div>
+											<div id="boton-<?=$idPartido?>" class="boton-enviar <?echo base_url()?>assets/js-boton-enviar"></div>
 										<? } else { ?>
 											<div class="boton-editar <?echo base_url()?>assets/js-boton-editar"></div>
 										<? }?>
@@ -93,9 +93,9 @@
 						<div class="ganador">
 							<div class="equipo equipo-izq titulo-ganador">Ganador</div>
 							<div class="equipo equipo-izq ganador-local">Local</div>
-							<input type="radio" name="partido-<?=$idPartido?>" class="partido-gol-input partido-gol-input-ganaLocal"/>
+							<input type="radio" data-id="<?=$partidosCuartos[$val['idPlayoff']]["idequipolocal"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
 							<div class="equipo equipo-izq ganador-visitante">Visitante</div>
-							<input type="radio" name="partido-<?=$idPartido?>" class="partido-gol-input partido-gol-input-ganaVisitante"/>
+							<input type="radio" data-id="<?=$partidosCuartos[$val['idPlayoff']]["idequipovisitante"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
 						</div>
 					  </div>
 					</div>
@@ -140,6 +140,13 @@
 										<? }?>
 									<? }?>
 								<? }?>
+							</div>
+							<div class="ganador">
+								<div class="equipo equipo-izq titulo-ganador">Ganador</div>
+								<div class="equipo equipo-izq ganador-local">Local</div>
+								<input type="radio" data-id="<?=$partidosSemis[$val['idPlayoff']]["idequipolocal"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
+								<div class="equipo equipo-izq ganador-visitante">Visitante</div>
+								<input type="radio" data-id="<?=$partidosSemis[$val['idPlayoff']]["idequipovisitante"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
 							</div>
 						  </div>
 						</div>

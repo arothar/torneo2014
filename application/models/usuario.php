@@ -38,7 +38,7 @@ class Usuario extends CI_Model {
 			return $this->db->insert_id();
 	}
 	
-	function guardarPartido($idUsuario, $idPartido, $golesLocal, $golesVisitante)
+	function guardarPartido($idUsuario, $idPartido, $golesLocal, $golesVisitante, $equipoGanador)
 	{
 	
 		$this->db->where('idUsuario', $idUsuario);
@@ -51,14 +51,16 @@ class Usuario extends CI_Model {
 						array('idUsuario'=>$idUsuario, 
 								'idPartido'=>$idPartido, 
 								'golesLocal'=>$golesLocal, 
-								'golesVisitante'=> $golesVisitante));
+								'golesVisitante'=> $golesVisitante,
+								'idGanador' => $equipoGanador));
 			return $this->db->insert_id();
 		} else {
 			$this->db->where('idUsuario', $idUsuario);
 			$this->db->where('idPartido', $idPartido);
 			$this->db->update('usuariopartido', 
 								array('golesLocal'=>$golesLocal, 
-										'golesVisitante'=> $golesVisitante));
+										'golesVisitante'=> $golesVisitante,
+										'idGanador' => $equipoGanador));
 		}
 	}
 
