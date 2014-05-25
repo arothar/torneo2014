@@ -17,7 +17,6 @@
       </a>
       <div class="header-modulo header-logo-premio"> <img src="<?echo base_url()?>assets/img/logoPremio.png" alt="Tu foto"> </div>
       <div class="header-modulo header-usuario">
-        <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Tu foto"></div>
         <div class="nombre"><?= $usuario->username?></div>
         <div class="puntos"> <? if ($usuario->puntos!= null) {echo $usuario->puntos;} else {echo 0;} ?> </div>
         <div class="sub-puntos">PUNTOS</div>
