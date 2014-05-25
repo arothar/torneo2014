@@ -32,12 +32,12 @@ app.ui.grupos = (function() {
         var loader = partidoPadre.find(".loader-partido");
         botonActual.hide();
         loader.css("display","inline-block");
+		
         partido.idPartido = partidoPadre.data("id");
         partido.golesLocal = partidoPadre.find(".partido-gol-input-local").val();
-		partido.ganaLocal = partidoPadre.find(".partido-gol-input-ganaLocal").val();
+		partido.ganador= partidoPadre.find(".radioGanador:checked").attr("data-id");
         partido.golesVisitante = partidoPadre.find(".partido-gol-input-visitante").val();
-		partido.ganaVisitante = partidoPadre.find(".partido-gol-input-ganaVisitante").val();
-		
+
         app.service.grupo.enviarPartido(partido).done(function() {
             botonActual.removeClass('boton-enviar').addClass('boton-editar');
             loader.css("display","none");

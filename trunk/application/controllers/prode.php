@@ -21,7 +21,7 @@ class Prode extends CI_Controller {
 	
 	public function index()
 	{
-		$fechaHoy = new DateTime('2014-06-30 01:00');
+		$fechaHoy = new DateTime('2014-06-17 01:00');
 	
 		$grupos = 						$this->Grupo->get_paged_list(30, 0)->result();
 		$partidos = 					$this->PartidoMundial->get_partidoxgrupo_array(1);
@@ -47,7 +47,7 @@ class Prode extends CI_Controller {
 		$usuariosOrdenados = 		$this->Usuario->getUsuarios()->result_array();
 		
 		// echo "<pre>";
-		// print_r ($estructuraSemisArray);die();
+		// print_r ($partidosCuartos);die();
 		// echo "</pre>";
 		
 		$data['grupos'] = 						$grupos;
@@ -82,10 +82,14 @@ class Prode extends CI_Controller {
 	
 	function partido()
 	{
+		$equipoGanador=null;
 		$data = $this->input->post('data');
+		//var_dump($data);die();
 		$data = json_decode($data);
 		$usuario = $this->session->userdata('usuario');
-		$this->Usuario->guardarPartido($usuario[0]->idUsuario,$data->idPartido, $data->golesLocal, $data->golesVisitante);
+		if (isset($data->ganador))
+			$equipoGanador = $data->ganador;
+		$this->Usuario->guardarPartido($usuario[0]->idUsuario,$data->idPartido, $data->golesLocal, $data->golesVisitante,$equipoGanador);
 		echo true;
 		
 	}
