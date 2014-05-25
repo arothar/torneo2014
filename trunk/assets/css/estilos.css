@@ -1227,6 +1227,11 @@ color: #F70000;
     width: 40px;
 }
 
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-1 .titulo-ganador{
+	width:60px;
+	color:red;
+}
+
 
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-2{
     margin: 35px 0 0 592px;
@@ -1295,7 +1300,14 @@ color: #F70000;
     position: relative;
     width: 40px;
 }
-
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .ganador{
+   margin-left: -89px;
+    width: 220px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .titulo-ganador{
+	width:60px;
+	color:red;
+}
 
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-3{
     margin: 262px 0 0 25px;
@@ -1360,7 +1372,10 @@ color: #F70000;
     position: relative;
     width: 40px;
 }
-
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-3 .titulo-ganador{
+	width:60px;
+	color:red;
+}
 
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-4{
     margin: 262px 0 0 592px;
@@ -1406,8 +1421,8 @@ color: #F70000;
 
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .resultado-izquierda{
     display: inline-block;
-    margin-left: -98px;
-    margin-top: 46px;
+    margin-left: -33px;
+    margin-top: -4px;
     position: absolute;
     width: 65px;
 }
@@ -1427,6 +1442,14 @@ color: #F70000;
     width: 40px;
 }
 
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .ganador{
+   margin-left: -89px;
+    width: 220px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .titulo-ganador{
+	width:60px;
+	color:red;
+}
 
 #listaFinal .arbol-fase-final .partido-fase-final.semi-1{
     margin: 150px 0 0 127px;
@@ -1461,8 +1484,8 @@ color: #F70000;
 }
 #listaFinal .arbol-fase-final .partido-fase-final.semi-1 .resultado-derecha{
     display: inline-block;
-    margin-left: 131px;
-    margin-top: 46px;
+    margin-left: -9px;
+    margin-top: -18px;
     position: absolute;
     width: 65px;
 }
@@ -1550,14 +1573,14 @@ color: #F70000;
 }
 #listaFinal .arbol-fase-final .partido-fase-final.final .boton-editar{
     border-radius: 2px;
-    margin-left: 4px;
-    margin-top: 1px;
+    margin-left: 117px;
+    margin-top: 5px;
 }
 
 #listaFinal .arbol-fase-final .partido-fase-final.final .boton-enviar{
     border-radius: 2px;
-    margin-left: 4px;
-    margin-top: 1px;
+    margin-left: 117px;
+    margin-top: 5px;
 }
 
 #listaFinal .arbol-fase-final .partido-fase-final.final .loader-partido{ 
@@ -1596,7 +1619,7 @@ color: #F70000;
     font-weight: 600;
     height: 17px;
     margin-left: 58px;
-    margin-top: 5px;
+    margin-top: -24px;
     padding-left: 10px;
     padding-top: 1px;
     position: relative;
@@ -1609,8 +1632,8 @@ color: #F70000;
 }
 
 #listaFinal .arbol-fase-final .partido-fase-final.final .contenido-inferior{
-    margin-left: 105px;
-    margin-top: 12px;
+    margin-left: 0px;
+    margin-top: 0px;
 }
 #listaFinal .arbol-fase-final .partido-fase-final.final .contenido-inferior .jugando{
     color: #F70000;
@@ -1625,14 +1648,14 @@ color: #F70000;
 
 #listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .boton-editar{
     border-radius: 2px;
-    margin-left: 3px;
-    margin-top: 3px;
+    margin-left: 110px;
+    margin-top: 8px;
 }
 
 #listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .boton-enviar{
     border-radius: 2px;
-    margin-left: 3px;
-    margin-top: 3px;
+    margin-left: 110px;
+    margin-top: 8px;
 }
 
 #listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .loader-partido{ 
@@ -1667,7 +1690,7 @@ color: #F70000;
     font-weight: 600;
     height: 17px;
     margin-left: 58px;
-    margin-top: 5px;
+    margin-top: -24px;
     padding-left: 10px;
     padding-top: 1px;
     position: relative;
@@ -1680,8 +1703,8 @@ color: #F70000;
 }
 
 #listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .contenido-inferior{
-    margin-left: 98px;
-    margin-top: 11px;
+    margin-left: 0px;
+    margin-top: 0px;
 }
 #listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .contenido-inferior .jugando{
     color: #F70000;
@@ -1708,7 +1731,24 @@ color: #F70000;
     text-align: center;
     width: 27px;
 }
-
+#listaFinal .arbol-fase-final .partido-fase-final .partido-gol-input-ganaLocal{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    height: 13px;
+    margin: -2px 3px -2px -2px;
+    text-align: center;
+    width: 13px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final .partido-gol-input-ganaVisitante{
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    height: 13px;
+    margin: -2px 3px -2px -2px;
+    text-align: center;
+    width: 13px;
+}
 
 #listaFinal .arbol-fase-final .partido-fase-final .bandera{
     display: inline-block;
@@ -1795,6 +1835,9 @@ color: #F70000;
     margin-bottom: 5px;
 }
 #listaFinal .arbol-fase-final .partido-fase-final .partido-activo .partido-gol-input{
+    margin-bottom: 5px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final .partido-activo .partido-gol-input-ganaLocal{
     margin-bottom: 5px;
 }
 
