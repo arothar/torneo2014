@@ -4,14 +4,22 @@
 			  <?$separador = 0; 
 				foreach ($estructuraOctavos as $val){ ?>
 				  <? if ($separador==0 || $separador ==4){ 
-						$fechaPartido = new DateTime($partidosOctavos[$val->idPlayoff]["fechaPartido"]); 
-						$CI =& get_instance();
-						$horas = $CI->dateTimeDiff($fechaHoy,$fechaPartido);
+						//$fechaPartido = new DateTime($partidosOctavos[$val->idPlayoff]["fechaPartido"]); 
+						//$CI =& get_instance();
+						//$horas = $CI->dateTimeDiff($fechaHoy,$fechaPartido);
 						?>
 					<div class="lista-partidos">
 				  <? } ?>
-						<? $idPartido = $partidosOctavos[$val->idPlayoff]["idPartido"]; ?>
-						<div class="partido <? if ($horas->d > 2) { ?> partido-inactivo <? } ?>" data-id="<?=$idPartido?>">
+						<? 
+						$fechaPartido = null;
+						$idPartido = 0;
+						if (isset($partidosOctavos[$val->idPlayoff])==1){
+							$fechaPartido = new DateTime($partidosOctavos[$val->idPlayoff]["fechaPartido"]); 
+							$CI =& get_instance();
+							$horas = $CI->dateTimeDiff($fechaHoy,$fechaPartido);
+							$idPartido = $partidosOctavos[$val->idPlayoff]["idPartido"];
+						}?>
+						<div class="partido <? if ($fechaPartido == null || $horas->d > 2) { ?> partido-inactivo <? } ?>" data-id="<?=$idPartido?>">
 						  <div class="bandera">
 							<img src="<?if (isset($partidosOctavos[$val->idPlayoff])) {echo base_url()?>assets/img/banderas/<?=$partidosOctavos[$val->idPlayoff]["banderaLocal"];}else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera">
 						  </div>
@@ -26,8 +34,10 @@
 						<div class="contenido-derecha">
 							<? if ($fechaHoy > $fechaPartido) {?>
 								<div class="contenido-derecha">
-									<div class="resultado"><?=$partidosOctavos[$val->idPlayoff]["golesLocal"]?>-<?=$partidosOctavos[$val->idPlayoff]["golesVisitante"]?></div>
-									<div class="puntaje"><?if (!empty($partidosUsuario[$idPartido])){ echo $partidosUsuario[$idPartido]['puntos'];} ?></div>
+									<? if (isset($partidosOctavos[$val->idPlayoff])==1){ ?>
+										<div class="resultado"><?=$partidosOctavos[$val->idPlayoff]["golesLocal"]?>-<?=$partidosOctavos[$val->idPlayoff]["golesVisitante"]?></div>
+										<div class="puntaje"><?if (!empty($partidosUsuario[$idPartido])){ echo $partidosUsuario[$idPartido]['puntos'];} ?></div>
+									<? } ?>
 								</div>
 							<? } else { 
 								 if ($horas->d <= 2) {?>
@@ -90,13 +100,15 @@
 								<? }?>
 							<? }?>
 						</div>
-						<div class="ganador">
-							<div class="equipo equipo-izq titulo-ganador">Ganador</div>
-							<div class="equipo equipo-izq ganador-local">Local</div>
-							<input type="radio" data-id="<?=$partidosCuartos[$val['idPlayoff']]["idequipolocal"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
-							<div class="equipo equipo-izq ganador-visitante">Visitante</div>
-							<input type="radio" data-id="<?=$partidosCuartos[$val['idPlayoff']]["idequipovisitante"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
-						</div>
+						<? if (isset($partidosCuartos[$val['idPlayoff']])==1){ ?>
+							<div class="ganador">
+								<div class="equipo equipo-izq titulo-ganador">Ganador</div>
+								<div class="equipo equipo-izq ganador-local">Local</div>
+								<input type="radio" data-id="<?=$partidosCuartos[$val['idPlayoff']]["idequipolocal"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
+								<div class="equipo equipo-izq ganador-visitante">Visitante</div>
+								<input type="radio" data-id="<?=$partidosCuartos[$val['idPlayoff']]["idequipovisitante"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
+							</div>
+						<? } ?>
 					  </div>
 					</div>
 				<? $countCuartos += 1;
@@ -141,13 +153,15 @@
 									<? }?>
 								<? }?>
 							</div>
-							<div class="ganador">
-								<div class="equipo equipo-izq titulo-ganador">Ganador</div>
-								<div class="equipo equipo-izq ganador-local">Local</div>
-								<input type="radio" data-id="<?=$partidosSemis[$val['idPlayoff']]["idequipolocal"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
-								<div class="equipo equipo-izq ganador-visitante">Visitante</div>
-								<input type="radio" data-id="<?=$partidosSemis[$val['idPlayoff']]["idequipovisitante"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
-							</div>
+							<? if (isset($partidosSemis[$val['idPlayoff']])==1){ ?>
+								<div class="ganador">
+									<div class="equipo equipo-izq titulo-ganador">Ganador</div>
+									<div class="equipo equipo-izq ganador-local">Local</div>
+									<input type="radio" data-id="<?=$partidosSemis[$val['idPlayoff']]["idequipolocal"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
+									<div class="equipo equipo-izq ganador-visitante">Visitante</div>
+									<input type="radio" data-id="<?=$partidosSemis[$val['idPlayoff']]["idequipovisitante"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
+								</div>
+							<? } ?>
 						  </div>
 						</div>
 					<? $countSemis += 1;
