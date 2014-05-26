@@ -1503,6 +1503,15 @@ color: #F70000;
     position: relative;
     width: 40px;
 }
+#listaFinal .arbol-fase-final .partido-fase-final.semi-1 .ganador{
+	margin-left: -1px;
+    width: 220px;
+	margin-top:-4px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.semi-1 .titulo-ganador{
+	width:60px;
+	color:red;
+}
 
 #listaFinal .arbol-fase-final .partido-fase-final.semi-2{
     margin:150px 0 0 492px;
@@ -1568,6 +1577,17 @@ color: #F70000;
     position: relative;
     width: 40px;
 }
+
+#listaFinal .arbol-fase-final .partido-fase-final.semi-2 .ganador{
+	margin-left: -90px;
+    width: 220px;
+	margin-top:-4px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.semi-2 .titulo-ganador{
+	width:60px;
+	color:red;
+}
+
 #listaFinal .arbol-fase-final .partido-fase-final.final{
     margin: 387px 0 0 237px;
 }
