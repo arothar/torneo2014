@@ -48,11 +48,12 @@ class Login extends CI_Controller {
 				$this->input->post('username'),
 				$this->input->post('email'),
 				$plainPass['first'],
-				$this->input->post('direccion'),
+				$this->input->post('nroLegajo'),
 				$this->input->post('nombre'),
-				$this->input->post('localidad'),
-				$this->input->post('telefono'),
-				$this->input->post('dni')
+				$this->input->post('nroCliente'),
+				$this->input->post('esBridgestone'),
+				$this->input->post('esAdecco'),
+				$this->input->post('esManpower')
 				);
 				redirect(base_url(). 'login', 'refresh');
 		}
