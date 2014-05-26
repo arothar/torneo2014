@@ -1226,7 +1226,9 @@ color: #F70000;
     position: relative;
     width: 40px;
 }
-
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-1 .ganador{
+   margin-top: -5px;
+}
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-1 .titulo-ganador{
 	width:60px;
 	color:red;
@@ -1302,7 +1304,8 @@ color: #F70000;
 }
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .ganador{
    margin-left: -89px;
-    width: 220px;
+   width: 220px;
+   margin-top: -5px;
 }
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-2 .titulo-ganador{
 	width:60px;
@@ -1371,6 +1374,9 @@ color: #F70000;
     padding-top: 1px;
     position: relative;
     width: 40px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.cuartos-3 .ganador{
+	margin-top: -5px;
 }
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-3 .titulo-ganador{
 	width:60px;
@@ -1443,8 +1449,9 @@ color: #F70000;
 }
 
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .ganador{
-   margin-left: -89px;
+	margin-left: -89px;
     width: 220px;
+	margin-top: -5px;
 }
 #listaFinal .arbol-fase-final .partido-fase-final.cuartos-4 .titulo-ganador{
 	width:60px;
@@ -1662,6 +1669,17 @@ color: #F70000;
     margin-left: 7px;
 }
 
+#listaFinal .arbol-fase-final .partido-fase-final.final .ganador{
+    display: inline-block;
+    margin-left: -18px;
+    margin-top: -5px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.final .ganador-izq{
+    display: inline-block;
+    margin-left: -4px;
+    margin-top: -5px;
+}
+
 #listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto{
     margin: 488px 0 0 243px;
 }
@@ -1731,6 +1749,17 @@ color: #F70000;
     font-size: 11px;
     font-weight: bold;
     margin-left: 7px;
+}
+
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .ganador{
+    display: inline-block;
+    margin-left: -18px;
+    margin-top: -5px;
+}
+#listaFinal .arbol-fase-final .partido-fase-final.tercer-cuarto .ganador-izq{
+    display: inline-block;
+    margin-left: -4px;
+    margin-top: -5px;
 }
 
 #listaFinal .arbol-fase-final .partido-fase-final .partido-equipo-1{
@@ -1864,14 +1893,14 @@ color: #F70000;
 #listaFinal .arbol-fase-final .partido-fase-final.final.partido-inactivo{
     margin-left: 227px;
     margin-top: 434px;
-    width: 293px;
+    width: 300px;
 }
 
 
 #listaFinal .arbol-fase-final .partido-fase-final.final{
     margin-left: 227px;
     margin-top: 434px;
-    width: 293px;
+    width: 300px;
 }
 
 #listaFinal .arbol-fase-final .partido-fase-final.final.partido-inactivo .partido-separacion-input {

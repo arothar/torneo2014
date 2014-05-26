@@ -22,17 +22,18 @@ class Usuario extends CI_Model {
 		return $this->db->get($this->tbl_usuario);
 	}
 	
-	function crearUsuario($username, $email, $pass1, $direccion, $nombre, $localidad, $telefono, $dni)
+	function crearUsuario($username, $email, $pass1, $nroLegajo, $nombre, $nroCliente, $esBridgestone, $esAdecco, $esManpower)
 	{
 		$this->db->insert("usuario", 
 						array('username'=>$username, 
 								'email'=>$email, 
 								'passw'=>md5($pass1), 
-								'direccion'=> $direccion,
+								'nroLegajo'=> $nroLegajo,
 								'nombre'=> $nombre,
-								'localidad'=> $localidad,
-								'telefono'=> $telefono,
-								'dni'=> $dni
+								'nroCliente'=> $nroCliente,
+								'esBridgestone'=> $esBridgestone,
+								'esAdecco'=> $esAdecco,
+								'esManpower'=> $esManpower
 							)
 						);
 			return $this->db->insert_id();
