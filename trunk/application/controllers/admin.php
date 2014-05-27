@@ -46,6 +46,19 @@ class Admin extends CI_Controller {
 			$crud->display_as('idEquipoLocal','EquipoLocal');
 			$crud->display_as('idEquipoVisitante','EquipoVisitante');
 			
+			/*
+			$this -> db -> select('id, Carrier_SCAC');
+					 $this -> db -> from('carrier');
+					 $query = $this -> db -> get();
+			$finalArray = array();
+			foreach ($query->result() as $row)
+			{
+				$finalArray[$row['id']]=$row['Carrier_SCAC'];
+			}
+			*/
+
+			$crud->field_type('TT_Carrier','dropdown', $finalArray);
+			
 			$crud->columns('idGrupo','idEquipoLocal','golesLocal','golesVisitante','idEquipoVisitante','fechaPartido');
 			
 			$crud->callback_after_update(array($this, 'actualizarPuntos'));
