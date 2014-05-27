@@ -4,6 +4,7 @@
         <title>Desafio Mundial!</title>
 		<link href="<?echo base_url()?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
 		<link href="<?echo base_url()?>assets/css/estilos.css" rel="stylesheet" type="text/css" media="all">
+		<link href="<?echo base_url()?>assets/css/estilos-checkbox.css" rel="stylesheet" type="text/css" media="all">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet' type='text/css'>
 		<link rel="icon" type="image/x-icon" href="/desafioMundial/appMundial/web/favicon.ico" />
@@ -58,34 +59,33 @@
 									<input type="text" id="fos_user_registration_form_nroEmpleado" name="nroEmpleado" required="required" oninvalid="setCustomValidity(&quot;Ingrese su nro de Empleado&quot;)" onfocus="setCustomValidity(&quot;&quot;)" />
 								</div>
 								<div>
-									<label for="fos_user_registration_form_bridgestone" class="required">Bridgestone</label>
-									<input type="checkbox" id="fos_user_registration_form_bridgestone" name="esBridgestone" required="required" />
+									<label style="display:inline" for="fos_user_registration_form_bridgestone" class="required">Bridgestone</label>
+									<input style="display:inline" type="checkbox" value="1" id="fos_user_registration_form_bridgestone" name="esBridgestone" />
 								</div>
 								<div>
 									<label for="fos_user_registration_form_manpower" class="required">Manpower</label>
-									<input type="checkbox" id="fos_user_registration_form_manpower" name="esManpower" required="required"  />
+									<input type="checkbox" value="1" id="fos_user_registration_form_manpower" name="esManpower"  />
 								</div>
 								<div>
 									<label for="fos_user_registration_form_adecco" class="required">Adecco</label>
-									<input type="checkbox" id="fos_user_registration_form_adecco" name="esAdecco" required="required"  />
+									<input type="checkbox" value="1" id="fos_user_registration_form_adecco" name="esAdecco"  />
 								</div>
-								<div>
+								<!--<div>
 									<label class="registro-check-terminos-label label-terminos required" for="fos_user_registration_form_terminos">Acepto los Terminos y Condiciones</label>
 									<input type="checkbox" id="fos_user_registration_form_terminos" name="terminos" required="required" class="registro-check-terminos input-terminos" oninvalid="setCustomValidity(&quot;Acepte los t�rminos y condiciones&quot;)" onfocus="setCustomValidity(&quot;&quot;)" value="1" />
-								</div>
-								<input type="hidden" id="fos_user_registration_form__token" name="_token" value="EZ-hO6Fo_7RJCIY9nv0EZl_cZ4MPz2QctDeNiDs9GjA" /></div>
+								</div>-->
                                 
-                            <div style="margin-top:-55px; margin-bottom:10px;">
+                            <div>
                                 <input type="submit" value="Registrar" />
                             </div>
                         </form>
-                        <div class="pie">
+                        <!--<div class="pie">
                             <div class="terminos-link">TÉRMINOS Y CONDICIONES</div>
-                        </div>
+                        </div>-->
                 </div>
-                        <div class="contenedor-terminos">
+                        <!--<div class="contenedor-terminos">
                                     Terminos y Condiciones               
-                             </div>
+                             </div>-->
        
         </div>
     </div>

@@ -23,11 +23,11 @@
 						  <div class="bandera">
 							<img src="<?if (isset($partidosOctavos[$val->idPlayoff])) {echo base_url()?>assets/img/banderas/<?=$partidosOctavos[$val->idPlayoff]["banderaLocal"];}else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera">
 						  </div>
-						  <div class="equipo equipo-izq"><?=$val->posicion1;?>º <?=$val->nombre1;?></div>
+						  <div class="equipo equipo-izq"><?=$partidosOctavos[$val->idPlayoff]["equipolocal"]?></div>
 							<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
 						  <div class="partido-separacion-input">ó</div>
 							<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
-						  <div class="equipo equipo-der"><?=$val->posicion2;?>º <?=$val->nombre2;?></div>
+						  <div class="equipo equipo-der"><?=$partidosOctavos[$val->idPlayoff]["equipovisitante"]?></div>
 						  <div class="bandera">
 							<img src="<?if (isset($partidosOctavos[$val->idPlayoff])) {echo base_url()?>assets/img/banderas/<?=$partidosOctavos[$val->idPlayoff]["banderaVisitante"];}else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera">
 						  </div>
@@ -72,12 +72,28 @@
 					<div class="partido partido-fase-final cuartos-<?=$countCuartos?>" data-id="<?=$idPartido?>">
 					  <div class="partido-activo" >
 						<div class="bandera"><img src="<?if (isset($partidosCuartos[$val['idPlayoff']])) {echo base_url()?>assets/img/banderas/<?=$partidosCuartos[$val['idPlayoff']]["banderaLocal"];}else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
-						<div class="equipo equipo-izq"><?=$val['estructura'][0]['padre'][0]['posicion'] ?>º <?=$val['estructura'][0]['padre'][0]['nombregrupo'] ?> ó <?=$val['estructura'][0]['padre'][1]['posicion'] ?>º <?=$val['estructura'][0]['padre'][1]['nombregrupo'] ?></div>
+						<div class="equipo equipo-izq">
+							<?if (!isset($partidosCuartos[$val['idPlayoff']])) 
+							{
+								echo $val['estructura'][0]['padre'][0]['posicion'] . "º " . $val['estructura'][0]['padre'][0]['nombregrupo'] . " ó ".  $val['estructura'][0]['padre'][1]['posicion'] . "º " . $val['estructura'][0]['padre'][1]['nombregrupo'] ;
+							}else {
+								echo $partidosCuartos[$val['idPlayoff']]["equipolocal"];
+							}
+							 ?>
+						</div>
 						<!--<input class="partido-gol-input" disabled="disabled">-->
 						<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
 						<br>
 						<div class="bandera"><img src="<?if (isset($partidosCuartos[$val['idPlayoff']])) {echo base_url()?>assets/img/banderas/<?=$partidosCuartos[$val['idPlayoff']]["banderaVisitante"];}else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
-						<div class="equipo equipo-der"><?=$val['estructura'][1]['padre'][0]['posicion'] ?>º <?=$val['estructura'][1]['padre'][0]['nombregrupo'] ?> ó <?=$val['estructura'][1]['padre'][1]['posicion'] ?>º <?=$val['estructura'][1]['padre'][1]['nombregrupo'] ?></div>
+						<div class="equipo equipo-der">
+							<?if (!isset($partidosCuartos[$val['idPlayoff']])) 
+							{
+								echo $val['estructura'][1]['padre'][0]['posicion'] . "º " . $val['estructura'][1]['padre'][0]['nombregrupo'] . " ó ".  $val['estructura'][1]['padre'][1]['posicion'] . "º " . $val['estructura'][1]['padre'][1]['nombregrupo'] ;
+							}else {
+								echo $partidosCuartos[$val['idPlayoff']]["equipovisitante"];
+							}
+							 ?>
+						</div>
 						<!--<input class="partido-gol-input" disabled="disabled">-->
 						<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
 						<div class="contenido-<?if ($countCuartos%2==0) echo "izquierda"; else echo "derecha";?>">
@@ -101,7 +117,7 @@
 							<? }?>
 						</div>
 						<? if (isset($partidosCuartos[$val['idPlayoff']])==1){ ?>
-							<div class="ganador">
+							<div class="ganador" style="display:none">
 								<div class="equipo equipo-izq titulo-ganador">Ganador</div>
 								<div class="equipo equipo-izq ganador-local">Local</div>
 								<input type="radio" data-id="<?=$partidosCuartos[$val['idPlayoff']]["idequipolocal"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
@@ -126,12 +142,28 @@
 						<div class="partido partido-fase-final semi-<?=$countSemis?>" data-id="<?=$idPartido?>">
 						  <div class="partido-activo">
 							<div class="bandera"><img src="<?if (isset($partidosSemis[$val['idPlayoff']])) {echo base_url()?>assets/img/banderas/<?=$partidosSemis[$val['idPlayoff']]["banderaLocal"];} else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
-							<div class="equipo equipo-izq">Semi <?=$nroEquipoSemi?></div>
+							<div class="equipo equipo-izq">
+							<?if (!isset($partidosSemis[$val['idPlayoff']])) 
+							{
+								echo "Semi " . $nroEquipoSemi;
+							}else {
+								echo $partidosSemis[$val['idPlayoff']]["equipolocal"];
+							}
+							 ?>
+							</div>
 							<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
 							<br>
 							<div class="bandera"><img src="<?if (isset($partidosSemis[$val['idPlayoff']])) {echo base_url()?>assets/img/banderas/<?=$partidosSemis[$val['idPlayoff']]["banderaVisitante"];} else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
 							<? $nroEquipoSemi += 1;?>
-							<div class="equipo equipo-der">Semi <?=$nroEquipoSemi?></div>
+							<div class="equipo equipo-der">
+							<?if (!isset($partidosSemis[$val['idPlayoff']])) 
+							{
+								echo "Semi " . $nroEquipoSemi;
+							}else {
+								echo $partidosSemis[$val['idPlayoff']]["equipovisitante"];
+							}
+							 ?>
+							</div>
 							<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
 							<div class="contenido-<?if ($countSemis%2==0) echo "izquierda"; else echo "derecha";?>">
 								<? if ($fechaHoy > $fechaPartido) {?>
@@ -154,7 +186,7 @@
 								<? }?>
 							</div>
 							<? if (isset($partidosSemis[$val['idPlayoff']])==1){ ?>
-								<div class="ganador">
+								<div class="ganador" style="display:none">
 									<div class="equipo equipo-izq titulo-ganador">Ganador</div>
 									<div class="equipo equipo-izq ganador-local">Local</div>
 									<input type="radio" data-id="<?=$partidosSemis[$val['idPlayoff']]["idequipolocal"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
@@ -178,22 +210,38 @@
 						<div class="partido partido-fase-final final" data-id="<?=$idPartido?>">
 							
 							<? if (isset($partidoFinal[$val['idPlayoff']])==1){ ?>
-								<div class="ganador">
+								<div class="ganador" style="display:none">
 									<input type="radio" data-id="<?=$partidoFinal[$val['idPlayoff']]["idequipolocal"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
 								</div>
 							<? } ?>
 							
 						<div class="bandera"><img src="<?if (isset($partidoFinal[$val['idPlayoff']])) {echo base_url()?>assets/img/banderas/<?=$partidoFinal[$val['idPlayoff']]["banderaLocal"];} else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
-						  <div class="equipo equipo-izq">Finalista <?=$nroEquipoFinal?></div>
+						  <div class="equipo equipo-izq">
+							<?if (!isset($partidoFinal[$val['idPlayoff']])) 
+							{
+								echo "Finalista " . $nroEquipoFinal;
+							}else {
+								echo $partidoFinal[$val['idPlayoff']]["equipolocal"];
+							}
+							 ?>
+						  </div>
 						  <input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
 						  <? $nroEquipoFinal += 1;?>
 						  <div class="partido-separacion-input">.</div>
 						  <input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
-						  <div class="equipo equipo-der">Finalista <?=$nroEquipoFinal?></div>
+						  <div class="equipo equipo-der">
+							<?if (!isset($partidoFinal[$val['idPlayoff']])) 
+							{
+								echo "Finalista " . $nroEquipoFinal;
+							}else {
+								echo $partidoFinal[$val['idPlayoff']]["equipovisitante"];
+							}
+							 ?>
+						  </div>
 						  <div class="bandera"><img src="<?if (isset($partidoFinal[$val['idPlayoff']])) {echo base_url()?>assets/img/banderas/<?=$partidoFinal[$val['idPlayoff']]["banderaVisitante"];} else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
 						  
 							<? if (isset($partidoFinal[$val['idPlayoff']])==1){ ?>
-								<div class="ganador-izq">
+								<div class="ganador-izq" style="display:none">
 									<input type="radio" data-id="<?=$partidoFinal[$val['idPlayoff']]["idequipovisitante"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
 								</div>
 							<? } ?>
@@ -232,22 +280,38 @@
 						<div class="partido partido-fase-final tercer-cuarto" data-id="<?=$idPartido?>">
 						  
 							<? if (isset($partidoTercer[$val['idPlayoff']])==1){ ?>
-								<div class="ganador">
+								<div class="ganador" style="display:none">
 									<input type="radio" data-id="<?=$partidoTercer[$val['idPlayoff']]["idequipolocal"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
 								</div>
 							<? } ?>
 						  
 						  <div class="bandera"><img src="<?if (isset($partidoTercer[$val['idPlayoff']])) {echo base_url()?>assets/img/banderas/<?=$partidoTercer[$val['idPlayoff']]["banderaLocal"];} else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
-						  <div class="equipo equipo-izq">Equipo <?=$nroEquipoTercer?> </div>
+						  <div class="equipo equipo-izq">
+							<?if (!isset($partidoTercer[$val['idPlayoff']])) 
+							{
+								echo "Equipo " . $nroEquipoTercer;
+							}else {
+								echo $partidoTercer[$val['idPlayoff']]["equipolocal"];
+							}
+							 ?>
+						  </div>
 						  <input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
 						  <? $nroEquipoTercer += 1;?>
 						  <div class="partido-separacion-input">.</div>
 						  <input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
-						  <div class="equipo equipo-der">Equipo <?=$nroEquipoTercer?></div>
+						  <div class="equipo equipo-der">
+							<?if (!isset($partidoTercer[$val['idPlayoff']])) 
+							{
+								echo "Equipo " . $nroEquipoTercer;
+							}else {
+								echo $partidoTercer[$val['idPlayoff']]["equipovisitante"];
+							}
+							 ?>
+						  </div>
 						  <div class="bandera"><img src="<?if (isset($partidoTercer[$val['idPlayoff']])) {echo base_url()?>assets/img/banderas/<?=$partidoTercer[$val['idPlayoff']]["banderaVisitante"];} else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
 						  
 							<? if (isset($partidoTercer[$val['idPlayoff']])==1){ ?>
-								<div class="ganador-izq">
+								<div class="ganador-izq" style="display:none">
 									<input type="radio" data-id="<?=$partidoTercer[$val['idPlayoff']]["idequipovisitante"]?>" name="partido-<?=$idPartido?>" class=" radioGanador"/>
 								</div>
 							<? } ?>

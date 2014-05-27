@@ -1,7 +1,7 @@
 <?php
 class UsuarioPartido extends CI_Model {
 	// table name
-	private $tbl_usuarioPartido= 'usuarioPartido';
+	private $tbl_usuarioPartido= 'usuariopartido';
 
     function __construct()
     {
