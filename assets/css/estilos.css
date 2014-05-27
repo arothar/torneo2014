@@ -25,7 +25,7 @@ body{
 	padding:0px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-	background:url(../img/bg.jpg) no-repeat center center #040f25;
+	background:url(../img/bg.jpg) no-repeat  #040f25;
 	-moz-background-size: cover;
 	-webkit-background-size: cover;
 	-o-background-size: cover;

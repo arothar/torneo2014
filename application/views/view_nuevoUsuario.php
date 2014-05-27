@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8" />
         <title>Desafio Mundial!</title>
-		<link href="<?echo base_url()?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+		<!--<link href="<?echo base_url()?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">-->
 		<link href="<?echo base_url()?>assets/css/estilos.css" rel="stylesheet" type="text/css" media="all">
-		<link href="<?echo base_url()?>assets/css/estilos-checkbox.css" rel="stylesheet" type="text/css" media="all">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet' type='text/css'>
 		<link rel="icon" type="image/x-icon" href="/desafioMundial/appMundial/web/favicon.ico" />
@@ -13,7 +13,7 @@
         <div id="contentRegistro">
     <div class="contenedor-caja-registro">
         <div class="caja-registro">
-                                <div class="registro">
+			<div class="registro">
                         <div class="encabezado">
                             <div class="titulo">FORMULARIO DE ACCESO</div>
                              <div class="texto">
@@ -54,41 +54,42 @@
 									<label for="fos_user_registration_form_nroLegajo" class="required">Nro. Legajo</label>
 									<input type="text" id="fos_user_registration_form_nroLegajo" name="nroLegajo" oninvalid="setCustomValidity(&quot;Ingrese Nro de Legajo&quot;)" onfocus="setCustomValidity(&quot;&quot;)"/> 
 								</div>
-								<div>
+<!--								<div>
 									<label for="fos_user_registration_form_nroEmpleado" class="required">Nro Empleado</label>
 									<input type="text" id="fos_user_registration_form_nroEmpleado" name="nroEmpleado" required="required" oninvalid="setCustomValidity(&quot;Ingrese su nro de Empleado&quot;)" onfocus="setCustomValidity(&quot;&quot;)" />
 								</div>
-								<div>
-									<label style="display:inline" for="fos_user_registration_form_bridgestone" class="required">Bridgestone</label>
-									<input style="display:inline" type="checkbox" value="1" id="fos_user_registration_form_bridgestone" name="esBridgestone" />
-								</div>
-								<div>
-									<label for="fos_user_registration_form_manpower" class="required">Manpower</label>
-									<input type="checkbox" value="1" id="fos_user_registration_form_manpower" name="esManpower"  />
-								</div>
-								<div>
-									<label for="fos_user_registration_form_adecco" class="required">Adecco</label>
-									<input type="checkbox" value="1" id="fos_user_registration_form_adecco" name="esAdecco"  />
-								</div>
+-->
+                                <div style="width:120px;">
+									<label for="fos_user_registration_form_bridgestone"> Bridgestone </label> 
+									<input style="height:auto; width:auto;" type="checkbox" value="1" id="fos_user_registration_form_bridgestone" name="esBridgestone" />
+                                </div>
+                                <div style="width:120px;">
+									<label for="fos_user_registration_form_adecco"> Manpower  </label> 
+									<input style="height:auto; width:auto;" type="checkbox" value="1" id="fos_user_registration_form_manpower" name="esManpower"  />
+                                </div>
+                                <div style="width:120px;">
+									<label for="fos_user_registration_form_adecco"> Adecco  </label> 
+									<input style="height:auto; width:auto;" type="checkbox" value="1" id="fos_user_registration_form_adecco" name="esAdecco"  />
+                                </div>
 								<!--<div>
 									<label class="registro-check-terminos-label label-terminos required" for="fos_user_registration_form_terminos">Acepto los Terminos y Condiciones</label>
 									<input type="checkbox" id="fos_user_registration_form_terminos" name="terminos" required="required" class="registro-check-terminos input-terminos" oninvalid="setCustomValidity(&quot;Acepte los t�rminos y condiciones&quot;)" onfocus="setCustomValidity(&quot;&quot;)" value="1" />
 								</div>-->
-                                
+                                </div>
                             <div>
                                 <input type="submit" value="Registrar" />
                             </div>
                         </form>
-                        <!--<div class="pie">
+                        <div class="pie">
                             <div class="terminos-link">TÉRMINOS Y CONDICIONES</div>
-                        </div>-->
+                        </div>
                 </div>
-                        <!--<div class="contenedor-terminos">
+                        <div class="contenedor-terminos">
                                     Terminos y Condiciones               
-                             </div>-->
+                             </div>
        
-        </div>
-    </div>
+			</div>
+		</div>
     <div id="logopie"> 
     <img src="<?echo base_url()?>assets/img/logobridgestone.png"/>
     </div>
