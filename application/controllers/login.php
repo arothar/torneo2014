@@ -38,6 +38,7 @@ class Login extends CI_Controller {
 	function registronuevo()
 	{
 		$plainPass = $this->input->post('plainPassword');
+
 		if ($plainPass['first'] != $plainPass['second'])
 		{
 			$data['passDiferentes']=1;
@@ -50,10 +51,10 @@ class Login extends CI_Controller {
 				$plainPass['first'],
 				$this->input->post('nroLegajo'),
 				$this->input->post('nombre'),
-				$this->input->post('nroCliente'),
-				$this->input->post('esBridgestone'),
-				$this->input->post('esAdecco'),
-				$this->input->post('esManpower')
+				$this->input->post('nroEmpleado'),
+				($this->input->post('esBridgestone') == "1") ? 1 : 0 ,
+				($this->input->post('esAdecco') == "1") ? 1 : 0 ,
+				($this->input->post('esManpower') == "1") ? 1 : 0
 				);
 				redirect(base_url(). 'login', 'refresh');
 		}

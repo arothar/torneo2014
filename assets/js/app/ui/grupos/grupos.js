@@ -4,6 +4,7 @@ app.ui.grupos = (function() {
         $('.partido').on('click', '.boton-editar', editarPartidoCallback);
         $('.partido').on('click', '.boton-enviar', enviarPartidoCallback);
         $('.partido').on('click', 'input', limpiarInput);
+		$('.partido').on('change', 'input', comprobarEmpate);
         $('.partido input').numberMask({beforePoint:2});
 		
 		$('#grupos .partido').tooltip({position: "BOTTOM RIGHT"});
@@ -45,7 +46,28 @@ app.ui.grupos = (function() {
             botonActual.parents(".partido").find("input").attr('disabled', true);
         });
     }
+	
+    function comprobarEmpate(){
+        var textoActual = $(this);
+		var partidoPadre = textoActual.parents(".partido");
+		var partido = {};
+		
+        partido.ganador= partidoPadre.find(".radioGanador").attr("data-id");
 
+		if (partido.ganador != null){
+			partido.golesLocal = partidoPadre.find(".partido-gol-input-local").val();
+			partido.golesVisitante = partidoPadre.find(".partido-gol-input-visitante").val();
+			
+			if (partido.golesLocal == partido.golesVisitante ){
+				partidoPadre.find(".ganador").show();
+				partidoPadre.find(".ganador-izq").show();
+			}else{
+				partidoPadre.find(".ganador").hide();
+				partidoPadre.find(".ganador-izq").hide();
+			}
+		}
+    }
+	
     return {
         init: init
     };
