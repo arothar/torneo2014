@@ -43,8 +43,10 @@ class Admin extends CI_Controller {
 			$crud->set_table('partidomundial');
 			$crud->set_relation('idEquipoLocal','equipo','nombre');
 			$crud->set_relation('idEquipoVisitante','equipo','nombre');
+			$crud->set_relation('idEquipoGanador','equipo','nombre');
 			$crud->display_as('idEquipoLocal','EquipoLocal');
 			$crud->display_as('idEquipoVisitante','EquipoVisitante');
+			$crud->display_as('idEquipoGanador','Ganador');
 			
 			/*
 			$this -> db -> select('id, Carrier_SCAC');
