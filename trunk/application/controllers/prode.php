@@ -21,16 +21,19 @@ class Prode extends CI_Controller {
 	
 	public function index()
 	{
-		//$fechaHoy = new DateTime('2014-06-01 19:00');
+		$fechaHoy = new DateTime('2014-06-26 19:00');
 		
-		$fechaHoy = new DateTime(date('Y-m-d G:i'));
+		//$fechaHoy = new DateTime(date('Y-m-d G:i'));
 		//var_dump($fechaHoy);
 		//die();
+		$usuario =$this->session->userdata('usuario'); 
+		//var_dump($usuario[0]->idUsuario);
+		//var_dump($this->Usuario->getUsuario($usuario[0]->idUsuario));
 		
-	
+		//die();
 		$grupos = 						$this->Grupo->get_paged_list(30, 0)->result();
 		$partidos = 					$this->PartidoMundial->get_partidoxgrupo_array(1);
-		$usuarioPartidoElegido = 		$this->session->userdata('usuario');
+		$usuarioPartidoElegido = 		$this->Usuario->getUsuario($usuario[0]->idUsuario);
 		$partidosUsuario = 				$this->UsuarioPartido->get_by_user_array($usuarioPartidoElegido[0]->idUsuario);
 		$estructuraOctavos = 			$this->PlayOff->get_estructura_octavos()->result();
 		$estructuraCuartosArray = 		$this->PlayOff->get_estructura_cuartos_array(4);

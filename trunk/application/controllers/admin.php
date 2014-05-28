@@ -83,6 +83,12 @@ class Admin extends CI_Controller {
 		}
 	}
 	
+	public function armarOctavos()
+	{
+		$equiposGanadores 	= 	$this->PlayOff->set_armarOctavos();
+		redirect(base_url(). 'admin', 'refresh');
+	}
+	
 	public function armarCuartos()
 	{
 		$equiposGanadores 	= 	$this->PlayOff->get_ganadoresTipoFinal(4,8)->result();

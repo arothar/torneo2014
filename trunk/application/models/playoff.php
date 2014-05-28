@@ -240,4 +240,12 @@ class PlayOff extends CI_Model {
 		
 		return $resultado;
 	}
+	
+	function set_armarOctavos()
+	{
+		$sql = "CALL sp_armarOctavos();";
+		$this->db->query($sql);
+		//return ($this->my_db->affected_rows() == 1); 
+	}
+	
 }
