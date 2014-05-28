@@ -47,6 +47,7 @@ class Admin extends CI_Controller {
 			$crud->display_as('idEquipoLocal','EquipoLocal');
 			$crud->display_as('idEquipoVisitante','EquipoVisitante');
 			$crud->display_as('idEquipoGanador','Ganador');
+			$crud->unset_delete();
 			
 			/*
 			$this -> db -> select('id, Carrier_SCAC');
