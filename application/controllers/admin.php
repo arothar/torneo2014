@@ -49,21 +49,6 @@ class Admin extends CI_Controller {
 			$crud->display_as('idEquipoGanador','Ganador');
 			$crud->unset_delete();
 			
-			/*
-			$this -> db -> select('id, Carrier_SCAC');
-					 $this -> db -> from('carrier');
-					 $query = $this -> db -> get();
-			$finalArray = array();
-			foreach ($query->result() as $row)
-			{
-				$finalArray[$row['id']]=$row['Carrier_SCAC'];
-			}
-			*/
-
-			//$crud->field_type('TT_Carrier','dropdown', $finalArray);
-			
-			//$equiposDelPartido = $this->PartidoMundial->get_equiposXPartido();
-			
 			$crud->columns('idGrupo','idEquipoLocal','golesLocal','golesVisitante','idEquipoVisitante','fechaPartido');
 			$crud->unset_edit_fields('idTorneo', 'idPlayoffEstructura', 'idResultadoMundial');
 			
@@ -82,6 +67,7 @@ class Admin extends CI_Controller {
 			redirect(base_url(). 'login/', 'refresh');
 		}
 	}
+	
 	
 	public function armarOctavos()
 	{
