@@ -81,5 +81,12 @@ class Usuario extends CI_Model {
 		$resultado = $this->db->get("usuario");
 		return $resultado;
 	}
+	
+	function getUsuario($idUsuario)
+	{
+		$this->db->where('idUsuario', $idUsuario);
+		$resultado = $this->db->get($this->tbl_usuario)->result();
+		return $resultado;
+	}
 
 }
