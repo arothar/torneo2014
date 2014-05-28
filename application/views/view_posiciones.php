@@ -4,17 +4,38 @@
                 <div class="primero">
                   <div class="medalla medalla-oro">130</div>
                   <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Imagen primero"></div>
-                  <div class="nombre nombre-primero"><span class="alineacion-nombre"><?=$usuariosOrdenados[0]["username"]?></span></div>
+                  <div class="nombre nombre-primero">
+						<span class="alineacion-nombre">
+							<? if (isset($usuariosOrdenados[0])==1){
+									echo $usuariosOrdenados[0]["username"];
+								}
+							?>
+						</span>
+				  </div>
                 </div>
                 <div class="segundo">
                   <div class="medalla medalla-plata">120</div>
                   <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Imagen segund"></div>
-                  <div class="nombre nombre-segundo"><span class="alineacion-nombre"><?=$usuariosOrdenados[1]["username"]?></span></div>
+                  <div class="nombre nombre-segundo">
+						<span class="alineacion-nombre">
+							<? if (isset($usuariosOrdenados[1])==1){
+									echo $usuariosOrdenados[1]["username"];
+								}
+							?>
+						</span>
+				   </div>
                 </div>
                 <div class="tercero">
                   <div class="medalla medalla-bronce">90</div>
                   <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Imagen tercero"></div>
-                  <div class="nombre nombre-tercero"><span class="alineacion-nombre"><?=$usuariosOrdenados[2]["username"]?></span></div>
+                  <div class="nombre nombre-tercero">
+						<span class="alineacion-nombre">
+							<? if (isset($usuariosOrdenados[2])==1){
+									echo $usuariosOrdenados[2]["username"];
+								}
+							?>
+						</span>
+				   </div>
                 </div>
               </div>
               <div class="lista-resultados">
@@ -28,33 +49,7 @@
               </div>
             </div>
             <div class="posiciones-ronda">
-              <div class="lista-resultados">
-                <div class="resultado primero">
-                  <div class="puesto">1</div>
-                  <div class="nombre">Jesás Pascual</div>
-                  <div class="puntaje">231</div>
-                </div>
-                <div class="resultado segundo">
-                  <div class="puesto">2</div>
-                  <div class="nombre">Tomás Rosado</div>
-                  <div class="puntaje">201</div>
-                </div>
-                <div class="resultado tercero">
-                  <div class="puesto">3</div>
-                  <div class="nombre">Pedro Panqueque</div>
-                  <div class="puntaje">201</div>
-                </div>
-                <div class="resultado cuarto">
-                  <div class="puesto">4</div>
-                  <div class="nombre">Jorge Meconio</div>
-                  <div class="puntaje">200</div>
-                </div>
-                <div class="resultado">
-                  <div class="puesto">5</div>
-                  <div class="nombre">Juan Palenque</div>
-                  <div class="puntaje">197</div>
-                </div>
-              </div>
+
             </div>
           </div>
           <div class="contenedor-premios">
@@ -117,7 +112,7 @@
                     <div class="posicion">10</div>
                     <div class="texto">Pelota de futbol</div>
                   </div>
-                 <div class="mas-premios">Y muchos premios <span class="resaltado assets/js-ver-mas-premios-globales">más</span></div>
+                 
                 </div>
               </div>
             </div>
@@ -161,14 +156,7 @@
                       <div class="posicion">8</div>
                       <div class="texto">Pelota de futbol</div>
                     </div>
-                    <div class="premio-lista">
-                      <div class="posicion">9</div>
-                      <div class="texto">Pelota de futbol</div>
-                    </div>
-                    <div class="premio-lista">
-                      <div class="posicion">10</div>
-                      <div class="texto">Pelota de futbol</div>
-                    </div>
+
                   </div>
                 </div>
               </div>

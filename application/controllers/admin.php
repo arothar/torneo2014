@@ -57,9 +57,18 @@ class Admin extends CI_Controller {
 			}
 			*/
 
-			$crud->field_type('TT_Carrier','dropdown', $finalArray);
+			//$crud->field_type('TT_Carrier','dropdown', $finalArray);
+			
+			//$equiposDelPartido = $this->PartidoMundial->get_equiposXPartido();
 			
 			$crud->columns('idGrupo','idEquipoLocal','golesLocal','golesVisitante','idEquipoVisitante','fechaPartido');
+			$crud->unset_edit_fields('idTorneo', 'idPlayoffEstructura', 'idResultadoMundial');
+			
+			$crud->field_type('fechaPartido', 'readonly');
+			$crud->field_type('idGrupo', 'readonly');
+			$crud->field_type('idPlayoff', 'readonly');
+			$crud->field_type('idEquipoLocal', 'readonly');
+			$crud->field_type('idEquipoVisitante', 'readonly');
 			
 			$crud->callback_after_update(array($this, 'actualizarPuntos'));
 

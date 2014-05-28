@@ -163,4 +163,18 @@ class PartidoMundial extends CI_Model {
 		$params = array($idPlayoffHijo,$idPlayOffPadre,$idEquipo,$localia);
 		$this->db->query($sql, $params);
 	}
+	
+	function get_equiposXPartido($idEquipo)
+	{
+		$sql = "select pl.idEquipoLocal idEquipo, el.Nombre nombre from partidomundial pl
+				inner join equipo el on pl.idEquipoLocal= el.IdEquipo
+				where pl.idPartidoMundial=?
+				union
+				select pv.idequipoVisitante idEquipo, ev.Nombre nombre from partidomundial pv
+				inner join equipo ev on pv.idEquipoVisitante= ev.IdEquipo
+				where pv.idPartidoMundial=?";
+		$params = array($idEquipo);
+		$this->db->query($sql, $params);
+
+	}
 }
