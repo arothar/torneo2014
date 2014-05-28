@@ -20,7 +20,6 @@
         <div class="nombre"><?= $usuario->username?></div>
         <div class="puntos"> <? if ($usuario->puntos!= null) {echo $usuario->puntos;} else {echo 0;} ?> </div>
         <div class="sub-puntos">PUNTOS</div>
-        <div class="detalle">VER DETALLE</div>
       </div>
     </div>
 </div>

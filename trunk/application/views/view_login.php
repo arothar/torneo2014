@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>Desafio Mundial!</title>
-		<link href="<?echo base_url()?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">
+		<!--<link href="<?echo base_url()?>assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all">-->
 		<link href="<?echo base_url()?>assets/css/estilos.css" rel="stylesheet" type="text/css" media="all">
 		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet' type='text/css'>
@@ -31,7 +31,7 @@
                 </div>
             </a>
             </div>
-            <div id="logopielogin"> <img src="<?echo base_url()?>assets/img/logobridgestone.jpg"/></div>
+            <div id="logopie"> <img src="<?echo base_url()?>assets/img/logobridgestone.jpg"/></div>
     </div>
         <script src="<?echo base_url()?>assets/js/lib/jquery-1.10.2.min.js" type="text/javascript"></script>
         <script src="<?echo base_url()?>assets/js/lib/bootstrap.min.js" type="text/javascript"></script>

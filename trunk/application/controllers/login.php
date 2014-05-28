@@ -27,7 +27,8 @@ class Login extends CI_Controller {
 			$this->session->set_userdata('usuario',$user);
 			redirect(base_url(). 'prode', 'refresh');
 		} else 
-			$this->load->view('view_login', '');
+			redirect(base_url(). 'login', 'refresh');
+			//$this->load->view('view_login', '');
 	}
 
 	function nuevousuario($offset = 0){
