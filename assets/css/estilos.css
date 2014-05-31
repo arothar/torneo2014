@@ -105,11 +105,11 @@ a:focus{
 
 #header .header-usuario .puntos{
     color: #FFFFFF;
-    font-size: 45px;
+    font-size: 32px;
     font-weight: 600;
     letter-spacing: 5px;
     margin-left: 368px;
-    margin-top: 8px;
+    margin-top: 19px;
     position: absolute;
     text-align: center;
     width: 162px;
@@ -2052,6 +2052,17 @@ color: #F70000;
     right:5px;
     text-align: center;
     width: 25px;
+}
+
+.lista-partidos .ganador{
+   margin-top: -18px;
+   width: 15px;
+    margin-left: -7px;
+}
+.lista-partidos .equipo-der .ganador{
+    margin-left: 51px;
+    margin-top: -18px;
+    width: 15px;
 }
 
 .partido-inactivo {
