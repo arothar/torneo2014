@@ -132,35 +132,38 @@ class Admin extends CI_Controller {
 	{	
 		$this->Usuario->asignarPuntaje($primary_key,$post_array["golesLocal"], $post_array["golesVisitante"]);
 		$idEquipoGanador = 0;
+		$partidoEditado = $this->PartidoMundial->get_by_id($primary_key)->result_array();
+
+		//var_dump($partidoEditado);
 		
-		if ($post_array["idPlayoff"] != null)
+		if ($partidoEditado[0]["idPlayoff"] != null)
 		{
 			if ($post_array["golesLocal"] > $post_array["golesVisitante"])
 			{
-				$idEquipoGanador = $post_array["idEquipoLocal"];
-				$idEquipoPerdedor = $post_array["idEquipoVisitante"];
+				$idEquipoGanador = $partidoEditado[0]["idEquipoLocal"];
+				$idEquipoPerdedor = $partidoEditado[0]["idEquipoVisitante"];
 			}
 			else if ($post_array["golesLocal"] < $post_array["golesVisitante"])
 			{
-				$idEquipoGanador = $post_array["idEquipoVisitante"];
-				$idEquipoPerdedor = $post_array["idEquipoLocal"];
+				$idEquipoGanador = $partidoEditado[0]["idEquipoVisitante"];
+				$idEquipoPerdedor = $partidoEditado[0]["idEquipoLocal"];
 			}
 			
-			$resultado = $this->PlayOff->get_playOffHijo_array($post_array["idPlayoff"], 1);
+			$resultado = $this->PlayOff->get_playOffHijo_array($partidoEditado[0]["idPlayoff"], 1);
 			if ($resultado != null)
 			{
 				$idPlayoffHijo = $resultado[0]['idPlayoff'];
 				$localia = $resultado[0]['localia'];
 				//var_dump($resultado);
-				$resultPartido = $this->PartidoMundial->save_partidoMundialPlayoff($idPlayoffHijo,$post_array["idPlayoff"],$idEquipoGanador,$localia);
+				$resultPartido = $this->PartidoMundial->save_partidoMundialPlayoff($idPlayoffHijo,$partidoEditado[0]["idPlayoff"],$idEquipoGanador,$localia);
 			}
 			
-			$resultado = $this->PlayOff->get_playOffHijo_array($post_array["idPlayoff"], 2);
+			$resultado = $this->PlayOff->get_playOffHijo_array($partidoEditado[0]["idPlayoff"], 2);
 			if ($resultado != null)
 			{
 				$idPlayoffHijo = $resultado[0]['idPlayoff'];
 				$localia = $resultado[0]['localia'];
-				$resultPartido = $this->PartidoMundial->save_partidoMundialPlayoff($idPlayoffHijo,$post_array["idPlayoff"],$idEquipoPerdedor,$localia);
+				$resultPartido = $this->PartidoMundial->save_partidoMundialPlayoff($idPlayoffHijo,$partidoEditado[0]["idPlayoff"],$idEquipoPerdedor,$localia);
 			}
 			
 		} 

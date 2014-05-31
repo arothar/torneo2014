@@ -18,7 +18,7 @@ class PartidoMundial extends CI_Model {
 		return $this->db->get($this->tbl_partidoMundial, $limit, $offset);
 	}
 	function get_by_id($id){
-		$this->db->where('idGrupo', $id);
+		$this->db->where('idPartidoMundial', $id);
 		return $this->db->get($this->tbl_partidoMundial);
 	}
 	function get_partidos_eliminatorias()
