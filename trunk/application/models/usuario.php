@@ -41,7 +41,7 @@ class Usuario extends CI_Model {
 	
 	function guardarPartido($idUsuario, $idPartido, $golesLocal, $golesVisitante, $equipoGanador)
 	{
-	
+		date_default_timezone_set('America/Argentina/Buenos_Aires');
 		$this->db->where('idUsuario', $idUsuario);
 		$this->db->where('idPartido', $idPartido);
 		$resultado = $this->db->get("usuariopartido")->result();
@@ -53,7 +53,8 @@ class Usuario extends CI_Model {
 								'idPartido'=>$idPartido, 
 								'golesLocal'=>$golesLocal, 
 								'golesVisitante'=> $golesVisitante,
-								'idGanador' => $equipoGanador));
+								'idGanador' => $equipoGanador,
+								'fechaUpdate' => date('Y-m-d G:i')));
 			return $this->db->insert_id();
 		} else {
 			$this->db->where('idUsuario', $idUsuario);
@@ -61,7 +62,8 @@ class Usuario extends CI_Model {
 			$this->db->update('usuariopartido', 
 								array('golesLocal'=>$golesLocal, 
 										'golesVisitante'=> $golesVisitante,
-										'idGanador' => $equipoGanador));
+										'idGanador' => $equipoGanador,
+										'fechaUpdate' => date('Y-m-d G:i')));
 		}
 	}
 
