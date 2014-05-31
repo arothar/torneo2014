@@ -21,9 +21,9 @@ class Prode extends CI_Controller {
 	
 	public function index()
 	{
-		$fechaHoy = new DateTime('2014-06-26 19:00');
+		//$fechaHoy = new DateTime('2014-06-15 14:00');
 		
-		//$fechaHoy = new DateTime(date('Y-m-d G:i'));
+		$fechaHoy = new DateTime(date('Y-m-d G:i'));
 		//var_dump($fechaHoy);
 		//die();
 		$usuario =$this->session->userdata('usuario'); 
