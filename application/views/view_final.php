@@ -3,11 +3,7 @@
               <div class="grupo-titulo"> OCTAVOS DE FINAL </div>
 			  <?$separador = 0; 
 				foreach ($estructuraOctavos as $val){ ?>
-				  <? if ($separador==0 || $separador ==4){ 
-						//$fechaPartido = new DateTime($partidosOctavos[$val->idPlayoff]["fechaPartido"]); 
-						//$CI =& get_instance();
-						//$horas = $CI->dateTimeDiff($fechaHoy,$fechaPartido);
-						?>
+				  <? if ($separador==0 || $separador ==4){ ?>
 					<div class="lista-partidos">
 				  <? } ?>
 						<? 
@@ -19,7 +15,7 @@
 							$horas = $CI->dateTimeDiff($fechaHoy,$fechaPartido);
 							$idPartido = $partidosOctavos[$val->idPlayoff]["idPartido"];
 						}?>
-						<div class="partido <? if ($fechaPartido == null || $horas->d > 2) { ?> partido-inactivo <? } ?>" data-id="<?=$idPartido?>">
+						<div class="partido <? if ($fechaPartido == null) { ?> partido-inactivo <? } ?>" data-id="<?=$idPartido?>">
 						  <div class="bandera">
 							<img src="<?if (isset($partidosOctavos[$val->idPlayoff])) {echo base_url()?>assets/img/banderas/<?=$partidosOctavos[$val->idPlayoff]["banderaLocal"];}else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera">
 						  </div>
@@ -91,6 +87,8 @@
 					if (isset($partidosCuartos[$val['idPlayoff']])==1){
 						$fechaPartido = new DateTime($partidosCuartos[$val['idPlayoff']]["fechaPartido"]); 
 						$idPartido = $partidosCuartos[$val['idPlayoff']]["idPartido"];
+						$CI =& get_instance();
+						$horas = $CI->dateTimeDiff($fechaHoy,$fechaPartido);
 					}
 					?>
 					<div class="partido partido-fase-final cuartos-<?=$countCuartos?>" data-id="<?=$idPartido?>">
@@ -160,6 +158,9 @@
 						if (isset($partidosSemis[$val['idPlayoff']])==1){
 							$fechaPartido = new DateTime($partidosSemis[$val['idPlayoff']]["fechaPartido"]); 
 							$idPartido = $partidosSemis[$val['idPlayoff']]["idPartido"];
+							$CI =& get_instance();
+							$horas = $CI->dateTimeDiff($fechaHoy,$fechaPartido);
+
 						}
 						$nroEquipoSemi += 1;
 						?>
@@ -228,6 +229,9 @@
 						if (isset($partidoFinal[$val['idPlayoff']])==1){
 							$fechaPartido = new DateTime($partidoFinal[$val['idPlayoff']]["fechaPartido"]); 
 							$idPartido = $partidoFinal[$val['idPlayoff']]["idPartido"];
+							$CI =& get_instance();
+							$horas = $CI->dateTimeDiff($fechaHoy,$fechaPartido);
+
 						}
 						$nroEquipoFinal += 1;
 						?>
@@ -299,6 +303,9 @@
 						if (isset($partidoTercer[$val['idPlayoff']])==1){
 							$fechaPartido = new DateTime($partidoTercer[$val['idPlayoff']]["fechaPartido"]); 
 							$idPartido = $partidoTercer[$val['idPlayoff']]["idPartido"];
+							$CI =& get_instance();
+							$horas = $CI->dateTimeDiff($fechaHoy,$fechaPartido);
+
 						}
 						$nroEquipoTercer += 1; ?>
 						<div class="partido partido-fase-final tercer-cuarto" data-id="<?=$idPartido?>">

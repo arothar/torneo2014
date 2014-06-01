@@ -147,6 +147,10 @@ class Admin extends CI_Controller {
 			{
 				$idEquipoGanador = $partidoEditado[0]["idEquipoVisitante"];
 				$idEquipoPerdedor = $partidoEditado[0]["idEquipoLocal"];
+			}else if ($post_array["golesLocal"] == $post_array["golesVisitante"])
+			{
+				$idEquipoGanador = $post_array["idEquipoGanador"];
+				$idEquipoPerdedor = ($partidoEditado[0]["idEquipoLocal"]== $post_array["idEquipoGanador"]) ? $partidoEditado[0]["idEquipoLocal"] : $partidoEditado[0]["idEquipoVisitante"];
 			}
 			
 			$resultado = $this->PlayOff->get_playOffHijo_array($partidoEditado[0]["idPlayoff"], 1);
