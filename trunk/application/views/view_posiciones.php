@@ -2,8 +2,12 @@
             <div class="posiciones-temporal">
               <div class="podio">
                 <div class="primero">
-                  <div class="medalla medalla-oro">130</div>
-                  <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Imagen primero"></div>
+                  <div class="medalla medalla-oro">
+					<? if (isset($usuariosOrdenados[0])==1){
+							echo $usuariosOrdenados[0]["puntos"];
+						}
+					?>
+				  </div>
                   <div class="nombre nombre-primero">
 						<span class="alineacion-nombre">
 							<? if (isset($usuariosOrdenados[0])==1){
@@ -14,8 +18,12 @@
 				  </div>
                 </div>
                 <div class="segundo">
-                  <div class="medalla medalla-plata">120</div>
-                  <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Imagen segund"></div>
+                  <div class="medalla medalla-plata">
+					<? if (isset($usuariosOrdenados[1])==1){
+							echo $usuariosOrdenados[1]["puntos"];
+						}
+					?>
+				  </div>
                   <div class="nombre nombre-segundo">
 						<span class="alineacion-nombre">
 							<? if (isset($usuariosOrdenados[1])==1){
@@ -26,8 +34,12 @@
 				   </div>
                 </div>
                 <div class="tercero">
-                  <div class="medalla medalla-bronce">90</div>
-                  <div class="foto"><img src="<?echo base_url()?>assets/img/avatar1.jpg" alt="Imagen tercero"></div>
+                  <div class="medalla medalla-bronce">
+				  <? if (isset($usuariosOrdenados[2])==1){
+						echo $usuariosOrdenados[2]["puntos"];
+					}
+				?>
+				  </div>
                   <div class="nombre nombre-tercero">
 						<span class="alineacion-nombre">
 							<? if (isset($usuariosOrdenados[2])==1){
@@ -59,61 +71,43 @@
                 <div class="premio-1">
                   <div class="medalla"></div>
                   <div class="imagen"><img src="assets/img/700394.png" alt="Imagen primer premio"></div>
-                  <div class="texto">LCD 32</div>
+                  <div class="texto">LED TV 32 PULGADAS</div>
                 </div>
                 <div class="premio-2">
                   <div class="medalla"></div>
                   <div class="imagen"><img src="assets/img/878829.png" alt="Imagen primer premio"></div>
-                  <div class="texto">Camiseta de argentina</div>
+                  <div class="texto">TABLET SAMSUNG 7 PULGADAS</div>
                 </div>
                 <div class="premio-3">
                   <div class="medalla"></div>
                   <div class="imagen"><img src="assets/img/934849.png" alt="Imagen primer premio"></div>
-                  <div class="texto">Pelota de futbol</div>
+                  <div class="texto">CAMARA DIGITAL</div>
                 </div>
                 <div class="lista-premios">
                   <div class="premio-lista">
                     <div class="posicion">4</div>
-                    <div class="texto">Pelota de futbol</div>
+                    <div class="texto">Camiseta selección Argentina</div>
                   </div>
                 </div>
                    <div class="lista-premios">
                   <div class="premio-lista">
                     <div class="posicion">5</div>
-                    <div class="texto">Pelota de futbol</div>
+                    <div class="texto">Camiseta selección Argentina</div>
                   </div>
                 </div>
                    <div class="lista-premios">
                   <div class="premio-lista">
                     <div class="posicion">6</div>
-                    <div class="texto">Pelota de futbol</div>
+                    <div class="texto">Pelota de fútbol N°5</div>
                   </div>
                 </div>
                    <div class="lista-premios">
                   <div class="premio-lista">
                     <div class="posicion">7</div>
-                    <div class="texto">Pelota de futbol</div>
+                    <div class="texto">Pelota de fútbol N°5</div>
                   </div>
                 </div>
-                   <div class="lista-premios">
-                  <div class="premio-lista">
-                    <div class="posicion">8</div>
-                    <div class="texto">Pelota de futbol</div>
-                  </div>
-                </div>
-                   <div class="lista-premios">
-                  <div class="premio-lista">
-                    <div class="posicion">9</div>
-                    <div class="texto">Pelota de futbol</div>
-                  </div>
-                </div>
-                   <div class="lista-premios">
-                  <div class="premio-lista">
-                    <div class="posicion">10</div>
-                    <div class="texto">Pelota de futbol</div>
-                  </div>
-                 
-                </div>
+				
               </div>
             </div>
             <div class="hidden premios-globales-popup-assets/js">

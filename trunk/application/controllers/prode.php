@@ -21,9 +21,9 @@ class Prode extends CI_Controller {
 	
 	public function index()
 	{
-		$fechaHoy = new DateTime('2014-06-27 14:00');
+		//$fechaHoy = new DateTime('2014-06-27 14:00');
 		
-		//$fechaHoy = new DateTime(date('Y-m-d G:i'));
+		$fechaHoy = new DateTime(date('Y-m-d G:i'));
 		//var_dump($fechaHoy);
 		//die();
 		$usuario =$this->session->userdata('usuario'); 
@@ -77,7 +77,7 @@ class Prode extends CI_Controller {
 		
 		$outReglamento = 	$this->load->view('view_reglamento',null, TRUE);
 		$outFaseGrupo = 	$this->load->view('view_fasegrupo',$data, TRUE);
-		$outFinal = 		$this->load->view('view_final',null, TRUE);
+		$outFinal = 		$this->load->view('view_final',$data, TRUE);
 		$outPosiciones = 	$this->load->view('view_posiciones',$data, TRUE);
 		
 		$data['outReglamento'] = 	$outReglamento;
