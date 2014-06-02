@@ -34,7 +34,7 @@
       </ul>
 	  <form method="post" accept-charset="utf-8" action="ProdeLucho/dev/partido" >
       <div class="tab-content">
-        <div class="tab-pane" id="reglamento">
+        <div class="tab-pane" id="reglamento"  style="margin-top:20px">
           <?php echo $outReglamento; ?>
         </div>
         <div class="tab-pane active " id="grupos">
@@ -43,7 +43,7 @@
         <div class="tab-pane " id="final">
           <?php echo $outFinal; ?>
         </div>
-        <div class="tab-pane" id="posiciones">
+        <div class="tab-pane" id="posiciones" style="height:645px">
 			<?php echo $outPosiciones; ?>
         </div>
       </div>
