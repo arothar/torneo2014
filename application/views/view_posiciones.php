@@ -71,17 +71,17 @@
                 <div class="premio-1">
                   <div class="medalla"></div>
                   <div class="imagen"><img src="assets/img/700394.png" alt="Imagen primer premio"></div>
-                  <div class="texto">LED TV 32 PULGADAS</div>
+                  <div class="texto">TV LED Samsung 40”</div>
                 </div>
                 <div class="premio-2">
                   <div class="medalla"></div>
                   <div class="imagen"><img src="assets/img/878829.png" alt="Imagen primer premio"></div>
-                  <div class="texto">TABLET SAMSUNG 7 PULGADAS</div>
+                  <div class="texto">Tablet Lenovo 8“</div>
                 </div>
                 <div class="premio-3">
                   <div class="medalla"></div>
                   <div class="imagen"><img src="assets/img/934849.png" alt="Imagen primer premio"></div>
-                  <div class="texto">CAMARA DIGITAL</div>
+                  <div class="texto">Cámara digital Kodak</div>
                 </div>
                 <div class="lista-premios">
                   <div class="premio-lista">
@@ -107,7 +107,24 @@
                     <div class="texto">Pelota de fútbol N°5</div>
                   </div>
                 </div>
-				
+                   <div class="lista-premios">
+                  <div class="premio-lista">
+                    <div class="posicion">8</div>
+                    <div class="texto">Pelota de fútbol N°5</div>
+                  </div>
+                </div>
+                   <div class="lista-premios">
+                  <div class="premio-lista">
+                    <div class="posicion">9</div>
+                    <div class="texto">Pelota de fútbol N°5</div>
+                  </div>
+                </div>
+                   <div class="lista-premios">
+                  <div class="premio-lista">
+                    <div class="posicion">10</div>
+                    <div class="texto">Pelota de fútbol N°5</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="hidden premios-globales-popup-assets/js">
