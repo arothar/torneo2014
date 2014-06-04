@@ -29,6 +29,7 @@
 <div id="contenedor">
   <div id="content">
     <div id="cuerpo">
+	<div id="alertSuccess" style="display:none" class="alert alert-success alert-dismissable">Resultado cargado correctamente..</div>
       <ul class="nav nav-tabs mundial-tab">
         <li><a href="#reglamento" data-toggle="tab">REGLAMENTO</a></li>
         <li class="active"><a href="#grupos" data-toggle="tab">FASE DE GRUPOS</a></li>

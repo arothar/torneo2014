@@ -43,6 +43,10 @@ app.ui.grupos = (function() {
             botonActual.removeClass('boton-enviar').addClass('boton-editar');
             loader.css("display","none");
             botonActual.show();
+			//$("#alertSuccess").show();
+			$("#alertSuccess").show("slow").delay(3000).queue(function(n) {
+			  $(this).hide("slow"); n();
+			});
             botonActual.parents(".partido").find("input").attr('disabled', true);
         });
     }
