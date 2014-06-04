@@ -151,18 +151,30 @@ a:focus{
 
 #header .logout{
     background-image: url("../img/botonLogout.png");
-    height: 32px;
+    height: 25px;
     margin-left: 685px;
     margin-top: 2px;
     position: absolute;
-    width: 80px;
+    width: 60px;
 }
 
 #header .logout a{
     color: #000000;
     text-decoration: none;
 }
+#header .consultas{
+    background-image: url("../img/botonConsultas.png");
+    height: 25px;
+    margin-left: 604px;
+    margin-top: 2px;
+    position: absolute;
+    width: 82px;
+}
 
+#header .consultas a{
+    color: #000000;
+    text-decoration: none;
+}
 
 #pie{
 	background-image:url(../img/bgfooter.png);
@@ -755,7 +767,7 @@ background-image:url(../img/bgbuttonoveractive.png);
 .contenedor-caja-registro{
     border-radius: 5px;
     margin-left: 310px;
-    margin-top: 80px;
+    margin-top: 40px;
     padding: 12px;
     position: absolute;
     width: 500px;

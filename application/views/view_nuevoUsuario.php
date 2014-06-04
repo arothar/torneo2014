@@ -46,19 +46,17 @@
 									<input type="password" id="fos_user_registration_form_plainPassword_second" name="plainPassword[second]" required="required" />
 								</div>
 								<div>
-									<label for="fos_user_registration_form_nombre" class="required">Nombre</label>
+									<label for="fos_user_registration_form_nombre" class="required">Nombre Completo</label>
 									<input type="text" id="fos_user_registration_form_nombre" name="nombre" required="required" oninvalid="setCustomValidity(&quot;Ingrese su nombre&quot;)" onfocus="setCustomValidity(&quot;&quot;)" />
 								</div>
-
+                                <div>
+									<label for="fos_user_registration_form_nombre" class="required">DNI</label>
+									<input type="text" id="fos_user_registration_form_nombre" name="nroDNI" required="required" oninvalid="setCustomValidity(&quot;Ingrese su dni&quot;)" onfocus="setCustomValidity(&quot;&quot;)" />
+								</div>
 								<div>
 									<label for="fos_user_registration_form_nroLegajo" class="required">Nro. Legajo</label>
-									<input type="text" id="fos_user_registration_form_nroLegajo" name="nroLegajo" oninvalid="setCustomValidity(&quot;Ingrese Nro de Legajo&quot;)" onfocus="setCustomValidity(&quot;&quot;)"/> 
+									<input type="text" id="fos_user_registration_form_nroLegajo" name="nroLegajo" required="required" oninvalid="setCustomValidity(&quot;Ingrese Nro de Legajo&quot;)" onfocus="setCustomValidity(&quot;&quot;)"/> 
 								</div>
-<!--								<div>
-									<label for="fos_user_registration_form_nroEmpleado" class="required">Nro Empleado</label>
-									<input type="text" id="fos_user_registration_form_nroEmpleado" name="nroEmpleado" required="required" oninvalid="setCustomValidity(&quot;Ingrese su nro de Empleado&quot;)" onfocus="setCustomValidity(&quot;&quot;)" />
-								</div>
--->
                                 <div style="width:120px;">
 									<label for="fos_user_registration_form_bridgestone"> Bridgestone </label> 
 									<input style="height:auto; width:auto;" type="checkbox" value="1" id="fos_user_registration_form_bridgestone" name="esBridgestone" />

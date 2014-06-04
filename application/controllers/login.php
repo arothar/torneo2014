@@ -53,6 +53,7 @@ class Login extends CI_Controller {
 				$this->input->post('nroLegajo'),
 				$this->input->post('nombre'),
 				$this->input->post('nroEmpleado'),
+				$this->input->post('nroDNI'),
 				($this->input->post('esBridgestone') == "1") ? 1 : 0 ,
 				($this->input->post('esAdecco') == "1") ? 1 : 0 ,
 				($this->input->post('esManpower') == "1") ? 1 : 0

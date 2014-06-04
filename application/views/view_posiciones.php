@@ -11,7 +11,7 @@
                   <div class="nombre nombre-primero">
 						<span class="alineacion-nombre">
 							<? if (isset($usuariosOrdenados[0])==1){
-									echo $usuariosOrdenados[0]["username"];
+									echo $usuariosOrdenados[0]["nombre"];
 								}
 							?>
 						</span>
@@ -27,7 +27,7 @@
                   <div class="nombre nombre-segundo">
 						<span class="alineacion-nombre">
 							<? if (isset($usuariosOrdenados[1])==1){
-									echo $usuariosOrdenados[1]["username"];
+									echo $usuariosOrdenados[1]["nombre"];
 								}
 							?>
 						</span>
@@ -43,7 +43,7 @@
                   <div class="nombre nombre-tercero">
 						<span class="alineacion-nombre">
 							<? if (isset($usuariosOrdenados[2])==1){
-									echo $usuariosOrdenados[2]["username"];
+									echo $usuariosOrdenados[2]["nombre"];
 								}
 							?>
 						</span>
@@ -51,10 +51,13 @@
                 </div>
               </div>
               <div class="lista-resultados">
-			  <? for ($i=3; $i < count($usuariosOrdenados); $i++){ ?>
+			  <?
+			  $cantidad = (count($usuariosOrdenados) < 10) ? count($usuariosOrdenados) : 10;
+			  ?>
+			  <? for ($i=3; $i < $cantidad ; $i++){ ?>
                 <div class="resultado">
                   <div class="puesto"><?=$i+1?></div>
-                  <div class="nombre"><?=$usuariosOrdenados[$i]["username"]?></div>
+                  <div class="nombre"><?=$usuariosOrdenados[$i]["nombre"]?></div>
                   <div class="puntaje"><?=$usuariosOrdenados[$i]["puntos"]?></div>
                 </div>
 			  <? } ?>

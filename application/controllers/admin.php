@@ -18,7 +18,7 @@ class Admin extends CI_Controller {
 		
 				
 		if ($this->session->userdata('usuario') == FALSE)
-			redirect(base_url(). 'login/', 'refresh');
+			redirect(base_url(). 'login', 'refresh');
 	}
 
 	public function _example_output($output = null)
@@ -64,7 +64,7 @@ class Admin extends CI_Controller {
 
 			$this->_example_output($output);
 		}else{
-			redirect(base_url(). 'login/', 'refresh');
+			redirect(base_url(). 'login', 'refresh');
 		}
 	}
 	

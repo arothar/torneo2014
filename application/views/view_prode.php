@@ -13,7 +13,10 @@
 <div id="contenedorheader">
 	<div id="header"> 
 	  <a href="login/remover/">
-      <div class="logout"></div>
+		<div class="logout"></div>
+      </a>
+	  <a href="mailto:consultas@fanaticosdelmundial.com.ar">
+		<div class="consultas"></div>
       </a>
       <div class="header-modulo header-logo-premio"> <img src="<?echo base_url()?>assets/img/logoPremio.png" alt="Tu foto"> </div>
       <div class="header-modulo header-usuario">
