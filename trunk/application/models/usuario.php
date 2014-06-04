@@ -22,7 +22,7 @@ class Usuario extends CI_Model {
 		return $this->db->get($this->tbl_usuario);
 	}
 	
-	function crearUsuario($username, $email, $pass1, $nroLegajo, $nombre, $nroEmpleado, $esBridgestone, $esAdecco, $esManpower)
+	function crearUsuario($username, $email, $pass1, $nroLegajo, $nombre, $nroEmpleado, $nroDNI, $esBridgestone, $esAdecco, $esManpower)
 	{
 		$this->db->insert("usuario", 
 						array('username'=>$username, 
@@ -31,6 +31,7 @@ class Usuario extends CI_Model {
 								'nroLegajo'=> $nroLegajo,
 								'nombre'=> $nombre,
 								'nroEmpleado'=> $nroEmpleado,
+								'nroDNI' => $nroDNI,
 								'esBridgestone'=> $esBridgestone,
 								'esAdecco'=> $esAdecco,
 								'esManpower'=> $esManpower
