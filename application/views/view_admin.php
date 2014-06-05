@@ -29,6 +29,7 @@ a:hover
 <body>
 	<div>
 		<a href='<?php echo site_url('admin/partidos_management')?>'>Partidos</a> |
+		<a href='<?php echo site_url('admin/usuarios_management')?>'>Usuarios</a> |
 		<a href='<?php echo site_url('admin/armarOctavos')?>'>Armar Octavos</a> |
 	</div>
 	<div style='height:20px;'></div>  

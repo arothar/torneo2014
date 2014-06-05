@@ -31,17 +31,18 @@
     <div id="cuerpo">
 	<div id="alertSuccess" style="display:none" class="alert alert-success alert-dismissable">Resultado cargado correctamente..</div>
       <ul class="nav nav-tabs mundial-tab">
-        <li><a href="#reglamento" data-toggle="tab">REGLAMENTO</a></li>
-        <li class="active"><a href="#grupos" data-toggle="tab">FASE DE GRUPOS</a></li>
-        <li><a href="#final" data-toggle="tab">FASE FINAL</a></li>
-        <li><a href="#posiciones" data-toggle="tab">POSICIONES Y PREMIOS</a></li>
+        <li><a href="#reglamento" onclick="javascript:$('#comojugar').hide();" data-toggle="tab">REGLAMENTO</a></li>
+        <!--<li class="active"><a href="#grupos" data-toggle="tab">FASE DE GRUPOS</a></li>-->
+		<li><a href="#grupos" onclick="javascript:$('#comojugar').hide();" data-toggle="tab">FASE DE GRUPOS</a></li>
+        <li><a href="#final" onclick="javascript:$('#comojugar').hide();" data-toggle="tab">FASE FINAL</a></li>
+        <li><a href="#posiciones" onclick="javascript:$('#comojugar').hide();" data-toggle="tab">POSICIONES Y PREMIOS</a></li>
       </ul>
 	  <form method="post" accept-charset="utf-8" action="ProdeLucho/dev/partido" >
       <div class="tab-content">
         <div class="tab-pane" id="reglamento"  style="margin-top:20px">
           <?php echo $outReglamento; ?>
         </div>
-        <div class="tab-pane active " id="grupos">
+        <div class="tab-pane " id="grupos">
 			<?php echo $outFaseGrupo; ?>
         </div>
         <div class="tab-pane " id="final">
@@ -49,6 +50,9 @@
         </div>
         <div class="tab-pane" id="posiciones" style="height:645px">
 			<?php echo $outPosiciones; ?>
+        </div>
+        <div class="tab-pane active "  id="comojugar"   style="margin-top:20px">
+          <?php echo $outComoJugar; ?>
         </div>
       </div>
 	  </form>
@@ -104,13 +108,52 @@
   </div>
 </div>
 </div>
+<script type="text/javascript">
+var app = (function() {
+
+    function urlIndex() {
+		  var url = "<?echo base_url()?>";
+        return url;
+    }
+
+    function urlLogin() {
+        var url = urlIndex() + "login";
+        return url;
+    }
+    function urlLoginFB() {
+        var url = urlIndex() + "fb";
+        return url;
+    }
+
+
+    function urlHome() {
+        var url = urlIndex() + "home";
+        return url;
+    }
+
+
+    function urlNotLike() {
+        var url = urlIndex() + "notLike";
+        return url;
+    }
+
+    return {
+        url: urlIndex,
+        urlHome: urlHome,
+        urlNotLike: urlNotLike,
+        urlLogin: urlLogin,
+        urlLoginFB: urlLoginFB
+    };
+
+})();
+</script>
 <script src="<?echo base_url()?>assets/js/lib/jquery-1.10.2.min.js" type="text/javascript"></script> 
 <script src="<?echo base_url()?>assets/js/lib/bootstrap.min.js" type="text/javascript"></script> 
 <script src="<?echo base_url()?>assets/js/lib/bootbox.min.js" type="text/javascript"></script> 
 <script src="<?echo base_url()?>assets/js/lib/jsrender.min.js" type="text/javascript"></script> 
 <script src="<?echo base_url()?>assets/js/lib/jquery.numberMask.js" type="text/javascript"></script> 
 <script src="<?echo base_url()?>assets/js/lib/jquery.countdown.js" type="text/javascript"></script> 
-<script src="<?echo base_url()?>assets/js/app/app.js" type="text/javascript"></script> 
+<!--<script src="<?echo base_url()?>assets/js/app/app.js" type="text/javascript"></script> -->
 <script src="<?echo base_url()?>assets/js/app/service/service.js" type="text/javascript"></script> 
 <script src="<?echo base_url()?>assets/js/app/service/usuario/usuario.js" type="text/javascript"></script> 
 <script src="<?echo base_url()?>assets/js/app/service/grupo/grupo.js" type="text/javascript"></script> 

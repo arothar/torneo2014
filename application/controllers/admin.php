@@ -69,6 +69,30 @@ class Admin extends CI_Controller {
 	}
 	
 	
+
+	public function usuarios_management()
+	{
+		$usuario = $this->session->userdata('usuario');
+		if ($usuario[0]->esAdmin == '1')
+		{
+			$crud = new grocery_CRUD();
+
+			$crud->set_theme('datatables');
+			$crud->set_table('usuario');
+			$crud->unset_delete();
+			$crud->unset_edit();
+			$crud->unset_add();
+			
+			$crud->columns('idUsuario','nombre','username','puntos','email');
+			
+			$output = $crud->render();
+
+			$this->_example_output($output);
+		}else{
+			redirect(base_url(). 'login', 'refresh');
+		}
+	}
+	
 	public function armarOctavos()
 	{
 		$equiposGanadores 	= 	$this->PlayOff->set_armarOctavos();
