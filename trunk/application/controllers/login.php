@@ -32,19 +32,38 @@ class Login extends CI_Controller {
 	}
 
 	function nuevousuario($offset = 0){
+		$data['existeUsuario']=0; 
 		$data['passDiferentes']=0;
+		$data['existeEmail']=0;
 		$this->load->view('view_nuevoUsuario',$data);
 	}
 
 	function registronuevo()
 	{
+		$existe = $this->Usuario->comprobarUsuario($this->input->post('username'));
+		$existeEmail = $this->Usuario->comprobarEmail($this->input->post('email'));
+		
 		$plainPass = $this->input->post('plainPassword');
 
 		if ($plainPass['first'] != $plainPass['second'])
 		{
+			$data['existeUsuario']=0;
 			$data['passDiferentes']=1;
+			$data['existeEmail']=0;
 			$this->load->view('view_nuevoUsuario',$data);	
-		}else
+		}else if ($existe) 
+		{
+			$data['passDiferentes']=0;
+			$data['existeUsuario']=1;
+			$data['existeEmail']=0;
+			$this->load->view('view_nuevoUsuario',$data);	
+		}else if ($existeEmail) 
+		{
+			$data['passDiferentes']=0;
+			$data['existeUsuario']=0;
+			$data['existeEmail']=1;
+			$this->load->view('view_nuevoUsuario',$data);	
+		}else 
 		{
 			$this->Usuario->crearUsuario(
 				$this->input->post('username'),
