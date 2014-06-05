@@ -79,11 +79,13 @@ class Prode extends CI_Controller {
 		$outFaseGrupo = 	$this->load->view('view_fasegrupo',$data, TRUE);
 		$outFinal = 		$this->load->view('view_final',$data, TRUE);
 		$outPosiciones = 	$this->load->view('view_posiciones',$data, TRUE);
+		$outComoJugar = 	$this->load->view('view_comojugar',null, TRUE);
 		
 		$data['outReglamento'] = 	$outReglamento;
 		$data['outFaseGrupo'] = 	$outFaseGrupo;
 		$data['outFinal'] = 		$outFinal;
 		$data['outPosiciones'] = 	$outPosiciones;
+		$data['outComoJugar'] = 	$outComoJugar;
 		
 		$this->load->view('view_prode',$data);
 	}

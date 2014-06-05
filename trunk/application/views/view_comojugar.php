@@ -1,0 +1,1 @@
+﻿<img src="<?echo base_url()?>assets/img/comojugar.png">
