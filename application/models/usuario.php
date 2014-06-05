@@ -22,7 +22,29 @@ class Usuario extends CI_Model {
 		return $this->db->get($this->tbl_usuario);
 	}
 	
-	function crearUsuario($username, $email, $pass1, $nroLegajo, $nombre, $nroEmpleado, $nroDNI, $esBridgestone, $esAdecco, $esManpower)
+	function comprobarUsuario($usuario){
+		$this->db->where('username', $usuario);
+		//$this->db->where('activo', 1);
+		
+		$registros = $this->db->get($this->tbl_usuario)->num_rows();
+		
+		//var_dump($registros);
+		
+		return ($registros >0) ? true : false;
+	}
+	
+	function comprobarEmail($email){
+		$this->db->where('email', $email);
+		//$this->db->where('activo', 1);
+		
+		$registros = $this->db->get($this->tbl_usuario)->num_rows();
+		
+		//var_dump($registros);
+		
+		return ($registros >0) ? true : false;
+	}
+	
+	function crearUsuario($username, $email, $pass1, $nroLegajo, $nombre, $nroEmpleado,$nroDNI, $esBridgestone, $esAdecco, $esManpower)
 	{
 		$this->db->insert("usuario", 
 						array('username'=>$username, 

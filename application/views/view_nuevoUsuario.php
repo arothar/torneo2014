@@ -26,10 +26,20 @@
                             <div id="fos_user_registration_form">
 								<div>
 									<label for="fos_user_registration_form_username" class="required">Nombre de usuario:</label>
+									<?if ($existeUsuario==1) { ?>
+										<ul>
+											<li>El nombre de usuario ya existe</li>
+										</ul>
+									<? } ?>
 									<input type="text" id="fos_user_registration_form_username" name="username" required="required" maxlength="255" pattern=".{2,}" oninvalid="setCustomValidity(&quot;Ingrese un nombre de usuario&quot;)" onfocus="setCustomValidity(&quot;&quot;)" />
 								</div>
 								<div>
 									<label for="fos_user_registration_form_email" class="required">Email:</label>
+									<?if ($existeEmail==1) { ?>
+										<ul>
+											<li>El email ya existe</li>
+										</ul>
+									<? } ?>
 									<input type="email" id="fos_user_registration_form_email" name="email" required="required" oninvalid="setCustomValidity(&quot;Ingrese su email&quot;)" onfocus="setCustomValidity(&quot;&quot;)" />
 								</div>
 								<div>
