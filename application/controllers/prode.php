@@ -24,11 +24,8 @@ class Prode extends CI_Controller {
 		//$fechaHoy = new DateTime('2014-06-27 14:00');
 		
 		$fechaHoy = new DateTime(date('Y-m-d G:i'));
-		//var_dump($fechaHoy);
-		//die();
+
 		$usuario =$this->session->userdata('usuario'); 
-		//var_dump($usuario[0]->idUsuario);
-		//var_dump($this->Usuario->getUsuario($usuario[0]->idUsuario));
 		
 		//die();
 		$grupos = 						$this->Grupo->get_paged_list(30, 0)->result();
