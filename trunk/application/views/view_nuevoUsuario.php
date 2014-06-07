@@ -89,7 +89,7 @@
                             </div>
                         </form>
                         <div class="pie">
-                            <div class="terminos-link">TÉRMINOS Y CONDICIONES</div>
+                            <a href='<?echo base_url()?>assets/uploads/Bases_Promocion_Mundial_interno_FINAL.docx'><div class="terminos-link">TÉRMINOS Y CONDICIONES</div></a>
                         </div>
                 </div>
                         <div class="contenedor-terminos">

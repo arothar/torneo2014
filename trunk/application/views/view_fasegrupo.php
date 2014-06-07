@@ -35,7 +35,7 @@
 								</div>
 							<? } else { 
 								// if ($horas->d <= 2) {?>
-									<? if ($horas->d != 0 || $horas->h >= 5) {?>
+									<? if ($horas->d != 0 || $horas->h >= 2) {?>
 										<? if (empty($partidosUsuario[$idPartido])) { ?>
 											<div class="boton-enviar <?echo base_url()?>assets/js-boton-enviar"></div>
 										<? } else { ?>
