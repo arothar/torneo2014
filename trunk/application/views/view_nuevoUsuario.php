@@ -85,7 +85,7 @@
 								</div>-->
                                 </div>
                             <div>
-                                <input type="submit" value="Registrar" />
+                                <input type="submit" value="Registrar" onclick="javascript:return comprobarEspacios();" />
                             </div>
                         </form>
                         <div class="pie">
@@ -129,7 +129,38 @@
                 app.ui.reglamento.init();
                 app.ui.detallePuntaje.init();
                 app.ui.login.init();
-            });
+            
+				$("#fos_user_registration_form_username").change(function(){
+					var espacio_blanco    = /\s/g;  //Expresión regular
+					var campo_validar = $("#fos_user_registration_form_username").val();  //Si usamos Jquery podemos obtener el valor con la siguiente línea.
+					if(espacio_blanco.test(campo_validar))
+					{
+						alert("El nombre de usuario no debe contener espacios en blanco.");
+						setTimeout(function() {
+							$("#fos_user_registration_form_username").focus();
+						}, 0);
+					}
+					
+				});
+			});
+			
+			function comprobarEspacios(){
+				var espacio_blanco    = /\s/g;  //Expresión regular
+				var campo_validar = $("#fos_user_registration_form_username").val();  //Si usamos Jquery podemos obtener el valor con la siguiente línea.
+				if(espacio_blanco.test(campo_validar))
+				{
+					alert("El nombre de usuario no debe contener espacios en blanco.");
+					setTimeout(function() {
+						$("#fos_user_registration_form_username").focus();
+					}, 0);
+					return false;
+				}else {
+					return true;
+				}
+					
+			}
+			
+			
           </script>
             </body>
 </html>
