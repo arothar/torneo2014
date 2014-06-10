@@ -634,6 +634,47 @@ background-image:url(../img/bgbuttonoveractive.png);
     width: 285px;
 }
 
+.contenedor-caja-login .consultasLogin{
+    border-radius: 2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+	text-decoration:none;
+	border:none;
+    margin-bottom: 3px;
+    margin-left: 21px;
+    margin-top: 12px;
+    padding: 8px;
+    text-align: center;
+    width: 285px;
+}
+
+.consultasLogin .consultas {
+    background-image: url("../img/botonConsultas.png");
+    height: 25px;
+    margin-left: 107px;
+    margin-top: -5px;
+    position: absolute;
+    width: 82px;
+}
+
+.contenedor-caja-login .exploradores {
+    border: medium none;
+    border-radius: 2px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    margin-left: -403px;
+    margin-top: 61px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    width: 790px;
+}
+
 .contenedor-caja-login a:hover{
     text-decoration: none;
 	border:none;
