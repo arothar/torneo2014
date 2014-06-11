@@ -25,7 +25,7 @@ class Login extends CI_Controller {
 		$user = $this->Usuario->login($this->input->post('usuario'), md5($this->input->post('_password')))->result();
 		if (count($user) == 1){
 			$this->session->set_userdata('usuario',$user);
-			redirect(base_url(). 'prode', 'refresh');
+			redirect(base_url(). 'prode?'. md5(rand()), 'refresh');
 		} else 
 			redirect(base_url(). 'login', 'refresh');
 			//$this->load->view('view_login', '');
