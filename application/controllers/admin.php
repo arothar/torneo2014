@@ -83,7 +83,7 @@ class Admin extends CI_Controller {
 			$crud->unset_edit();
 			$crud->unset_add();
 			
-			$crud->columns('idUsuario','nombre','username','puntos','email');
+			$crud->columns('idUsuario','nombre','nroLegajo','username','puntos','email');
 			
 			$output = $crud->render();
 

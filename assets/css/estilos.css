@@ -643,15 +643,25 @@ background-image:url(../img/bgbuttonoveractive.png);
 	text-decoration:none;
 	border:none;
     margin-bottom: 3px;
-    margin-left: 21px;
+    margin-left: -23px;
     margin-top: 12px;
     padding: 8px;
     text-align: center;
-    width: 285px;
+    width: 90px;
+	float: left;
 }
 
 .consultasLogin .consultas {
     background-image: url("../img/botonConsultas.png");
+    height: 25px;
+    margin-left: 107px;
+    margin-top: -5px;
+    position: absolute;
+    width: 82px;
+}
+
+.consultasLogin .preguntas {
+    background-image: url("../img/botonpreguntas.png");
     height: 25px;
     margin-left: 107px;
     margin-top: -5px;
@@ -2555,6 +2565,7 @@ color: #F70000;
     padding-left: 15px;
     padding-top: 18px;
     width: 374px;
+	overflow-y: overlay;
 }
 
 #posiciones .lista-resultados .resultado{
