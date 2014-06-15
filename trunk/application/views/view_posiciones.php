@@ -52,7 +52,9 @@
               </div>
               <div class="lista-resultados">
 			  <?
-			  $cantidad = (count($usuariosOrdenados) < 10) ? count($usuariosOrdenados) : 10;
+			  //$cantidad = (count($usuariosOrdenados) < 10) ? count($usuariosOrdenados) : 10;
+			  $cantidad = count($usuariosOrdenados);
+			   
 			  ?>
 			  <? for ($i=3; $i < $cantidad ; $i++){ ?>
                 <div class="resultado">

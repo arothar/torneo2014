@@ -33,10 +33,16 @@
 					</div>
 				</a>
 				<div class="consultasLogin">
+					  <a href="<?echo base_url()?>assets/uploads/preguntas.pdf" target="_blank">
+						<div class="preguntas"></div>
+					  </a>
+				</div>
+				<div class="consultasLogin">
 					  <a href="mailto:consultas@fanaticosdelmundial.com.ar">
 						<div class="consultas"></div>
 					  </a>
 				</div>
+				
 				<div class="exploradores">
 					<img src="<?echo base_url()?>assets/img/navegadores/frase.png" /> 
 					<a class="registrado" target="blank" href="https://www.google.com/intl/en/chrome/browser/">
