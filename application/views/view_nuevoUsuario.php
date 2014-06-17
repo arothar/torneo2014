@@ -65,6 +65,11 @@
 								</div>
 								<div>
 									<label for="fos_user_registration_form_nroLegajo" class="required">Nro. Legajo</label>
+									<?if ($existeLegajo==1) { ?>
+										<ul>
+											<li>El legajo ya existe</li>
+										</ul>
+									<? } ?>
 									<input type="text" id="fos_user_registration_form_nroLegajo" name="nroLegajo" required="required" oninvalid="setCustomValidity(&quot;Ingrese Nro de Legajo&quot;)" onfocus="setCustomValidity(&quot;&quot;)"/> 
 								</div>
                                 <div style="width:120px;">
