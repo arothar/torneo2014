@@ -119,5 +119,24 @@ class Usuario extends CI_Model {
 		$resultado = $this->db->get($this->tbl_usuario)->result();
 		return $resultado;
 	}
+	
+	function getUsuariosSinCargar($idPartido)
+	{
+		$this->db->select('*')->from('usuario');
+		$this->db->where('`idusuario` NOT IN (SELECT `idusuario` FROM `usuariopartido` where idpartido='. $idPartido . ')', NULL, FALSE);	
+		$resultado = $this->db->get()->result();
+		
+		$sql = "select * from usuario where idusuario not in (select idusuario from usuariopartido where idpartido=?)";
+		$params = array($idPartido);
+		$resultado = $this->db->query($sql, $params);
+		
+/*
+		$this->db->select('idusuario')->from('usuariopartido')->where('idpartido', $idPartido);
+		$sub = $this->subquery->start_subquery('where_in');
+		$sub->select('idusuario')->from('usuariopartido')->where('idpartido', $idPartido);
+		$resultado = $this->subquery->end_subquery('idusuario', FALSE);
+*/		
+		return $resultado;
+	}
 
 }

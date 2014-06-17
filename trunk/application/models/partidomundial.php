@@ -177,4 +177,16 @@ class PartidoMundial extends CI_Model {
 		$this->db->query($sql, $params);
 
 	}
+	
+	function get_partidoByFecha($fecha)
+	{
+		$query = $this->db->get_where('partidomundial', array('DATE_ADD(fechaPartido ,INTERVAL -4 HOUR)=' => $fecha));
+		//echo $this->db->last_query();
+		if ($query->num_rows() > 0)
+			$resultado = $query->result_array();
+		else
+			$resultado = null;
+		
+		return $resultado;
+	}
 }
