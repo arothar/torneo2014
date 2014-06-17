@@ -35,6 +35,7 @@ class Login extends CI_Controller {
 		$data['existeUsuario']=0; 
 		$data['passDiferentes']=0;
 		$data['existeEmail']=0;
+		$data['existeLegajo']=0;
 		$this->load->view('view_nuevoUsuario',$data);
 	}
 
@@ -43,25 +44,37 @@ class Login extends CI_Controller {
 		$existe = $this->Usuario->comprobarUsuario($this->input->post('username'));
 		$existeEmail = $this->Usuario->comprobarEmail($this->input->post('email'));
 		
+		$existeLegajo = $this->Usuario->comprobarLegajo($this->input->post('nroLegajo'));
+		
 		$plainPass = $this->input->post('plainPassword');
 
 		if ($plainPass['first'] != $plainPass['second'])
 		{
-			$data['existeUsuario']=0;
 			$data['passDiferentes']=1;
+			$data['existeUsuario']=0;
 			$data['existeEmail']=0;
+			$data['existeLegajo']=0;
 			$this->load->view('view_nuevoUsuario',$data);	
 		}else if ($existe) 
 		{
 			$data['passDiferentes']=0;
 			$data['existeUsuario']=1;
 			$data['existeEmail']=0;
+			$data['existeLegajo']=0;
 			$this->load->view('view_nuevoUsuario',$data);	
 		}else if ($existeEmail) 
 		{
 			$data['passDiferentes']=0;
 			$data['existeUsuario']=0;
 			$data['existeEmail']=1;
+			$data['existeLegajo']=0;
+			$this->load->view('view_nuevoUsuario',$data);	
+		}else if ($existeLegajo) 
+		{
+			$data['passDiferentes']=0;
+			$data['existeUsuario']=0;
+			$data['existeEmail']=0;
+			$data['existeLegajo']=1;
 			$this->load->view('view_nuevoUsuario',$data);	
 		}else 
 		{

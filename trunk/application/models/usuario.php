@@ -35,11 +35,16 @@ class Usuario extends CI_Model {
 	
 	function comprobarEmail($email){
 		$this->db->where('email', $email);
-		//$this->db->where('activo', 1);
 		
 		$registros = $this->db->get($this->tbl_usuario)->num_rows();
 		
-		//var_dump($registros);
+		return ($registros >0) ? true : false;
+	}
+	
+	function comprobarLegajo($nroLegajo){
+		$this->db->where('nroLegajo', $nroLegajo);
+		
+		$registros = $this->db->get($this->tbl_usuario)->num_rows();
 		
 		return ($registros >0) ? true : false;
 	}
