@@ -173,8 +173,8 @@ class PartidoMundial extends CI_Model {
 				select pv.idequipoVisitante idEquipo, ev.Nombre nombre from partidomundial pv
 				inner join equipo ev on pv.idEquipoVisitante= ev.IdEquipo
 				where pv.idPartidoMundial=?";
-		$params = array($idEquipo);
-		$this->db->query($sql, $params);
+		$params = array($idEquipo,$idEquipo);
+		return $this->db->query($sql, $params);
 
 	}
 	

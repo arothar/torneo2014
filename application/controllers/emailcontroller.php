@@ -23,6 +23,8 @@ class Emailcontroller extends CI_Controller {
 		
 		$partido =$this->PartidoMundial->get_partidoByFecha($fechaHoy);
 		
+		$partidoCompleto = $this->PartidoMundial->get_equiposXPartido($partido[0]["idPartidoMundial"])->result_array();
+
 		if ($partido != null) 
 		{
 			$usuariosSinCargar = $this->Usuario->getUsuariosSinCargar($partido[0]["idPartidoMundial"])->result();
@@ -31,23 +33,22 @@ class Emailcontroller extends CI_Controller {
 
 			$arr_emails = array();
 			foreach ($usuariosSinCargar as $key => $val){
-					$arr_emails[$key] = $val->Email;
+					$arr_emails[$key] = $val->email;
 			}
 			  
-			$smtp = Swift_SmtpTransport::newInstance('www.fanaticosdelmundial.com', 25)
-			  ->setUsername('soporte@fanaticosdelmundial.com')
+			$smtp = Swift_SmtpTransport::newInstance('www.fanaticosdelmundial.com.ar', 25)
+			  ->setUsername('soporte@fanaticosdelmundial.com.ar')
 			  ->setPassword('fanaticosdelmundial1234');
 		  
 			$mailer = Swift_Mailer::newInstance($smtp);
 
-			$message = Swift_Message::newInstance('No ha cargado los resultados del partido siguiente');
+			$message = Swift_Message::newInstance('No ha cargado los resultados '. $partidoCompleto[0]["nombre"] . ' - ' . $partidoCompleto[1]["nombre"]);
 
 			$message
-			  ->setTo("soporte@fanaticosdelmundial.com")
-			  ->setBcc($arr_emails)
-			  ->setFrom(array('soporte@fanaticosdelmundial.com' => 'soporte@fanaticosdelmundial.com'))
-			  ->setBody("Recuerde que en una hora finaliza la carga de resultados para el siguiente partido y no se registraron cargas de este usuario.",'text/html')
-			  ;
+			  ->setTo("soporte@fanaticosdelmundial.com.ar")
+			  ->setBcc("arothar@gmail.com")
+			  ->setFrom(array('soporte@fanaticosdelmundial.com.ar' => 'soporte@fanaticosdelmundial.com.ar'))
+			  ->setBody("Recuerde que en una hora finaliza la carga de resultados para el siguiente partido y no se registraron cargas de su usuario.",'text/html');
 
 			$mailer->send($message);
 		}
