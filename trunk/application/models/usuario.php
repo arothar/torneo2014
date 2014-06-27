@@ -95,10 +95,10 @@ class Usuario extends CI_Model {
 		}
 	}
 
-	function  asignarPuntaje($partido, $golesLocal, $golesVisitante)
+	function  asignarPuntaje($partido, $golesLocal, $golesVisitante, $idGanador)
 	{
-		$sql = "CALL sp_asignarPuntajeUsuario(?,?,?)";
-		$params = array($partido,$golesLocal, $golesVisitante);
+		$sql = "CALL sp_asignarPuntajeUsuario(?,?,?,?)";
+		$params = array($partido,$golesLocal, $golesVisitante, $idGanador);
 		$this->db->query($sql, $params);
 		
 		$sql = "CALL sp_actualizarPuntos()";
