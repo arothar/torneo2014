@@ -154,7 +154,7 @@ class Admin extends CI_Controller {
 	
 	function actualizarPuntos($post_array,$primary_key)
 	{	
-		$this->Usuario->asignarPuntaje($primary_key,$post_array["golesLocal"], $post_array["golesVisitante"]);
+		$this->Usuario->asignarPuntaje($primary_key,$post_array["golesLocal"], $post_array["golesVisitante"],  $post_array["idEquipoGanador"]);
 		$idEquipoGanador = 0;
 		$partidoEditado = $this->PartidoMundial->get_by_id($primary_key)->result_array();
 
