@@ -17,8 +17,8 @@ class Emailcontroller extends CI_Controller {
 
 	function index($offset = 0){
 		date_default_timezone_set('America/Argentina/Buenos_Aires');
-		$test = new DateTime('2014-06-15 15:00');
-		//$test = new DateTime(date('Y-m-d H:i:s'));
+		//$test = new DateTime('2014-06-15 16:00');
+		$test = new DateTime(date('Y-m-d H:i:s'));
 		$fechaHoy = date_format($test, 'Y-m-d H:i'); // 2011-03-03 00:00:00
 		
 		$partido =$this->PartidoMundial->get_partidoByFecha($fechaHoy);
@@ -35,7 +35,7 @@ class Emailcontroller extends CI_Controller {
 			foreach ($usuariosSinCargar as $key => $val){
 					$arr_emails[$key] = $val->email;
 			}
-			  
+
 			$smtp = Swift_SmtpTransport::newInstance('www.fanaticosdelmundial.com.ar', 25)
 			  ->setUsername('soporte@fanaticosdelmundial.com.ar')
 			  ->setPassword('fanaticosdelmundial1234');
@@ -46,9 +46,10 @@ class Emailcontroller extends CI_Controller {
 
 			$message
 			  ->setTo("soporte@fanaticosdelmundial.com.ar")
-			  ->setBcc("arothar@gmail.com")
+			  ->setBcc($arr_emails)
 			  ->setFrom(array('soporte@fanaticosdelmundial.com.ar' => 'soporte@fanaticosdelmundial.com.ar'))
-			  ->setBody("Recuerde que en una hora finaliza la carga de resultados para el siguiente partido y no se registraron cargas de su usuario.",'text/html');
+			  ->setBody("No te olvides de cargar el resultado del partido " . $partidoCompleto[0]["nombre"] . " - " . $partidoCompleto[1]["nombre"] . ".. queda 1 hora para que puedas hacerlo y seguir sumando puntos!.",'text/html');
+			  //->setBody("No te olvides de cargar tus resultados para los próximos partidos y seguí sumando puntos!",'text/html');
 
 			$mailer->send($message);
 		}
