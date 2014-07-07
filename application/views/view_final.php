@@ -32,9 +32,9 @@
 								</div>
 							<? } ?>
 						  </div>
-							<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
+							<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" <?if (!empty($partidosUsuario[$idPartido]) || ($fechaHoy > $fechaPartido)) { ?> disabled="disabled" <? } ?>>
 						  <div class="partido-separacion-input">ó</div>
-							<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
+							<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" <?if (!empty($partidosUsuario[$idPartido]) || ($fechaHoy > $fechaPartido)) { ?> disabled="disabled" <? } ?>>
 						  <div class="equipo equipo-der">
 							  <? if (!isset($partidosOctavos[$val->idPlayoff])==1){
 									echo $val->posicion2 . "º " . $val->nombre2;
@@ -84,6 +84,7 @@
 			    <? $countCuartos = 1;
 					$idPartido =0;
 					foreach ($estructuraCuartosArray as $val){ 
+					$idPartido =0;
 					if (isset($partidosCuartos[$val['idPlayoff']])==1){
 						$fechaPartido = new DateTime($partidosCuartos[$val['idPlayoff']]["fechaPartido"]); 
 						$idPartido = $partidosCuartos[$val['idPlayoff']]["idPartido"];
@@ -104,7 +105,7 @@
 							 ?>
 						</div>
 						<!--<input class="partido-gol-input" disabled="disabled">-->
-						<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
+						<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesLocal'] :  "-" ;  ?>" maxlength="2" class="partido-gol-input partido-gol-input-local" <?if (!empty($partidosUsuario[$idPartido]) || ($fechaHoy > $fechaPartido)) { ?> disabled="disabled" <? } ?>>
 						<br>
 						<div class="bandera"><img src="<?if (isset($partidosCuartos[$val['idPlayoff']])) {echo base_url()?>assets/img/banderas/<?=$partidosCuartos[$val['idPlayoff']]["banderaVisitante"];}else { echo "assets/img/banderas/16702.jpg";} ?>" title="bandera"></div>
 						<div class="equipo equipo-der">
@@ -117,7 +118,7 @@
 							 ?>
 						</div>
 						<!--<input class="partido-gol-input" disabled="disabled">-->
-						<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" <?if (!empty($partidosUsuario[$idPartido])) { ?> disabled="disabled" <? } ?>>
+						<input value="<?=(!empty($partidosUsuario[$idPartido])) ? $partidosUsuario[$idPartido]['golesVisitante'] :  "-" ;  ?>" class="partido-gol-input partido-gol-input-visitante" maxlength="2" <?if (!empty($partidosUsuario[$idPartido]) || ($fechaHoy > $fechaPartido)) { ?> disabled="disabled" <? } ?>>
 						<div class="contenido-<?if ($countCuartos%2==0) echo "izquierda"; else echo "derecha";?>">
 							<? if ($fechaHoy > $fechaPartido) {?>
 								<div class="resultado-<?if ($countCuartos%2==0) echo "izquierda"; else echo "derecha";?>">
@@ -127,7 +128,7 @@
 									<? } ?>
 								</div>
 							<? } else { 
-								 if ($horas->d <= 2) {?>
+								 if ($horas->d <= 10 && $idPartido !=0) {?>
 									<? if ($horas->d != 0 || $horas->h >= 2) {?>
 										<? if (empty($partidosUsuario[$idPartido] )) { ?>
 											<div id="boton-<?=$idPartido?>" class="boton-enviar <?echo base_url()?>assets/js-boton-enviar"></div>
@@ -155,6 +156,7 @@
 					$idPartido =0;
 					$nroEquipoSemi = 0;
 					foreach ($estructuraSemisArray as $val){ 
+						$idPartido =0;
 						if (isset($partidosSemis[$val['idPlayoff']])==1){
 							$fechaPartido = new DateTime($partidosSemis[$val['idPlayoff']]["fechaPartido"]); 
 							$idPartido = $partidosSemis[$val['idPlayoff']]["idPartido"];
@@ -199,7 +201,7 @@
 										<? } ?>
 									</div>
 								<? } else { 
-									 if ($horas->d <= 2) {?>
+									 if ($horas->d <= 2 && $idPartido !=0) {?>
 										<? if ($horas->d != 0 || $horas->h >= 2) {?>
 											<? if (empty($partidosUsuario[$idPartido] )) { ?>
 												<div class="boton-enviar <?echo base_url()?>assets/js-boton-enviar"></div>
@@ -226,6 +228,7 @@
 				<?	$idPartido =0;
 					$nroEquipoFinal = 0;
 					foreach ($estructuraFinalisimaArray as $val){ 
+						$idPartido =0;
 						if (isset($partidoFinal[$val['idPlayoff']])==1){
 							$fechaPartido = new DateTime($partidoFinal[$val['idPlayoff']]["fechaPartido"]); 
 							$idPartido = $partidoFinal[$val['idPlayoff']]["idPartido"];
@@ -283,7 +286,7 @@
 										<? } ?>
 									</div>
 								<? } else { 
-									 if ($horas->d <= 2) {?>
+									 if ($horas->d <= 2 && $idPartido !=0) {?>
 										<? if ($horas->d != 0 || $horas->h >= 2) {?>
 											<? if (empty($partidosUsuario[$idPartido] )) { ?>
 												<div class="boton-enviar <?echo base_url()?>assets/js-boton-enviar"></div>
@@ -300,6 +303,7 @@
 					$nroEquipoTercer = 0;
 					
 					foreach ($estructuraTercerArray as $val){ 
+						$idPartido =0;
 						if (isset($partidoTercer[$val['idPlayoff']])==1){
 							$fechaPartido = new DateTime($partidoTercer[$val['idPlayoff']]["fechaPartido"]); 
 							$idPartido = $partidoTercer[$val['idPlayoff']]["idPartido"];
@@ -356,7 +360,7 @@
 										<? } ?>
 									</div>
 								<? } else { 
-									 if ($horas->d <= 2) {?>
+									 if ($horas->d <= 2 && $idPartido !=0) {?>
 										<? if ($horas->d != 0 || $horas->h >= 2) {?>
 											<? if (empty($partidosUsuario[$idPartido] )) { ?>
 												<div class="boton-enviar <?echo base_url()?>assets/js-boton-enviar"></div>
