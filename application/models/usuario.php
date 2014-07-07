@@ -107,6 +107,7 @@ class Usuario extends CI_Model {
 	
 	function getUsuarios()
 	{
+		$this->db->where('activo', 1);
 		$this->db->where('puntos > ', 0);
 		$this->db->order_by('puntos','desc');
 		$resultado = $this->db->get("usuario");
